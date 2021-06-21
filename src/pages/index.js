@@ -1,29 +1,80 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from "react";
+import { useState, useRef, createRef, useEffect } from 'react';
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import * as THREE from 'three';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { Render, Three } from '../components/three.js';
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+import bg from "../images/backgrounds/light.jpg";
+import { CremaTitle } from "../components/CremaTitle/CremaTitle.js";
+
+
+const IndexPage = () => {
+    /*
+    const [yOffset, setYOffset] = useState(0);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenHeight, setScreenHeight] = useState(window.innerHeight);
+
+    const UpdateScreenDimensions = () => {
+        setScreenWidth(window.innerWidth);
+        setScreenHeight(window.innerHeight);
+    }
+    const UpdateYOffset = () => {
+        setYOffset(window.pageYOffset);
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", UpdateYOffset);
+        window.addEventListener("resize", UpdateScreenDimensions);
+        return () => {
+            window.removeEventListener("scroll", UpdateYOffset, false);
+            window.removeEventListener("resize", UpdateScreenDimensions, false);
+        };
+    }, []);
+
+
+
+    */
+
+    return (
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+            }}
+        >
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    height: "100vh",
+                    width: "100vw",
+                    maxWidth: "100%",
+                    display: "flex",
+                    backgroundImage: 'url(' + bg + ')',
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                }}
+            >
+                <div
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        alignSelf:"center"
+                    }}>
+                    <CremaTitle />
+                    </div>
+            </div>
+            <div
+                style={{
+                    height: "100vh",
+                    backgroundColor: "red",
+                }}
+            />
+        </div>
+    )
+}
 
 export default IndexPage
