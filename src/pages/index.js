@@ -4,10 +4,9 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as THREE from 'three';
 
-import { Render, Three } from '../components/three.js';
 
-import bg from "../images/backgrounds/light.jpg";
-import { CremaTitle } from "../components/CremaTitle/CremaTitle.js";
+import bg from "../assets/images/backgrounds/light.jpg";
+import { CremaTitle } from "../components/CremaTitle.js";
 
 
 const IndexPage = () => {
@@ -42,6 +41,7 @@ const IndexPage = () => {
                 display: "flex",
                 flexDirection: "column",
                 width: "100%",
+                margin:0
             }}
         >
             <div
@@ -58,14 +58,7 @@ const IndexPage = () => {
                     backgroundSize: "cover",
                 }}
             >
-                <div
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        alignSelf:"center"
-                    }}>
-                    <CremaTitle />
-                    </div>
+                <CremaTitle />
             </div>
             <div
                 style={{

@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import * as React from "react";
 import { useState, useRef, createRef, useEffect } from 'react';
+import stereofidelic from '../assets/fonts/Stereofidelic.json';
+import felix from '../assets/fonts/Felix Titling.json';
+import particle from '../assets/liquidParticle.png';
 
 export const CremaTitle = () => {
 
@@ -14,6 +17,7 @@ export const CremaTitle = () => {
             style={{
                 width: "100%",
                 height: "100%",
+                alignSelf: "center",
                 top: 0,
                 left: 0,
             }}
@@ -24,21 +28,21 @@ export const CremaTitle = () => {
 const Preload = () => {
     let manager = new THREE.LoadingManager();
     manager.onLoad = function () {
-        const environment = new Environment(typo, particle);
+        const environment = new Environment(typo, font2, particle);
     }
 
-    var typo = null;
     const loader = new THREE.FontLoader(manager);
-    const font = loader.load('https://res.cloudinary.com/dydre7amr/raw/upload/v1612950355/font_zsd4dr.json', function (font) { typo = font; });
+    const typo = loader.parse(stereofidelic);
+    const font2 = loader.parse(felix);
     const particle = new THREE.TextureLoader(manager).load('https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png');
-
 }
 
 class Environment {
 
-    constructor(font, particle) {
+    constructor(font, font2, particle) {
 
         this.font = font;
+        this.font2 = font2;
         this.particle = particle;
         this.container = document.querySelector('#magic');
         this.scene = new THREE.Scene();
@@ -56,7 +60,7 @@ class Environment {
 
     setup() {
 
-        this.createParticles = new CreateParticles(this.scene, this.font, this.particle, this.camera, this.renderer);
+        this.createParticles = new CreateParticles(this.scene, this.font, this.font2, this.particle, this.camera, this.renderer);
     }
 
     render() {
@@ -97,10 +101,11 @@ class Environment {
 
 class CreateParticles {
 
-    constructor(scene, font, particleImg, camera, renderer) {
+    constructor(scene, font, font2, particleImg, camera, renderer) {
 
         this.scene = scene;
         this.font = font;
+        this.font2 = font2;
         this.particleImg = particleImg;
         this.camera = camera;
         this.renderer = renderer;
@@ -113,47 +118,37 @@ class CreateParticles {
         this.buttom = false;
 
         this.data = {
-            text: `      The
+            text: `    The
 BONEYARD
  Espresso
 `,
             amount: 1500,
             particleSize: 1,
-            //originally white
-            //???????????????????????
             particleColor: 0xffffff,
-            textSize: 10,
-            area: 250,
-            ease: .05,
+            textSize: 8,
+            area: 50,
+            ease: .07,
         }
         this.setup();
         this.bindEvents();
 
     }
-
-
     setup() {
 
         const geometry = new THREE.PlaneGeometry(this.visibleWidthAtZDepth(100, this.camera), this.visibleHeightAtZDepth(100, this.camera));
-                                                              // ????????????????????
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
+        const material = new THREE.MeshBasicMaterial({ transparent: true });
         this.planeArea = new THREE.Mesh(geometry, material);
         this.planeArea.visible = false;
         this.createText();
 
     }
-
     bindEvents() {
         document.addEventListener('mousemove', this.onMouseMove.bind(this));
     }
-
     onMouseMove() {
 
         this.mouse.x = (window.event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = - (window.event.clientY / window.innerHeight) * 2 + 1;
-
-        console.log("clientX " + window.event.clientX);
-        console.log("mouse X " + this.mouse.x)
 
     }
 
@@ -187,8 +182,11 @@ BONEYARD
                 let py = pos.getY(i);
                 let pz = pos.getZ(i);
 
-                //top text color... kind of
-                this.colorChange.setHSL(.069, 0.33, 0.33)
+                //fully white overrides top 
+                //fully black overrides top + bottom\
+                //Affects outside of top letters
+                //Currently mid crema color
+                this.colorChange.setHSL(.091, 0.75, 0.87)
                 coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
                 coulors.needsUpdate = true;
 
@@ -205,37 +203,23 @@ BONEYARD
 
                 if (mouseDistance < this.data.area) {
 
-                    if (i % 5 == 0) {
+                    const t = Math.atan2(dy, dx);
+                    px += f * Math.cos(t);
+                    py += f * Math.sin(t);
 
-                        const t = Math.atan2(dy, dx);
-                        px -= .03 * Math.cos(t);
-                        py -= .03 * Math.sin(t);
+                    pos.setXYZ(i, px, py, pz);
+                    pos.needsUpdate = true;
 
-                        this.colorChange.setHSL(.15, 1.0, .5)
-                        coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
-                        coulors.needsUpdate = true;
-
-                        size.array[i] = this.data.particleSize / 1.2;
-                        size.needsUpdate = true;
-
-                    } else {
-
-                        const t = Math.atan2(dy, dx);
-                        px += f * Math.cos(t);
-                        py += f * Math.sin(t);
-
-                        pos.setXYZ(i, px, py, pz);
-                        pos.needsUpdate = true;
-
-                        size.array[i] = this.data.particleSize * 1.3;
-                        size.needsUpdate = true;
-                    }
+                    size.array[i] = this.data.particleSize * 1.3;
+                    size.needsUpdate = true;
 
                     if ((px > (initX + 10)) || (px < (initX - 10)) || (py > (initY + 10) || (py < (initY - 10)))) {
 
-                        this.colorChange.setHSL(.15, 1.0, .5)
-                        coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
-                        coulors.needsUpdate = true;
+                        //darkest crema color
+                        //changes subset of particles
+                          this.colorChange.setHSL(0.066, .89, .75)
+                         coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
+                         coulors.needsUpdate = true;
 
                         size.array[i] = this.data.particleSize / 1.8;
                         size.needsUpdate = true;
@@ -261,6 +245,9 @@ BONEYARD
         let thePoints = [];
 
         let shapes = this.font.generateShapes(this.data.text, this.data.textSize);
+        let shapes1 = this.font2.generateShapes("The", this.data.textSize);
+        let shapes2 = this.font.generateShapes("BONEYARD", this.data.textSize);
+        let shapes3 = this.font2.generateShapes("Espresso", this.data.textSize);
         let geometry = new THREE.ShapeGeometry(shapes);
         geometry.computeBoundingBox();
 
@@ -317,8 +304,8 @@ BONEYARD
         const material = new THREE.ShaderMaterial({
 
             uniforms: {
-                //back text color
-                color: { value: new THREE.Color(0x444444) },
+                //lightest crema color
+                color: { value: new THREE.Color(0xdfcea5) },
                 pointTexture: { value: this.particleImg }
             },
             vertexShader: `
@@ -334,7 +321,8 @@ BONEYARD
     gl_PointSize = size * ( 300.0 / -mvPosition.z );
     gl_Position = projectionMatrix * mvPosition;
 
-  }`,
+  }
+  `,
             fragmentShader: `
     
  uniform vec3 color;
@@ -344,7 +332,7 @@ BONEYARD
 
  void main() {
 
-   gl_FragColor = vec4( color * vColor, 1.0 );
+   gl_FragColor = vec4( color * vColor, 1 );
    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
 
  }
@@ -373,14 +361,12 @@ BONEYARD
 
         return 2 * Math.tan(vFOV / 2) * Math.abs(depth);
     }
-
     visibleWidthAtZDepth(depth, camera) {
 
         const height = this.visibleHeightAtZDepth(depth, camera);
         return height * camera.aspect;
 
     }
-
     distance(x1, y1, x2, y2) {
 
         return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
