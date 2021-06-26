@@ -1,11 +1,23 @@
 import * as THREE from 'three';
 import * as React from "react";
-import { useState, useRef, createRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSpring, animated, config } from "@react-spring/web";
 import stereofidelic from '../assets/fonts/Stereofidelic.json';
 import felix from '../assets/fonts/Felix Titling.json';
-import particle from '../assets/liquidParticle.png';
+
+
+const calc = (x, y, rect) => [
+    -(y - rect.top - rect.height / 2) / 5,
+    (x - rect.left - rect.width / 2) / 5,
+    1.4
+];
+const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 export const CremaTitle = () => {
+
+    const ref = useRef(null);
+    const [xys, set] = useState([0, 0, 1]);
+    const props = useSpring({ xys, config: config.molasses });
 
     useEffect(() => {
         Preload();
@@ -13,22 +25,69 @@ export const CremaTitle = () => {
 
     return (
         <div
-            id={"magic"}
-            style={{
-                width: "100%",
-                height: "100%",
-                alignSelf: "center",
-                top: 0,
-                left: 0,
-            }}
-        />
+        >
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                    height: "100%",
+                    textAlign: "center",
+                    color: "white",
+                    fontFamily: 'Felix Titling',
+                    src: "local('Felix Titling'), url(../assets/fonts/Felixti.ttf) format('ttf')",
+                    justifyContent: "center",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    fontSize: "30px",
+                    textShadow: "0px 1px 5px rgba(0,0,0,0.25)",
+                    zIndex: 1
+                }}
+            >
+
+                <h1 style={{
+                    marginTop: 0,
+                    marginBottom: 0,
+                }}>
+                    The
+                </h1>
+
+                <div style={{ height: "10%" }} />
+
+                <h1 style={{
+                    marginTop: 0,
+                    marginBottom: 0
+                }}>
+                    Espresso
+                </h1>
+
+                <div style={{ height: "15%" }} />
+
+            </div>
+            <div
+                id={"magic"}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                }}
+            />
+        </div>
+
+
+
+
+
     )
 }
 
 const Preload = () => {
     let manager = new THREE.LoadingManager();
     manager.onLoad = function () {
-        const environment = new Environment(typo, font2, particle);
+        new Environment(typo, font2, particle);
     }
 
     const loader = new THREE.FontLoader(manager);
@@ -118,15 +177,13 @@ class CreateParticles {
         this.buttom = false;
 
         this.data = {
-            text: `    The
-BONEYARD
- Espresso
-`,
-            amount: 1500,
-            particleSize: 1,
+            text: `BONE YARD`,
+            amount: 500,
+            //1
+            particleSize: 1.25,
             particleColor: 0xffffff,
-            textSize: 8,
-            area: 50,
+            textSize: 10,
+            area: 75,
             ease: .07,
         }
         this.setup();
@@ -154,8 +211,8 @@ BONEYARD
 
     render(level) {
 
-        const time = ((.001 * performance.now()) % 12) / 12;
-        const zigzagTime = (1 + (Math.sin(time * 2 * Math.PI))) / 6;
+        //  const time = ((.001 * performance.now()) % 12) / 12;
+        // const zigzagTime = (1 + (Math.sin(time * 2 * Math.PI))) / 6;
 
         this.raycaster.setFromCamera(this.mouse, this.camera);
 
@@ -170,7 +227,7 @@ BONEYARD
 
             const mx = intersects[0].point.x;
             const my = intersects[0].point.y;
-            const mz = intersects[0].point.z;
+            // const mz = intersects[0].point.z;
 
             for (var i = 0, l = pos.count; i < l; i++) {
 
@@ -195,7 +252,7 @@ BONEYARD
 
                 let dx = mx - px;
                 let dy = my - py;
-                const dz = mz - pz;
+                // const dz = mz - pz;
 
                 const mouseDistance = this.distance(mx, my, px, py)
                 let d = (dx = mx - px) * dx + (dy = my - py) * dy;
@@ -217,9 +274,9 @@ BONEYARD
 
                         //darkest crema color
                         //changes subset of particles
-                          this.colorChange.setHSL(0.066, .89, .75)
-                         coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
-                         coulors.needsUpdate = true;
+                        this.colorChange.setHSL(0.066, .89, .75)
+                        coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
+                        coulors.needsUpdate = true;
 
                         size.array[i] = this.data.particleSize / 1.8;
                         size.needsUpdate = true;
@@ -245,10 +302,9 @@ BONEYARD
         let thePoints = [];
 
         let shapes = this.font.generateShapes(this.data.text, this.data.textSize);
-        let shapes1 = this.font2.generateShapes("The", this.data.textSize);
-        let shapes2 = this.font.generateShapes("BONEYARD", this.data.textSize);
-        let shapes3 = this.font2.generateShapes("Espresso", this.data.textSize);
+
         let geometry = new THREE.ShapeGeometry(shapes);
+
         geometry.computeBoundingBox();
 
         const xMid = - 0.5 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
@@ -281,7 +337,7 @@ BONEYARD
 
             let shape = shapes[x];
 
-            const amountPoints = (shape.type == 'Path') ? this.data.amount / 2 : this.data.amount;
+            const amountPoints = (shape.type === 'Path') ? this.data.amount / 2 : this.data.amount;
 
             let points = shape.getSpacedPoints(amountPoints);
 
