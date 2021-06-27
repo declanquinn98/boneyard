@@ -24,8 +24,7 @@ export const CremaTitle = () => {
     }, []);
 
     return (
-        <div
-        >
+        <div>
             <div
                 style={{
                     display: "flex",
