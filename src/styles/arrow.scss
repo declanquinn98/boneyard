@@ -1,0 +1,34 @@
+.cDiv {
+    cursor: pointer;
+	display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+	
+	.cSvgUp, .cSvgDown {
+		position: relative;
+		top: -1px;
+		-webkit-transition: -webkit-transform 0.3s ease;
+		transition: -webkit-transform 0.3s ease;
+		transition: transform 0.3s ease;
+		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+		vertical-align: middle;
+	}
+	
+	.cCircle {
+		transition: stroke-dashoffset .5s ease;
+		stroke-dasharray: 95;
+		stroke-dashoffset: 95;
+	}
+	
+	&:hover {
+		.cSvgDown {
+			transform: translate3d(0, 5px, 10px);
+		}
+		.cSvgUp {
+			transform: translate3d(0, -5px, 10px);
+		}
+		.cCircle {
+			stroke-dashoffset: 0;
+		}
+	}
+}

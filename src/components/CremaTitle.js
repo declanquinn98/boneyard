@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import * as React from "react";
 import { useEffect, useRef, useState } from 'react';
 import { useSpring, animated, config } from "@react-spring/web";
-import stereofidelic from '../assets/fonts/Stereofidelic.json';
-import felix from '../assets/fonts/Felix Titling.json';
+import stereofidelic from '../fonts/Stereofidelic.json';
+import felix from '../fonts/Felix Titling.json';
 
 
 const calc = (x, y, rect) => [
@@ -33,8 +33,6 @@ export const CremaTitle = () => {
                     height: "100%",
                     textAlign: "center",
                     color: "white",
-                    fontFamily: 'Felix Titling',
-                    src: "local('Felix Titling'), url(../assets/fonts/Felixti.ttf) format('ttf')",
                     justifyContent: "center",
                     position: "absolute",
                     top: 0,
@@ -52,7 +50,7 @@ export const CremaTitle = () => {
                     The
                 </h1>
 
-                <div style={{ height: "10%" }} />
+                <div style={{ height: "15%" }} />
 
                 <h1 style={{
                     marginTop: 0,
@@ -61,7 +59,7 @@ export const CremaTitle = () => {
                     Espresso
                 </h1>
 
-                <div style={{ height: "15%" }} />
+                <div style={{ height: "20%" }} />
 
             </div>
             <div
@@ -181,7 +179,7 @@ class CreateParticles {
             //1
             particleSize: 1.25,
             particleColor: 0xffffff,
-            textSize: 10,
+            textSize: 12,
             area: 75,
             ease: .07,
         }

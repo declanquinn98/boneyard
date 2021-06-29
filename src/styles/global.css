@@ -6,3 +6,23 @@ body {
     padding: 0;
     overflow-x: hidden; 
 }
+@font-face {
+    font-family: 'IndieFlower';
+    src: local('IndieFlower'), url(../fonts/indie-flower-v12-latin-regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald'), url(../fonts/oswald-v36-latin-regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Bebas';
+    src: local('Bebas'), url(../fonts/bebas-neue-v2-latin-regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Playfair';
+    src: local('Bebas'), url(../fonts/playfair-display-v22-latin-regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'PlayfairItalic';
+    src: local('Bebas'), url(../fonts/playfair-display-v22-latin-italic.ttf) format('truetype');
+}
