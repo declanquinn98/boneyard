@@ -94,8 +94,8 @@ const IndexPage = () => {
                 <ParallaxLayer
                     offset={1}
                     style={{
-                        display:"flex",
-                        justifyContent:'center'
+                        display: "flex",
+                        justifyContent: 'center'
                     }}
                 >
 
@@ -120,7 +120,6 @@ const IndexPage = () => {
                                 zIndex: 1
                             }}
                         >
-
                             <div
                                 style={{
                                     width: "75%",
@@ -139,7 +138,6 @@ const IndexPage = () => {
                                     }}>
                                     Let Us Explain
                                 </h3>
-
                                 <div
                                     style={{
                                         width: "100%",
@@ -177,12 +175,8 @@ const IndexPage = () => {
 
                                 </div>
                             </div>
-
-
                         </ParallaxLayer>
-
                     </div>
-
                     <ParallaxLayer
                         speed={-1}
                         horizontal
@@ -204,9 +198,6 @@ const IndexPage = () => {
                             HELLO
                         </h2>
                     </ParallaxLayer>
-
-
-
                     <div
                         style={{
                             position: "absolute",
@@ -243,10 +234,6 @@ const IndexPage = () => {
                             }}
                         />
                     </div>
-
-
-
-
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -271,12 +258,12 @@ const IndexPage = () => {
                 <ParallaxLayer
                     offset={2.5}
                     style={{
-                        display:'flex',
-                        justifyContent:'center'
+                        display: 'flex',
+                        justifyContent: 'center'
                     }}
                 >
-                    <Menu/>
-                   
+                        <Menu />
+
                     <ParallaxLayer
                         speed={-1}
                         horizontal
@@ -361,8 +348,8 @@ const IndexPage = () => {
                 <ParallaxLayer
                     offset={4}
                     style={{
-                        display:'flex',
-                        justifyContent:'center'
+                        display: 'flex',
+                        justifyContent: 'center'
                     }}
                 >
 
@@ -536,8 +523,8 @@ const IndexPage = () => {
                 <ParallaxLayer
                     offset={5.5}
                     style={{
-                        display:'flex',
-                        justifyContent:'center'
+                        display: 'flex',
+                        justifyContent: 'center'
                     }}
                 >
                     <div
