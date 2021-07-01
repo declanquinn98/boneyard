@@ -5,7 +5,9 @@ import { config } from 'react-spring';
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 
 import { Arrow } from "../components/Arrow.js";
+import { About } from "../components/IndexSections/About.js";
 import { Menu } from "../components/IndexSections/Menu.js";
+import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
 import styles from '../styles/global.css';
 import landingBG from "../assets/images/backgrounds/espressoBlack.jpg";
@@ -99,85 +101,8 @@ const IndexPage = () => {
                         justifyContent: 'center'
                     }}
                 >
+                    <About />
 
-                    <div
-                        style={{
-                            position: "relative",
-                            height: "100vh",
-                            width: "100vw",
-                            backgroundColor: offBlack,
-                            display: "flex",
-                            justifyContent: "center",
-                            color: offWhite,
-                        }}
-                    >
-                        <ParallaxLayer
-                            offset={0.125}
-                            speed={0.1}
-                            config={config.default}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                zIndex: 1
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: "75%",
-                                    height: "80%",
-                                    alignSelf: "center",
-                                    display: "flex",
-                                    flexDirection: "column"
-                                }}
-                            >
-                                <h3
-                                    style={{
-                                        fontSize: 100,
-                                        fontFamily: "Oswald",
-                                        marginBottom: 0,
-                                        marginTop: 0
-                                    }}>
-                                    Let Us Explain
-                                </h3>
-                                <div
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        display: "flex",
-                                        fontSize: 30
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            width: "40%",
-                                            height: "100%",
-                                        }}
-                                    >
-                                        <p> There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler---> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-                                    </div>
-
-                                    <div
-                                        style={{
-                                            width: "5%",
-                                        }}
-                                    />
-
-                                    <div
-                                        style={{
-                                            width: "40%",
-                                            height: "100%",
-                                        }}
-                                    >
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </ParallaxLayer>
-                    </div>
                     <ParallaxLayer
                         speed={-1}
                         horizontal
@@ -263,7 +188,7 @@ const IndexPage = () => {
                         justifyContent: 'center'
                     }}
                 >
-                        <Menu />
+                    <Menu />
 
                     <ParallaxLayer
                         speed={-1}
@@ -323,8 +248,6 @@ const IndexPage = () => {
                             }}
                         />
                     </div>
-
-
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -353,89 +276,8 @@ const IndexPage = () => {
                         justifyContent: 'center'
                     }}
                 >
+                    <Sustain />
 
-                    <div
-                        style={{
-                            position: "relative",
-                            height: "100vh",
-                            width: "100vw",
-                            color: offWhite,
-                            backgroundColor: offBlack,
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <ParallaxLayer
-                            offset={0.5}
-                            speed={0.1}
-                            config={config.default}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                zIndex: 1
-                            }}
-                        >
-
-                            <div
-                                style={{
-                                    width: "75%",
-                                    height: "80%",
-                                    alignSelf: "center",
-                                    display: "flex",
-                                    flexDirection: "column"
-                                }}
-                            >
-
-                                <h3
-                                    style={{
-                                        fontSize: 100,
-                                        fontFamily: "Oswald",
-                                        marginBottom: 0,
-                                        marginTop: 0
-                                    }}>
-                                    We like this planet
-                                </h3>
-
-                                <div
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        display: "flex",
-                                        fontSize: 30
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            width: "40%",
-                                            height: "100%",
-                                        }}
-                                    >
-                                        <p>Again up to you obviously what goes here. Something about the keepcup discount and advertising the fonzie abbot cups I assume. filler---> I Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-
-                                    </div>
-
-                                    <div
-                                        style={{
-                                            width: "5%",
-                                        }}
-                                    />
-
-                                    <div
-                                        style={{
-                                            width: "40%",
-                                            height: "100%",
-                                        }}
-                                    >
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </ParallaxLayer>
-
-                    </div>
 
                     <ParallaxLayer
                         speed={-1}
@@ -539,7 +381,7 @@ const IndexPage = () => {
                             justifyContent: "center",
                         }}
                     >
-                        <Contact/>
+                        <Contact />
 
                     </div>
 
