@@ -7,6 +7,7 @@
   "dependencies": {
     "@react-spring/parallax": "^9.2.3",
     "@react-three/fiber": "^7.0.1",
+    "dotenv": "^10.0.0",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.7.0",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
@@ -23,6 +24,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-ig-feed": "^1.0.4",
     "react-spring": "^9.2.3",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
