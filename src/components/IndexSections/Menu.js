@@ -2,7 +2,6 @@ import * as React from "react";
 import { useRef, useEffect, useState } from "react";
 import { config } from 'react-spring';
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
-import { Textfit } from 'react-textfit';
 
 import styles from '../../styles/global.css';
 

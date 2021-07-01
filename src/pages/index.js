@@ -6,6 +6,7 @@ import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 
 import { Arrow } from "../components/Arrow.js";
 import { Menu } from "../components/IndexSections/Menu.js";
+import { Contact } from "../components/IndexSections/Contact.js";
 import styles from '../styles/global.css';
 import landingBG from "../assets/images/backgrounds/espressoBlack.jpg";
 import cookiesBG from "../assets/images/backgrounds/cookies.jpg";
@@ -538,75 +539,7 @@ const IndexPage = () => {
                             justifyContent: "center",
                         }}
                     >
-                        <ParallaxLayer
-                            offset={0.6}
-                            speed={0.1}
-                            config={config.default}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                zIndex: 1
-                            }}
-                        >
-
-                            <div
-                                style={{
-                                    width: "75%",
-                                    height: "80%",
-                                    alignSelf: "center",
-                                    display: "flex",
-                                    flexDirection: "column"
-                                }}
-                            >
-
-                                <h3
-                                    style={{
-                                        fontSize: 100,
-                                        fontFamily: "Oswald",
-                                        marginBottom: 0,
-                                        marginTop: 0
-                                    }}>
-                                    Contact
-                                </h3>
-
-                                <div
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        display: "flex",
-                                        fontSize: 30
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            width: "40%",
-                                            height: "100%",
-                                        }}
-                                    >
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-                                    </div>
-
-                                    <div
-                                        style={{
-                                            width: "5%",
-                                        }}
-                                    />
-
-                                    <div
-                                        style={{
-                                            width: "40%",
-                                            height: "100%",
-                                        }}
-                                    >
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </ParallaxLayer>
+                        <Contact/>
 
                     </div>
 
@@ -624,7 +557,7 @@ const IndexPage = () => {
                                 fontFamily: "Bebas",
                                 alignSelf: "center",
                                 position: "absolute",
-                                left: "-505%",
+                                left: "-485%",
                                 opacity: "20%"
                             }}
                         >
