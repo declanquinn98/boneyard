@@ -188,11 +188,11 @@ const IndexPage = () => {
                         <h2
                             style={{
                                 color: orange,
-                                fontSize: 400,
-                                fontFamily: "Bebas",
+                                fontSize: 500,
+                                fontFamily: "Stereofidelic",
                                 alignSelf: "center",
                                 position: "relative",
-                                left: "-45%",
+                                left: "-40%",
                                 opacity: "50%"
                             }}
                         >
@@ -275,11 +275,11 @@ const IndexPage = () => {
                         <h2
                             style={{
                                 color: red,
-                                fontSize: 400,
-                                fontFamily: "Bebas",
+                                fontSize: 500,
+                                fontFamily: "Stereofidelic",
                                 alignSelf: "center",
                                 position: "absolute",
-                                left: "-195%",
+                                left: "-185%",
                                 opacity: "25%"
                             }}
                         >
@@ -447,8 +447,8 @@ const IndexPage = () => {
                         <h2
                             style={{
                                 color: green,
-                                fontSize: 230,
-                                fontFamily: "Bebas",
+                                fontSize: 300,
+                                fontFamily: "Stereofidelic",
                                 alignSelf: "center",
                                 position: "absolute",
                                 left: "-360%",
@@ -553,11 +553,11 @@ const IndexPage = () => {
                         <h2
                             style={{
                                 color: offWhite,
-                                fontSize: 250,
-                                fontFamily: "Bebas",
+                                fontSize: 350,
+                                fontFamily: "Stereofidelic",
                                 alignSelf: "center",
                                 position: "absolute",
-                                left: "-485%",
+                                left: "-490%",
                                 opacity: "20%"
                             }}
                         >

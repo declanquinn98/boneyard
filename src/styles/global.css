@@ -26,3 +26,7 @@ body {
     font-family: 'PlayfairItalic';
     src: local('Bebas'), url(../fonts/playfair-display-v22-latin-italic.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'Stereofidelic';
+    src: local('Stereofidelic'), url(../fonts/Stereofidelic.ttf) format('truetype');
+}
