@@ -15,16 +15,7 @@ import cookiesBG from "../assets/images/backgrounds/cookies.jpg";
 import keepcupBG from "../assets/images/backgrounds/keepcup.jpg";
 import outsideBG from "../assets/images/backgrounds/outside.jpg";
 
-
-/*
-https://codepen.io/manelroig/pen/rJMVRO
-https://codepen.io/GioAc96/pen/QarEQM
-https://codepen.io/Podgro/pen/GoRyZV
-https://codepen.io/raf187/pen/BvgGRQ
-*/
-
-
-const IndexPage = () => {
+const Wrapper = () => {
 
     const offBlack = "#1f1d1e";
     const offWhite = "#f4f4f9";
@@ -33,8 +24,23 @@ const IndexPage = () => {
     const red = "#db4451"; //3b0d11
 
     const parallax = useRef(null);
+    const [width, setWidth] = useState(0);
+
     const ScrollTo = (page) => {
         parallax.current.scrollTo(page);
+    }
+
+    useEffect(() => {
+
+        updateDimensions();
+
+        window.addEventListener("resize", updateDimensions); 
+        return () => window.removeEventListener("resize", updateDimensions);
+
+    }, []);    
+    
+    const updateDimensions = () => {
+        setWidth(window.innerWidth)
     }
 
     return (
@@ -441,4 +447,4 @@ const IndexPage = () => {
 }
 
 
-export default IndexPage
+export default Wrapper
