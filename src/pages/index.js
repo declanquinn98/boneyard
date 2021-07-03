@@ -2,46 +2,49 @@ import * as React from "react";
 import { useRef, useEffect, useState } from "react";
 import { CremaTitle } from "../components/CremaTitle.js";
 import { config } from 'react-spring';
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import { isDesktop, isMobileOnly, isTablet } from "react-device-detect";
 
-import { Arrow } from "../components/Arrow.js";
+import { ScrollArrows } from "../components/ScrollArrows.js";
 import { About } from "../components/IndexSections/About.js";
 import { Menu } from "../components/IndexSections/Menu.js";
 import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
+import { BackgroundText } from "../components/BackgroundText.js";
+
 import styles from '../styles/global.css';
 import landingBG from "../assets/images/backgrounds/espressoBlack.jpg";
 import cookiesBG from "../assets/images/backgrounds/cookies.jpg";
 import keepcupBG from "../assets/images/backgrounds/keepcup.jpg";
 import outsideBG from "../assets/images/backgrounds/outside.jpg";
 
-const Wrapper = () => {
+const offBlack = "#1f1d1e";
+const offWhite = "#f4f4f9";
+const green = "#5d9835";
+const orange = "#f2a541";
+const red = "#db4451"; //3b0d11
 
-    const offBlack = "#1f1d1e";
-    const offWhite = "#f4f4f9";
-    const green = "#5d9835";
-    const orange = "#f2a541";
-    const red = "#db4451"; //3b0d11
+
+const Index = () => {
 
     const parallax = useRef(null);
-    const [width, setWidth] = useState(0);
 
-    const ScrollTo = (page) => {
-        parallax.current.scrollTo(page);
-    }
+    const [deviceType, setDeviceType] = useState(null);
 
     useEffect(() => {
-
-        updateDimensions();
-
-        window.addEventListener("resize", updateDimensions); 
-        return () => window.removeEventListener("resize", updateDimensions);
-
-    }, []);    
-    
-    const updateDimensions = () => {
-        setWidth(window.innerWidth)
-    }
+        if (isDesktop) {
+            setDeviceType("desktop");
+        }
+        else if (isTablet) {
+            setDeviceType("tablet");
+        }
+        else if (isMobileOnly) {
+            setDeviceType("mobile");
+        }
+        else {
+            setDeviceType("other");
+        }
+    }, []);
 
     return (
         <div
@@ -54,15 +57,14 @@ const Wrapper = () => {
         >
 
             <Parallax
+                ref={parallax}
                 pages={6.5}
                 config={config.fast}
-                ref={parallax}
                 style={{
                     top: 0,
                     left: 0,
                 }}
             >
-
                 <ParallaxLayer offset={0}>
                     <div
                         style={{
@@ -79,24 +81,8 @@ const Wrapper = () => {
                         }}
                     >
                         <CremaTitle />
-                        <div
-                            style={{
-                                position: "absolute",
-                                width: "5vh",
-                                height: "5vh",
-                                bottom: "2.5vh",
-                                zIndex: 2,
-                            }}
-                            onClick={() => ScrollTo(1)}
-                        >
-                            <Arrow
-                                up={false}
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                }}
-                            />
-                        </div>
+                        <ScrollArrows ref={parallax} arrows={[["down", 1]]} />
+
                     </div>
                 </ParallaxLayer>
 
@@ -108,64 +94,9 @@ const Wrapper = () => {
                     }}
                 >
                     <About />
+                    <BackgroundText text="hello" color={orange} />
+                    <ScrollArrows ref={parallax} arrows={[["up", 0], ["down", 2.5]]} />
 
-                    <ParallaxLayer
-                        speed={-1}
-                        horizontal
-                        style={{
-                            display: "flex",
-                        }}
-                    >
-                        <h2
-                            style={{
-                                color: orange,
-                                fontSize: 500,
-                                fontFamily: "Stereofidelic",
-                                alignSelf: "center",
-                                position: "relative",
-                                left: "-40%",
-                                opacity: "50%"
-                            }}
-                        >
-                            HELLO
-                        </h2>
-                    </ParallaxLayer>
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            top: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(0)}
-                    >
-                        <Arrow
-                            up={true}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            bottom: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(2.5)}
-                    >
-                        <Arrow
-                            up={false}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -194,66 +125,11 @@ const Wrapper = () => {
                         justifyContent: 'center'
                     }}
                 >
+
                     <Menu />
+                    <BackgroundText text="menu" color={red} />
+                    <ScrollArrows ref={parallax} arrows={[["up", 1], ["down", 4]]} />
 
-                    <ParallaxLayer
-                        speed={-1}
-                        horizontal
-                        style={{
-                            display: "flex",
-                        }}
-                    >
-                        <h2
-                            style={{
-                                color: red,
-                                fontSize: 500,
-                                fontFamily: "Stereofidelic",
-                                alignSelf: "center",
-                                position: "absolute",
-                                left: "-185%",
-                                opacity: "25%"
-                            }}
-                        >
-                            MENU
-                        </h2>
-                    </ParallaxLayer>
-
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            top: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(1)}
-                    >
-                        <Arrow
-                            up={true}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            bottom: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(4)}
-                    >
-                        <Arrow
-                            up={false}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -283,70 +159,8 @@ const Wrapper = () => {
                     }}
                 >
                     <Sustain />
-
-
-                    <ParallaxLayer
-                        speed={-1}
-                        horizontal
-                        style={{
-                            display: "flex",
-                        }}
-                    >
-                        <h2
-                            style={{
-                                color: green,
-                                fontSize: 300,
-                                fontFamily: "Stereofidelic",
-                                alignSelf: "center",
-                                position: "absolute",
-                                left: "-360%",
-                                opacity: "50%"
-                            }}
-                        >
-                            SUSTAINABILITY
-                        </h2>
-                    </ParallaxLayer>
-
-
-
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            top: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(2.5)}
-                    >
-                        <Arrow
-                            up={true}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            bottom: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(5.5)}
-                    >
-                        <Arrow
-                            up={false}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-
-
+                    <BackgroundText text="SUSTAINABILITY" color={green} />
+                    <ScrollArrows ref={parallax} arrows={[["up", 2.5], ["down", 5.5]]} />
 
                 </ParallaxLayer>
 
@@ -376,75 +190,17 @@ const Wrapper = () => {
                         justifyContent: 'center'
                     }}
                 >
-                    <div
-                        style={{
-                            position: "relative",
-                            height: "100vh",
-                            width: "100vw",
-                            color: offWhite,
-                            backgroundColor: offBlack,
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Contact />
-
-                    </div>
-
-                    <ParallaxLayer
-                        speed={-1}
-                        horizontal
-                        style={{
-                            display: "flex",
-                        }}
-                    >
-                        <h2
-                            style={{
-                                color: offWhite,
-                                fontSize: 350,
-                                fontFamily: "Stereofidelic",
-                                alignSelf: "center",
-                                position: "absolute",
-                                left: "-490%",
-                                opacity: "20%"
-                            }}
-                        >
-                            FIND US
-                        </h2>
-                    </ParallaxLayer>
-
-
-
-
-                    <div
-                        style={{
-                            position: "absolute",
-                            width: "5vh",
-                            height: "5vh",
-                            top: "2.5vh",
-                            zIndex: 2,
-                        }}
-                        onClick={() => ScrollTo(4)}
-                    >
-                        <Arrow
-                            up={true}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-
+                    <Contact />
+                    <BackgroundText text="FIND US" color={offWhite} />
+                    <ScrollArrows ref={parallax} arrows={[["up", 4]]} />
 
                 </ParallaxLayer>
 
             </Parallax>
 
-
         </div>
     )
-
 }
 
 
-export default Wrapper
+export default Index
