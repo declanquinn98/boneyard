@@ -30,3 +30,7 @@ body {
     font-family: 'Stereofidelic';
     src: local('Stereofidelic'), url(../fonts/Stereofidelic.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'Felix';
+    src: local('Felix'), url(../fonts/Felixti.ttf) format('truetype');
+}

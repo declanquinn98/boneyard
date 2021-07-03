@@ -47,158 +47,145 @@ const Index = () => {
     }, []);
 
     return (
-        <div
+        <Parallax
+            ref={parallax}
+            pages={6.5}
+            config={config.fast}
             style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
+                top: 0,
+                left: 0,
                 fontFamily: "Playfair"
             }}
         >
+            <ParallaxLayer offset={0}>
+                <div
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundImage: 'url(' + landingBG + ')',
+                    }}
+                >
+                    <CremaTitle device={deviceType} />
+                    <ScrollArrows ref={parallax} arrows={[["down", 1]]} />
 
-            <Parallax
-                ref={parallax}
-                pages={6.5}
-                config={config.fast}
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer
+                offset={1}
                 style={{
-                    top: 0,
-                    left: 0,
+                    display: "flex",
+                    justifyContent: 'center'
                 }}
             >
-                <ParallaxLayer offset={0}>
-                    <div
-                        style={{
-                            height: "100%",
-                            width: "100%",
-                            backgroundImage: 'url(' + landingBG + ')',
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                            position: "relative",
-                            zIndex: -2,
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <CremaTitle />
-                        <ScrollArrows ref={parallax} arrows={[["down", 1]]} />
+                <About />
+                <BackgroundText text="hello" color={orange} />
+                <ScrollArrows ref={parallax} arrows={[["up", 0], ["down", 2.5]]} />
 
-                    </div>
-                </ParallaxLayer>
+            </ParallaxLayer>
 
-                <ParallaxLayer
-                    offset={1}
+            <ParallaxLayer
+                offset={1.85}
+                speed={0.15}
+                style={{
+                    zIndex: -1
+                }}
+            >
+                <div
                     style={{
-                        display: "flex",
-                        justifyContent: 'center'
+                        height: "100vh",
+                        width: "100vw",
+                        backgroundImage: 'url(' + cookiesBG + ')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
                     }}
-                >
-                    <About />
-                    <BackgroundText text="hello" color={orange} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 0], ["down", 2.5]]} />
+                />
+            </ParallaxLayer>
 
-                </ParallaxLayer>
+            <ParallaxLayer
+                offset={2.5}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
+            >
 
-                <ParallaxLayer
-                    offset={1.85}
-                    speed={0.15}
+                <Menu />
+                <BackgroundText text="menu" color={red} />
+                <ScrollArrows ref={parallax} arrows={[["up", 1], ["down", 4]]} />
+
+            </ParallaxLayer>
+
+            <ParallaxLayer
+                offset={3.35}
+                speed={0.15}
+                style={{
+                    zIndex: -1
+                }}
+            >
+                <div
                     style={{
-                        zIndex: -1
+                        height: "100vh",
+                        width: "100vw",
+                        backgroundImage: 'url(' + keepcupBG + ')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
                     }}
-                >
-                    <div
-                        style={{
-                            height: "100vh",
-                            width: "100vw",
-                            backgroundImage: 'url(' + cookiesBG + ')',
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                        }}
-                    />
-                </ParallaxLayer>
+                />
+            </ParallaxLayer>
 
-                <ParallaxLayer
-                    offset={2.5}
+            <ParallaxLayer
+                offset={4}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
+            >
+                <Sustain />
+                <BackgroundText text="SUSTAINABILITY" color={green} />
+                <ScrollArrows ref={parallax} arrows={[["up", 2.5], ["down", 5.5]]} />
+
+            </ParallaxLayer>
+
+            <ParallaxLayer
+                offset={4.85}
+                speed={0.15}
+                style={{
+                    zIndex: -1
+                }}
+            >
+                <div
                     style={{
-                        display: 'flex',
-                        justifyContent: 'center'
+                        height: "100vh",
+                        width: "100vw",
+                        backgroundImage: 'url(' + outsideBG + ')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
                     }}
-                >
+                />
+            </ParallaxLayer>
 
-                    <Menu />
-                    <BackgroundText text="menu" color={red} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 1], ["down", 4]]} />
+            <ParallaxLayer
+                offset={5.5}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
+            >
+                <Contact />
+                <BackgroundText text="FIND US" color={offWhite} />
+                <ScrollArrows ref={parallax} arrows={[["up", 4]]} />
 
-                </ParallaxLayer>
+            </ParallaxLayer>
 
-                <ParallaxLayer
-                    offset={3.35}
-                    speed={0.15}
-                    style={{
-                        zIndex: -1
-                    }}
-                >
-                    <div
-                        style={{
-                            height: "100vh",
-                            width: "100vw",
-                            backgroundImage: 'url(' + keepcupBG + ')',
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                        }}
-                    />
-                </ParallaxLayer>
-
-                <ParallaxLayer
-                    offset={4}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}
-                >
-                    <Sustain />
-                    <BackgroundText text="SUSTAINABILITY" color={green} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 2.5], ["down", 5.5]]} />
-
-                </ParallaxLayer>
-
-                <ParallaxLayer
-                    offset={4.85}
-                    speed={0.15}
-                    style={{
-                        zIndex: -1
-                    }}
-                >
-                    <div
-                        style={{
-                            height: "100vh",
-                            width: "100vw",
-                            backgroundImage: 'url(' + outsideBG + ')',
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                        }}
-                    />
-                </ParallaxLayer>
-
-                <ParallaxLayer
-                    offset={5.5}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}
-                >
-                    <Contact />
-                    <BackgroundText text="FIND US" color={offWhite} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 4]]} />
-
-                </ParallaxLayer>
-
-            </Parallax>
-
-        </div>
+        </Parallax>
     )
 }
 

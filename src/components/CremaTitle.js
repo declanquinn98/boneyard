@@ -5,6 +5,7 @@ import { useSpring, animated, config } from "@react-spring/web";
 import stereofidelic from '../fonts/Stereofidelic.json';
 import felix from '../fonts/Felix Titling.json';
 
+import styles from '../styles/global.css';
 
 const calc = (x, y, rect) => [
     -(y - rect.top - rect.height / 2) / 5,
@@ -13,72 +14,103 @@ const calc = (x, y, rect) => [
 ];
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-export const CremaTitle = () => {
+export const CremaTitle = (props) => {
 
     const ref = useRef(null);
     const [xys, set] = useState([0, 0, 1]);
-    const props = useSpring({ xys, config: config.molasses });
-
     useEffect(() => {
-        Preload();
+        console.log(props.device + "D")
+         if (props.device === "desktop")
+         Preload();
     }, []);
 
-    return (
-        <div>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "100%",
-                    height: "100%",
-                    textAlign: "center",
-                    color: "white",
-                    justifyContent: "center",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    fontSize: "30px",
+    /*
+
                     textShadow: "0px 1px 5px rgba(0,0,0,0.25)",
-                    zIndex: 1
-                }}
-            >
+    */
 
-                <h1 style={{
-                    marginTop: 0,
-                    marginBottom: 0,
-                }}>
-                    The
-                </h1>
+    if (props.device === "desktop") {
+        return (
+            <div>
+                <div
+                    style={{
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        color: "white",
+                        fontSize: "5vw",
+                        fontFamily: "Felix",
+                        textAlign: "center",
+                        zIndex: 0,
+                    }}
+                >
 
-                <div style={{ height: "15%" }} />
+                    <h4 style={{ marginBottom: 0, fontWeight: 200 }}>The</h4>
 
-                <h1 style={{
-                    marginTop: 0,
-                    marginBottom: 0
-                }}>
-                    Espresso
-                </h1>
+                    <h4
+                        style={{
+                            fontSize: "17vw",
+                            fontWeight: 200,
+                            fontFamily: "Stereofidelic",
+                            marginTop: 0,
+                            marginBottom: 0
+                        }}
+                    >
+                        BONE YARD
+                    </h4>
 
-                <div style={{ height: "20%" }} />
+                    <h4 style={{ marginTop: 0, fontWeight: 200 }}>Espresso</h4>
 
+                    <div style={{ height: "15%" }} />
+
+                </div>
+                <div
+                    id={"magic"}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                    }}
+                />
             </div>
-            <div
-                id={"magic"}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                }}
-            />
-        </div>
+        )
+    }
+    else {
+        return (
+            <div>
+                <div
+                    style={{
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        color: "white",
+                        fontSize: "5vw",
+                        fontFamily: "Felix",
+                        textAlign: "center",
+                        zIndex: 0
+                    }}
+                >
 
+                    <h4 style={{ marginBottom: 0 }}>The</h4>
+                    <h4 style={{ fontFamily: "Stereofidelic" }}>BONEYARD</h4>
 
+                    <h4 style={{ marginTop: 0 }}>Espresso</h4>
 
+                    <div style={{ height: "10%" }} />
 
+                </div>
+            </div>
+        )
+    }
 
-    )
 }
 
 const Preload = () => {
@@ -179,9 +211,9 @@ class CreateParticles {
             //1
             particleSize: 1.25,
             particleColor: 0xffffff,
-            textSize: 12,
-            area: 75,
-            ease: .07,
+            textSize: 25,
+            area: 100,
+            ease: .05,
         }
         this.setup();
         this.bindEvents();
@@ -425,4 +457,3 @@ class CreateParticles {
         return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
     }
 }
-
