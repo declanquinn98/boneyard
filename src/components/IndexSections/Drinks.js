@@ -8,7 +8,7 @@ import styles from '../../styles/global.css';
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 
-export const Menu = () => {
+export const Drinks = () => {
 
 
     return (
@@ -30,7 +30,7 @@ export const Menu = () => {
                     display: "flex",
                     height: "100%",
                     justifyContent: "center",
-                    zIndex:1
+                    zIndex: 1
                 }}
             >
                 <div
@@ -56,19 +56,11 @@ export const Menu = () => {
                                 textAlign: "center",
                                 fontSize: "5vw",
                                 marginTop: 0,
-                                marginBottom: 0
+                                marginBottom: 0,
                             }}
                         >
                             Drinks
                         </h3>
-
-                        <div
-                            style={{
-                                width: "15%",
-                                alignSelf: "center"
-                            }}
-                        >
-                        </div>
 
                         <div
                             style={{
@@ -97,7 +89,7 @@ export const Menu = () => {
                                         marginBottom: 0
                                     }}
                                 >
-                                    The Usual Suspects
+                                    The Usual<br />Suspects
                                 </h4>
 
                                 <p
@@ -135,8 +127,6 @@ export const Menu = () => {
                                 </div>
 
                             </div>
-
-
                             <div
                                 style={{
                                     width: "30%",
@@ -155,7 +145,7 @@ export const Menu = () => {
                                         marginBottom: 0
                                     }}
                                 >
-                                    Boneyard Specialties
+                                    Boneyard <br /> Specialties
                                 </h4>
 
                                 <p
@@ -168,7 +158,7 @@ export const Menu = () => {
                                     <br />
                                     White Choc Mocha
                                     <br />
-                                    Hazelnut Mocha
+                                    Nutella Mocha
                                     <br />
                                     Caramel Latte
                                     <br />
@@ -200,7 +190,18 @@ export const Menu = () => {
                                         marginTop: 0
                                     }}
                                 >
-                                    Soy, Almond, Oat, Zymil,<br />Extra Shot, Syrups 0.5
+                                    Decaf, Soy, Oat, Almond, Zymil, Coconut, <br />  Macadamia, Extra Shot, Syrups 0.5
+                                </p>
+
+                                <p
+                                    style={{
+                                        fontSize: "1.5vw",
+                                        fontFamily: "Bebas",
+                                        textAlign: "center",
+                                        marginTop:"auto"
+                                    }}
+                                >
+                                    Add ice cream to any drink 0.5
                                 </p>
 
                             </div>
@@ -286,37 +287,10 @@ export const Menu = () => {
 
                             </div>
 
+
                         </div>
                     </div>
 
-                    <div
-                        style={{
-                            flex: 5,
-                            display: "flex",
-                            flexDirection: "column",
-                        }}
-                    >
-                         <h3
-                            style={{
-                                fontFamily: "Oswald",
-                                fontSize: "5vw",
-                                marginTop: 0,
-                                marginBottom: 0
-                            }}
-                        >
-                            Not Drinks
-                        </h3>
-                        <div
-                            style={{
-                                fontSize: "1.145vw",
-                            }}
-                        >
-                            <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
-                            <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
-                            <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
-                            <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
-                        </div>
-                    </div>
 
                 </div>
             </ParallaxLayer>

@@ -1,8 +1,5 @@
 import * as React from "react";
-import { useRef, useState, useEffect } from "react";
-
 import styles from '../styles/arrow.scss';
-
 
 const UpArrow = () => {
     return (
@@ -15,7 +12,6 @@ const UpArrow = () => {
         />
     )
 }
-
 const DownArrow = () => {
     return (
         <path d="   M 16 8 
@@ -128,13 +124,9 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                         }}
                     />
                 </div>
-
             </>
         )
-
     }
-
-
 })
 
 const Arrow = (props) => {

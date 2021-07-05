@@ -6,8 +6,10 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { isDesktop, isMobileOnly, isTablet } from "react-device-detect";
 
 import { ScrollArrows } from "../components/ScrollArrows.js";
+import { NavMenu } from "../components/NavMenu.js";
 import { About } from "../components/IndexSections/About.js";
-import { Menu } from "../components/IndexSections/Menu.js";
+import { Food, Menu } from "../components/IndexSections/Food.js";
+import { Drinks } from "../components/IndexSections/Drinks.js";
 import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
 import { BackgroundText } from "../components/BackgroundText.js";
@@ -49,7 +51,7 @@ const Index = () => {
     return (
         <Parallax
             ref={parallax}
-            pages={6.5}
+            pages={8}
             config={config.fast}
             style={{
                 top: 0,
@@ -69,8 +71,10 @@ const Index = () => {
                         backgroundImage: 'url(' + landingBG + ')',
                     }}
                 >
+
                     <CremaTitle device={deviceType} />
                     <ScrollArrows ref={parallax} arrows={[["down", 1]]} />
+                    <NavMenu ref={parallax}/>
 
                 </div>
             </ParallaxLayer>
@@ -115,8 +119,8 @@ const Index = () => {
                 }}
             >
 
-                <Menu />
-                <BackgroundText text="menu" color={red} />
+                <Drinks />
+                <BackgroundText text="DRINKS" color={red} />
                 <ScrollArrows ref={parallax} arrows={[["up", 1], ["down", 4]]} />
 
             </ParallaxLayer>
@@ -147,8 +151,8 @@ const Index = () => {
                     justifyContent: 'center'
                 }}
             >
-                <Sustain />
-                <BackgroundText text="SUSTAINABILITY" color={green} />
+                <Food />
+                <BackgroundText text="FOOD" color={red} />
                 <ScrollArrows ref={parallax} arrows={[["up", 2.5], ["down", 5.5]]} />
 
             </ParallaxLayer>
@@ -179,10 +183,41 @@ const Index = () => {
                     justifyContent: 'center'
                 }}
             >
+                <Sustain />
+                <BackgroundText text="SUSTAINABILITY" color={green} />
+                <ScrollArrows ref={parallax} arrows={[["up", 4], ["down", 7]]} />
+            </ParallaxLayer>
+
+            <ParallaxLayer
+                offset={6.35}
+                speed={0.15}
+                style={{
+                    zIndex: -1
+                }}
+            >
+                <div
+                    style={{
+                        height: "100vh",
+                        width: "100vw",
+                        backgroundImage: 'url(' + outsideBG + ')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                    }}
+                />
+
+            </ParallaxLayer>
+
+            <ParallaxLayer
+                offset={7}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
+            >
                 <Contact />
                 <BackgroundText text="FIND US" color={offWhite} />
-                <ScrollArrows ref={parallax} arrows={[["up", 4]]} />
-
+                <ScrollArrows ref={parallax} arrows={[["up", 5.5]]} />
             </ParallaxLayer>
 
         </Parallax>

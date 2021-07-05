@@ -7,27 +7,16 @@ import felix from '../fonts/Felix Titling.json';
 
 import styles from '../styles/global.css';
 
-const calc = (x, y, rect) => [
-    -(y - rect.top - rect.height / 2) / 5,
-    (x - rect.left - rect.width / 2) / 5,
-    1.4
-];
-const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
-
 export const CremaTitle = (props) => {
 
     const ref = useRef(null);
     const [xys, set] = useState([0, 0, 1]);
+
     useEffect(() => {
         console.log(props.device + "D")
-         if (props.device === "desktop")
-         Preload();
+        if (props.device === "desktop")
+            Preload();
     }, []);
-
-    /*
-
-                    textShadow: "0px 1px 5px rgba(0,0,0,0.25)",
-    */
 
     if (props.device === "desktop") {
         return (
@@ -41,7 +30,7 @@ export const CremaTitle = (props) => {
                         justifyContent: "center",
                         flexDirection: "column",
                         color: "white",
-                        fontSize: "5vw",
+                        fontSize: "9vh",
                         fontFamily: "Felix",
                         textAlign: "center",
                         zIndex: 0,
@@ -50,34 +39,22 @@ export const CremaTitle = (props) => {
 
                     <h4 style={{ marginBottom: 0, fontWeight: 200 }}>The</h4>
 
-                    <h4
+                    <div
+                        id={"magic"}
                         style={{
-                            fontSize: "17vw",
-                            fontWeight: 200,
-                            fontFamily: "Stereofidelic",
-                            marginTop: 0,
-                            marginBottom: 0
+                            width: "100vw",
+                            height: "35vh",
+                            top: "25vh",
+                            left: 0,
                         }}
-                    >
-                        BONE YARD
-                    </h4>
+                    />
 
                     <h4 style={{ marginTop: 0, fontWeight: 200 }}>Espresso</h4>
 
                     <div style={{ height: "15%" }} />
 
                 </div>
-                <div
-                    id={"magic"}
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                    }}
-                />
-            </div>
+            </div >
         )
     }
     else {
@@ -101,9 +78,7 @@ export const CremaTitle = (props) => {
 
                     <h4 style={{ marginBottom: 0 }}>The</h4>
                     <h4 style={{ fontFamily: "Stereofidelic" }}>BONEYARD</h4>
-
                     <h4 style={{ marginTop: 0 }}>Espresso</h4>
-
                     <div style={{ height: "10%" }} />
 
                 </div>
@@ -143,7 +118,7 @@ class Environment {
     bindEvents() {
 
         window.addEventListener('resize', this.onWindowResize.bind(this));
-
+        document.addEventListener("visibilitychange", this.onWindowResize.bind(this));
     }
 
     setup() {
@@ -160,7 +135,7 @@ class Environment {
     createCamera() {
 
         this.camera = new THREE.PerspectiveCamera(65, this.container.clientWidth / this.container.clientHeight, 1, 10000);
-        this.camera.position.set(0, 0, 100);
+        this.camera.position.set(0, 70, 100);
 
     }
 
@@ -179,7 +154,7 @@ class Environment {
     }
 
     onWindowResize() {
-
+        console.log("resize");
         this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
@@ -207,13 +182,13 @@ class CreateParticles {
 
         this.data = {
             text: `BONE YARD`,
-            amount: 500,
+            amount: 1000,
             //1
             particleSize: 1.25,
             particleColor: 0xffffff,
-            textSize: 25,
-            area: 100,
-            ease: .05,
+            textSize: 75,
+            area: 5000,
+            ease: .07,
         }
         this.setup();
         this.bindEvents();
@@ -233,15 +208,15 @@ class CreateParticles {
     }
     onMouseMove() {
 
+        //x full page width -1 - 0.  0 middle
+        //y 1 top, -1 bottom 0 middle
+        //not relative to element - always from -1 to 1 no matter what page your on
+        
         this.mouse.x = (window.event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = - (window.event.clientY / window.innerHeight) * 2 + 1;
-
     }
 
     render(level) {
-
-        //  const time = ((.001 * performance.now()) % 12) / 12;
-        // const zigzagTime = (1 + (Math.sin(time * 2 * Math.PI))) / 6;
 
         this.raycaster.setFromCamera(this.mouse, this.camera);
 
@@ -272,7 +247,10 @@ class CreateParticles {
                 //fully black overrides top + bottom\
                 //Affects outside of top letters
                 //Currently mid crema color
-                this.colorChange.setHSL(.091, 0.75, 0.87)
+               // this.colorChange.setHSL(.091, 0.75, 0.87)
+
+               //THE DEFAULT COLOUR
+                this.colorChange.setHSL(.091, 0.8, 1)
                 coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
                 coulors.needsUpdate = true;
 
@@ -303,7 +281,7 @@ class CreateParticles {
 
                         //darkest crema color
                         //changes subset of particles
-                        this.colorChange.setHSL(0.066, .89, .75)
+                        this.colorChange.setHSL(0.066, .8, .76)
                         coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
                         coulors.needsUpdate = true;
 
@@ -311,8 +289,6 @@ class CreateParticles {
                         size.needsUpdate = true;
 
                     }
-
-
                 }
 
                 px += (initX - px) * this.data.ease;
@@ -390,7 +366,7 @@ class CreateParticles {
 
             uniforms: {
                 //lightest crema color
-                color: { value: new THREE.Color(0xdfcea5) },
+                color: { value: new THREE.Color(0xffffff) },
                 pointTexture: { value: this.particleImg }
             },
             vertexShader: `

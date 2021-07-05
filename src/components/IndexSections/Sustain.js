@@ -24,7 +24,7 @@ export const Sustain = () => {
             }}
         >
             <ParallaxLayer
-                offset={0.5}
+                offset={0.65}
                 speed={0.1}
                 style={{
                     display: "flex",

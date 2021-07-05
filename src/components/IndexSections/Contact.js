@@ -83,7 +83,7 @@ export const Contact = () => {
             }}
         >
             <ParallaxLayer
-                offset={0.55}
+                offset={0.75}
                 speed={0.1}
                 style={{
                     display: "flex",
@@ -115,7 +115,7 @@ export const Contact = () => {
                                 marginBottom: 0
                             }}
                         >
-                            Open Wed-Sun 6am-2pm
+                            Open Tuesday - Sunday 7am-2pm
                             <br />
                             0413 442 321
                             <br />
@@ -174,9 +174,13 @@ export const Contact = () => {
                                 width: "100%",
                                 height: "25%",
                                 marginTop: "auto",
+                                backgroundColor:"red"
                             }}
                         >
-                            <InstagramFeed token={process.env.INSTAGRAM_TOKEN} counter="6" />
+                            <InstagramFeed
+                                counter="6"
+                                token={process.env.INSTAGRAM_TOKEN}
+                            />
                         </div>
                     </div>
 
@@ -198,7 +202,7 @@ export const Contact = () => {
                                 marginBottom: 0
                             }}
                         >
-                            1 - 13 Redcliffe Parade,
+                            18 Anzac ave,
                             <br />
                             Redcliffe QLD 4020
                         </h4>
