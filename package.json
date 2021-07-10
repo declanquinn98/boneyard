@@ -27,6 +27,7 @@
     "react-helmet": "^6.1.0",
     "react-ig-feed": "^1.0.4",
     "react-reveal": "^1.2.2",
+    "react-slideshow-image": "^3.5.0",
     "react-spring": "^9.2.3",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",

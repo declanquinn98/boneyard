@@ -43,11 +43,19 @@ export const CremaTitle = (props) => {
                         id={"magic"}
                         style={{
                             width: "100vw",
-                            height: "35vh",
-                            top: "25vh",
-                            left: 0,
+                            height: "50vh",
+                            position: "absolute",
+                            top: "22vh",
+                            left: 0
                         }}
                     />
+                    <div
+                        style={{
+                            width: "100vw",
+                            height: "50vh",
+                        }}
+                    />
+
 
                     <h4 style={{ marginTop: 0, fontWeight: 200 }}>Espresso</h4>
 
@@ -116,9 +124,7 @@ class Environment {
     }
 
     bindEvents() {
-
         window.addEventListener('resize', this.onWindowResize.bind(this));
-        document.addEventListener("visibilitychange", this.onWindowResize.bind(this));
     }
 
     setup() {
@@ -134,7 +140,7 @@ class Environment {
 
     createCamera() {
 
-        this.camera = new THREE.PerspectiveCamera(65, this.container.clientWidth / this.container.clientHeight, 1, 10000);
+        this.camera = new THREE.PerspectiveCamera(80, this.container.clientWidth / this.container.clientHeight, 1, 10000);
         this.camera.position.set(0, 70, 100);
 
     }
@@ -154,7 +160,6 @@ class Environment {
     }
 
     onWindowResize() {
-        console.log("resize");
         this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
@@ -186,7 +191,7 @@ class CreateParticles {
             //1
             particleSize: 1.25,
             particleColor: 0xffffff,
-            textSize: 75,
+            textSize: 85,
             area: 5000,
             ease: .07,
         }
@@ -211,9 +216,11 @@ class CreateParticles {
         //x full page width -1 - 0.  0 middle
         //y 1 top, -1 bottom 0 middle
         //not relative to element - always from -1 to 1 no matter what page your on
-        
+
         this.mouse.x = (window.event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = - (window.event.clientY / window.innerHeight) * 2 + 1;
+        console.log(this.mouse.x);
+        console.log(this.mouse.y);
     }
 
     render(level) {
@@ -247,9 +254,9 @@ class CreateParticles {
                 //fully black overrides top + bottom\
                 //Affects outside of top letters
                 //Currently mid crema color
-               // this.colorChange.setHSL(.091, 0.75, 0.87)
+                // this.colorChange.setHSL(.091, 0.75, 0.87)
 
-               //THE DEFAULT COLOUR
+                //THE DEFAULT COLOUR
                 this.colorChange.setHSL(.091, 0.8, 1)
                 coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)
                 coulors.needsUpdate = true;
@@ -279,7 +286,7 @@ class CreateParticles {
 
                     if ((px > (initX + 10)) || (px < (initX - 10)) || (py > (initY + 10) || (py < (initY - 10)))) {
 
-                        //darkest crema color
+                        //darkest  color
                         //changes subset of particles
                         this.colorChange.setHSL(0.066, .8, .76)
                         coulors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b)

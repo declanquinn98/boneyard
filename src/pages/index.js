@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useRef, useEffect, useState } from "react";
-import { CremaTitle } from "../components/CremaTitle.js";
 import { config } from 'react-spring';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { isDesktop, isMobileOnly, isTablet } from "react-device-detect";
 
+import { CremaTitle } from "../components/CremaTitle.js";
 import { ScrollArrows } from "../components/ScrollArrows.js";
 import { NavMenu } from "../components/NavMenu.js";
 import { About } from "../components/IndexSections/About.js";
@@ -93,8 +93,8 @@ const Index = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-                offset={1.85}
-                speed={0.15}
+                offset={1.5}
+                speed={-0.1}
                 style={{
                     zIndex: -1
                 }}
@@ -126,8 +126,8 @@ const Index = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-                offset={3.35}
-                speed={0.15}
+                offset={3.25}
+                speed={-0.1}
                 style={{
                     zIndex: -1
                 }}
@@ -158,8 +158,8 @@ const Index = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-                offset={4.85}
-                speed={0.15}
+                offset={4.75}
+                speed={-0.1}
                 style={{
                     zIndex: -1
                 }}
@@ -189,8 +189,8 @@ const Index = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-                offset={6.35}
-                speed={0.15}
+                offset={6.25}
+                speed={-0.1}
                 style={{
                     zIndex: -1
                 }}

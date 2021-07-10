@@ -13,6 +13,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
     const scroll = (page) => {
         ref.current.scrollTo(page)
     }
+    //
 
     return (
         <div
@@ -34,7 +35,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     width: "50%",
                     display: "flex",
                     justifyContent: "space-evenly",
-                    marginBottom: "10vh"
+                    marginBottom: "10vh",
                 }}
             >
                 <p
