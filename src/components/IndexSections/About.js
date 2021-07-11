@@ -1,8 +1,8 @@
 import * as React from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 import { ParallaxLayer } from '@react-spring/parallax';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated, config, to } from 'react-spring';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
@@ -28,9 +28,26 @@ const trans = (x, y, s) => `perspective(100vw) rotateX(${x}deg) rotateY(${y}deg)
 export const About = () => {
 
     const ref = useRef(null);
-    const [xys, set] = useState([0, 0, 1]);
+
     const [isHovered, setIsHovered] = useState(false);
-    const props = useSpring({ xys, config: config.default });
+
+    const [recordDelay, setRecordDelay] = useState(0);
+    const sleeveDelayTime = 500
+    const [sleeveDelay, setSleeveDelay] = useState(sleeveDelayTime);
+
+    const [xys, setXYS] = useState([0, 0, 1]);
+    const sleeveSpring = useSpring({ xys, delay: sleeveDelay });
+
+    const [recordTRS, setRecordTRS] = useState([0, 0, 1]);
+    const recordSpring = useSpring({ recordTRS, delay: recordDelay });
+
+    const recordStyle = useSpring({
+        to: [
+            { opacity: 1, transform: `translateX(-${recordTRS[0]}%) rotate(${recordTRS[1]}deg) scale(${recordTRS[2]}, ${recordTRS[2]})` },
+            { opacity: 0, transform: `translateX(-${recordTRS[0]}%) rotate(${recordTRS[1]}deg) scale(${recordTRS[2]}, ${recordTRS[2]})` },
+        ],
+        from: { opacity: 1, transform: `translateX(-${recordTRS[0]}%) rotate(${recordTRS[1]}deg) scale(${recordTRS[2]}, ${recordTRS[2]})` }
+    })
 
     return (
         <div
@@ -60,63 +77,44 @@ export const About = () => {
                         height: "85%",
                         alignSelf: "center",
                         display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                    }}
-                >
-                    <h3
-                        style={{
-                            fontSize: "5vw",
-                            fontFamily: "Oswald",
-                            marginBottom: 0,
-                            marginTop: 0,
-                        }}
-                    >
-                        Let Us Explain
-                    </h3>
-                    <div
-                        style={{
-                            width: "100%",
-                            display: "flex",
-                            fontSize: "1.5vw",
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: "40%",
-                                height: "100%",
-                                marginBottom: "3.5vh"
-                            }}
-                        >
-                            <p> There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler--- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
-                </div>
-            </ParallaxLayer>
-            <ParallaxLayer
-                offset={0.075}
-                speed={0.075}
-                style={{
-                    display: "flex",
-                    height: "100%",
-                    justifyContent: "center",
-                    zIndex: 1,
-                }}
-            >
-                <div
-                    style={{
-                        width: "90%",
-                        height: "85%",
-                        alignSelf: "center",
-                        display: "flex",
                     }}
                 >
                     <div
                         style={{
                             width: "40%",
-                            height: "100%"
+                            height: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
                         }}
-                    />
+                    >
+                        <h3
+                            style={{
+                                fontSize: "5vw",
+                                fontFamily: "Oswald",
+                                marginBottom: 0,
+                                marginTop: 0,
+                            }}
+                        >
+                            Hello
+                        </h3>
+                        <div
+                            style={{
+                                width: "100%",
+                                display: "flex",
+                                fontSize: "1.5vw",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    height: "100%",
+                                    marginBottom: "3.5vh"
+                                }}
+                            >
+                                <p> There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler--- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
                     <div
                         style={{
                             width: "60%",
@@ -130,14 +128,14 @@ export const About = () => {
                         <div
                             ref={ref}
                             style={{
-                                position:"absolute",
+                                position: "absolute",
                                 display: "flex",
                                 alignSelf: "center",
                                 alignItems: "center",
                                 justifyContent: "center"
                             }}
                         >
-                            <animated.div className={"slideshow"} style={{ transform: props.xys.to(trans) }}>
+                            <animated.div className={"slideshow"} style={{ transform: sleeveSpring.xys.to(trans) }}>
                                 <Slideshow autoplay={!isHovered} />
                             </animated.div>
                             <div
@@ -146,22 +144,38 @@ export const About = () => {
                                     height: "28vw",
                                     zIndex: 1,
                                 }}
-                                onMouseEnter={async () => setIsHovered(true)}
-                                onMouseLeave={() => { set([0, 0, 1]); setIsHovered(false); }}
+                                onMouseEnter={async () => {
+                                    setIsHovered(true);
+                                    setRecordTRS([51.5, 180, 1])
+
+                                    await new Promise(r => setTimeout(r, sleeveDelayTime));
+                                    setSleeveDelay(0);
+                                    setRecordDelay(sleeveDelayTime);
+                                }}
+                                onMouseLeave={async () => {
+                                    setXYS([0, 0, 1]);
+                                    setIsHovered(false);
+                                    setRecordTRS([0, 0, 1])
+
+                                    await new Promise(r => setTimeout(r, sleeveDelayTime));
+                                    setSleeveDelay(sleeveDelayTime);
+                                    setRecordDelay(0);
+                                }}
                                 onMouseMove={(e) => {
                                     const rect = ref.current.getBoundingClientRect();
-                                    set(calc(e.clientX, e.clientY, rect));
+                                    setXYS(calc(e.clientX, e.clientY, rect));
                                 }}
                             />
                         </div>
-                        <img
+                        <animated.img
                             src={record}
                             style={{
-                                position:"relative",
-                                left:"25%",
+                                position: "relative",
+                                left: "25%",
                                 width: "26vw",
                                 height: "26vw",
-                                zIndex: -1
+                                zIndex: -1,
+                                transform: recordSpring.recordTRS.to((t, r, s) => `translateX(-${t}%) rotate(${r}deg) scale(${s}, ${s})`)
                             }}
                         />
                     </div>
@@ -177,7 +191,7 @@ const Slideshow = (props) => {
             <Fade
                 arrows={false}
                 autoplay={props.autoplay}
-                duration={4000}
+                duration={3000}
                 style={{
                     width: "100%",
                     height: "100%",

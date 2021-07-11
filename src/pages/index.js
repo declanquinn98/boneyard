@@ -87,7 +87,6 @@ const Index = () => {
                 }}
             >
                 <About />
-                <BackgroundText text="hello" color={orange} />
                 <ScrollArrows ref={parallax} arrows={[["up", 0], ["down", 2.5]]} />
 
             </ParallaxLayer>

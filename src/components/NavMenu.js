@@ -27,7 +27,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                 color: offWhite,
                 fontSize: "2vh",
                 fontFamily:"playfair",
-                background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0) 100%)"
+                background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0) 75%)"
             }}
         >
             <div

@@ -219,8 +219,6 @@ class CreateParticles {
 
         this.mouse.x = (window.event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = - (window.event.clientY / window.innerHeight) * 2 + 1;
-        console.log(this.mouse.x);
-        console.log(this.mouse.y);
     }
 
     render(level) {
