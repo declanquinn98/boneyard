@@ -1,11 +1,10 @@
 import * as React from "react";
-import { useRef, useState, useEffect } from "react";
-import ReactDOM from 'react-dom';
+import { useRef, useState } from "react";
+import { useSpring, animated } from 'react-spring';
 import { ParallaxLayer } from '@react-spring/parallax';
-import { useSpring, animated, config, to } from 'react-spring';
 import { Fade } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
 
+import 'react-slideshow-image/dist/styles.css'
 import styles from '../../styles/global.css';
 
 import slide0 from "../../assets/images/AboutSlideshow/0.jpg";
@@ -14,16 +13,18 @@ import slide2 from "../../assets/images/AboutSlideshow/2.jpg";
 import slide3 from "../../assets/images/AboutSlideshow/3.jpg";
 import record from "../../assets/images/AboutSlideshow/record.png";
 
+import coffee from "../../assets/images/coffeeIcon.png";
+import community from "../../assets/images/communityIcon.png";
+import sustainability from "../../assets/images/sustainabilityIcon.png";
+
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 
-
-const calc = (x, y, rect) => [
+const calcSleeveTransform = (x, y, rect) => [
     -(y - rect.top - rect.height / 2) / 5,
     (x - rect.left - rect.width / 2) / 5,
     1.4
 ];
-const trans = (x, y, s) => `perspective(100vw) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 export const About = () => {
 
@@ -31,23 +32,15 @@ export const About = () => {
 
     const [isHovered, setIsHovered] = useState(false);
 
-    const [recordDelay, setRecordDelay] = useState(0);
-    const sleeveDelayTime = 500
+    const sleeveDelayTime = 400
     const [sleeveDelay, setSleeveDelay] = useState(sleeveDelayTime);
 
-    const [xys, setXYS] = useState([0, 0, 1]);
-    const sleeveSpring = useSpring({ xys, delay: sleeveDelay });
+    const [sleeveXYS, setSleeveXYS] = useState([0, 0, 1]);
+    const sleeveSpring = useSpring({ sleeveXYS, delay: sleeveDelay });
 
     const [recordTRS, setRecordTRS] = useState([0, 0, 1]);
-    const recordSpring = useSpring({ recordTRS, delay: recordDelay });
+    const recordSpring = useSpring({ recordTRS });
 
-    const recordStyle = useSpring({
-        to: [
-            { opacity: 1, transform: `translateX(-${recordTRS[0]}%) rotate(${recordTRS[1]}deg) scale(${recordTRS[2]}, ${recordTRS[2]})` },
-            { opacity: 0, transform: `translateX(-${recordTRS[0]}%) rotate(${recordTRS[1]}deg) scale(${recordTRS[2]}, ${recordTRS[2]})` },
-        ],
-        from: { opacity: 1, transform: `translateX(-${recordTRS[0]}%) rotate(${recordTRS[1]}deg) scale(${recordTRS[2]}, ${recordTRS[2]})` }
-    })
 
     return (
         <div
@@ -75,8 +68,8 @@ export const About = () => {
                     style={{
                         width: "90%",
                         height: "85%",
-                        alignSelf: "center",
                         display: "flex",
+                        alignSelf: "center",
                     }}
                 >
                     <div
@@ -90,30 +83,156 @@ export const About = () => {
                     >
                         <h3
                             style={{
-                                fontSize: "5vw",
-                                fontFamily: "Oswald",
-                                marginBottom: 0,
                                 marginTop: 0,
+                                marginBottom: 0,
+                                fontFamily: "Oswald",
+                                fontSize: "5vw",
                             }}
                         >
                             Hello
                         </h3>
+                        <div>
+                            <p
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    fontSize: "1vw",
+                                }}
+                            >
+                                There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler--- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <h4
+                            style={{
+                                fontSize: "2.5vw",
+                                fontFamily: "Oswald",
+                                marginBottom: "3vh",
+                                textAlign: "center"
+                            }}
+                        >
+                            We Value
+                        </h4>
                         <div
                             style={{
                                 width: "100%",
                                 display: "flex",
-                                fontSize: "1.5vw",
+                                textAlign: "center",
+                                justifyContent: "space-around",
                             }}
                         >
                             <div
                                 style={{
-                                    height: "100%",
-                                    marginBottom: "3.5vh"
+                                    width: "30%",
+                                    display: "flex",
+                                    flexDirection: "column",
                                 }}
                             >
-                                <p> There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler--- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <img
+                                    src={coffee}
+                                    style={{
+                                        width: "3vw",
+                                        height: "3vw",
+                                        objectFit: "contain",
+                                        alignSelf: "center"
+                                    }}
+                                />
+                                <p
+                                    style={{
+                                        marginTop: "1vh",
+                                        marginBottom: 0,
+                                        fontSize: "1.5vw",
+                                        fontFamily: "Oswald"
+                                    }}
+                                >
+                                    Quality Coffee
+                                </p>
+                                <p
+                                    style={{
+                                        marginTop: "1vh",
+                                        fontSize: "0.75vw",
+                                    }}
+                                >
+                                    Our beans are ethically sourced or something like that.
+                                </p>
+                            </div>
+
+                            <div
+                                style={{
+                                    width: "30%",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                <img
+                                    src={sustainability}
+                                    style={{
+                                        width: "3vw",
+                                        height: "3vw",
+                                        objectFit: "contain",
+                                        alignSelf: "center"
+                                    }}
+                                />
+                                <p
+                                    style={{
+                                        marginTop: "1vh",
+                                        marginBottom: 0,
+                                        fontSize: "1.5vw",
+                                        fontFamily: "Oswald"
+                                    }}
+                                >
+                                    Sustainability
+                                </p>
+                                <p
+                                    style={{
+                                        marginTop: "1vh",
+                                        fontSize: "0.75vw",
+                                    }}
+                                >
+                                    We minimise our power usage and waste.??
+                                </p>
+                            </div>
+
+                            <div
+                                style={{
+                                    width: "30%",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                <img
+                                    src={community}
+                                    style={{
+                                        width: "3vw",
+                                        height: "3vw",
+                                        objectFit: "contain",
+                                        alignSelf: "center"
+                                    }}
+                                />
+                                <p
+                                    style={{
+                                        marginTop: "1vh",
+                                        marginBottom: 0,
+                                        fontSize: "1.5vw",
+                                        fontFamily: "Oswald"
+                                    }}
+                                >
+                                    Community
+                                </p>
+                                <p
+                                    style={{
+                                        marginTop: "1vh",
+                                        fontSize: "0.75vw",
+                                    }}
+                                >
+                                    We like our neighbours, they're very cool.
+                                </p>
                             </div>
                         </div>
+                        <div
+                            style={{
+                                height:"12vh"
+                            }}
+                        />
                     </div>
                     <div
                         style={{
@@ -125,6 +244,9 @@ export const About = () => {
                             justifyContent: "center"
                         }}
                     >
+                        <animated.div className={"slideshow"} style={{ transform: sleeveSpring.sleeveXYS.to((x, y, s) => `perspective(100vw) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`) }}>
+                            <Slideshow autoplay={!isHovered} />
+                        </animated.div>
                         <div
                             ref={ref}
                             style={{
@@ -132,16 +254,13 @@ export const About = () => {
                                 display: "flex",
                                 alignSelf: "center",
                                 alignItems: "center",
-                                justifyContent: "center"
+                                justifyContent: "center",
                             }}
                         >
-                            <animated.div className={"slideshow"} style={{ transform: sleeveSpring.xys.to(trans) }}>
-                                <Slideshow autoplay={!isHovered} />
-                            </animated.div>
                             <div
                                 style={{
-                                    width: "28vw",
-                                    height: "28vw",
+                                    width: "26vw",
+                                    height: "26vw",
                                     zIndex: 1,
                                 }}
                                 onMouseEnter={async () => {
@@ -149,26 +268,27 @@ export const About = () => {
                                     setRecordTRS([51.5, 180, 1])
 
                                     await new Promise(r => setTimeout(r, sleeveDelayTime));
+                                    setRecordTRS([51.5, 180, 0])
                                     setSleeveDelay(0);
-                                    setRecordDelay(sleeveDelayTime);
                                 }}
                                 onMouseLeave={async () => {
-                                    setXYS([0, 0, 1]);
+                                    setSleeveXYS([0, 0, 1]);
+                                    setRecordTRS([51.5, 180, 1])
                                     setIsHovered(false);
-                                    setRecordTRS([0, 0, 1])
 
                                     await new Promise(r => setTimeout(r, sleeveDelayTime));
+                                    setRecordTRS([0, 0, 1])
                                     setSleeveDelay(sleeveDelayTime);
-                                    setRecordDelay(0);
                                 }}
                                 onMouseMove={(e) => {
                                     const rect = ref.current.getBoundingClientRect();
-                                    setXYS(calc(e.clientX, e.clientY, rect));
+                                    setSleeveXYS(calcSleeveTransform(e.clientX, e.clientY, rect));
                                 }}
                             />
                         </div>
                         <animated.img
                             src={record}
+                            className={"slideshowrecord"}
                             style={{
                                 position: "relative",
                                 left: "25%",
@@ -191,7 +311,7 @@ const Slideshow = (props) => {
             <Fade
                 arrows={false}
                 autoplay={props.autoplay}
-                duration={3000}
+                duration={2500}
                 style={{
                     width: "100%",
                     height: "100%",
