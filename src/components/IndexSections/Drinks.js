@@ -35,264 +35,238 @@ export const Drinks = () => {
             >
                 <div
                     style={{
-                        width: "90%",
-                        height: "85%",
-                        alignSelf: "center",
-                        display: "flex",
                         zIndex: 1,
+                        width: "80%",
+                        height: "70%",
+                        display: "flex",
+                        alignSelf: "center",
+                        justifyContent: "center",
                     }}
                 >
-
                     <div
                         style={{
-                            flex: 12,
+                            width:"100%",
                             display: "flex",
-                            flexDirection: "column",
+                            alignSelf: "center",
+                            justifyContent: "space-around",
                         }}
                     >
-                        <h3
-                            style={{
-                                fontFamily: "Oswald",
-                                textAlign: "center",
-                                fontSize: "5vw",
-                                marginTop: 0,
-                                marginBottom: 0,
-                            }}
-                        >
-                            Drinks
-                        </h3>
 
                         <div
                             style={{
-                                flex: 1,
-                                width: "95%",
-                                alignSelf: "center",
-                                display: "flex",
-                                justifyContent: "space-around",
+                                width: "30%",
+                                display: 'flex',
+                                flexDirection: "column",
                             }}
                         >
-                            <div
+
+                            <h4
                                 style={{
-                                    width: "30%",
-                                    height: "100%",
-                                    display: 'flex',
-                                    flexDirection: "column",
+                                    fontFamily: "Oswald",
+                                    textAlign: "center",
+                                    fontSize: "2.5vw",
+                                    marginTop: 0,
+                                    marginBottom: 0
                                 }}
                             >
+                                The Usual<br />Suspects
+                            </h4>
 
-                                <h4
-                                    style={{
-                                        fontFamily: "Oswald",
-                                        textAlign: "center",
-                                        fontSize: "2.5vw",
-                                        marginTop: 0,
-                                        marginBottom: 0
-                                    }}
-                                >
-                                    The Usual<br />Suspects
-                                </h4>
+                            <p
+                                style={{
+                                    fontSize: "1.25vw",
+                                    marginLeft: "12.5%"
+                                }}
+                            >
+                                Latte
+                                <br />
+                                Cappuchino
+                                <br />
+                                Flat White
+                                <br />
+                                Long Black
+                                <br />
+                                Hot Chocolate/White
+                                <br />
+                                Chai Latte
+                                <br />
+                                Assorted Teas
+                            </p>
 
-                                <p
-                                    style={{
-                                        fontSize: "1.25vw",
-                                        marginLeft: "12.5%"
-                                    }}
-                                >
-                                    Latte
-                                    <br />
-                                    Cappuchino
-                                    <br />
-                                    Flat White
-                                    <br />
-                                    Long Black
-                                    <br />
-                                    Hot Chocolate/White
-                                    <br />
-                                    Chai Latte
-                                    <br />
-                                    Assorted Teas
-                                </p>
-
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-evenly",
-                                        fontSize: "1.5vw",
-                                        fontFamily: "Bebas",
-                                    }}
-                                >
-                                    <p style={{ marginTop: 0 }}>SML 4</p>
-                                    <p style={{ marginTop: 0 }}>MED 4.5</p>
-                                    <p style={{ marginTop: 0 }}>LRG 5</p>
-                                </div>
-
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-evenly",
+                                    fontSize: "1.5vw",
+                                    fontFamily: "Bebas",
+                                }}
+                            >
+                                <p style={{ marginTop: 0 }}>SML 4</p>
+                                <p style={{ marginTop: 0 }}>MED 4.5</p>
+                                <p style={{ marginTop: 0 }}>LRG 5</p>
                             </div>
-                            <div
+
+                        </div>
+                        <div
+                            style={{
+                                width: "30%",
+                                display: 'flex',
+                                flexDirection: "column",
+                            }}
+                        >
+                            <h4
                                 style={{
-                                    width: "30%",
-                                    height: "100%",
-                                    display: 'flex',
-                                    flexDirection: "column",
+                                    fontFamily: "Oswald",
+                                    textAlign: "center",
+                                    fontSize: "2.5vw",
+                                    marginTop: 0,
+                                    marginBottom: 0
                                 }}
                             >
+                                Boneyard <br /> Specialties
+                            </h4>
 
-                                <h4
-                                    style={{
-                                        fontFamily: "Oswald",
-                                        textAlign: "center",
-                                        fontSize: "2.5vw",
-                                        marginTop: 0,
-                                        marginBottom: 0
-                                    }}
-                                >
-                                    Boneyard <br /> Specialties
-                                </h4>
+                            <p
+                                style={{
+                                    fontSize: "1.25vw",
+                                    marginLeft: "12.5%"
+                                }}
+                            >
+                                Mocha
+                                <br />
+                                White Choc Mocha
+                                <br />
+                                Nutella Mocha
+                                <br />
+                                Caramel Latte
+                                <br />
+                                Vanilla Latte
+                                <br />
+                                Crème Brûlée Latte
+                                <br />
+                                Dirty Chai Latte
+                            </p>
 
-                                <p
-                                    style={{
-                                        fontSize: "1.25vw",
-                                        marginLeft: "12.5%"
-                                    }}
-                                >
-                                    Mocha
-                                    <br />
-                                    White Choc Mocha
-                                    <br />
-                                    Nutella Mocha
-                                    <br />
-                                    Caramel Latte
-                                    <br />
-                                    Vanilla Latte
-                                    <br />
-                                    Crème Brûlée Latte
-                                    <br />
-                                    Dirty Chai Latte
-                                </p>
-
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-evenly",
-                                        fontSize: "1.5vw",
-                                        fontFamily: "Bebas",
-                                    }}
-                                >
-                                    <p style={{ marginTop: 0 }}>SML 4.5</p>
-                                    <p style={{ marginTop: 0 }}>MED 5</p>
-                                    <p style={{ marginTop: 0 }}>LRG 5.5</p>
-                                </div>
-
-                                <p
-                                    style={{
-                                        fontSize: "1.5vw",
-                                        fontFamily: "Bebas",
-                                        textAlign: "center",
-                                        marginTop: 0
-                                    }}
-                                >
-                                    Decaf, Soy, Oat, Almond, Zymil, Coconut, <br />  Macadamia, Extra Shot, Syrups 0.5
-                                </p>
-
-                                <p
-                                    style={{
-                                        fontSize: "1.5vw",
-                                        fontFamily: "Bebas",
-                                        textAlign: "center",
-                                        marginTop:"auto"
-                                    }}
-                                >
-                                    Add ice cream to any drink 0.5
-                                </p>
-
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-evenly",
+                                    fontSize: "1.5vw",
+                                    fontFamily: "Bebas",
+                                }}
+                            >
+                                <p style={{ marginTop: 0 }}>SML 4.5</p>
+                                <p style={{ marginTop: 0 }}>MED 5</p>
+                                <p style={{ marginTop: 0 }}>LRG 5.5</p>
                             </div>
-                            <div
+
+                            <p
                                 style={{
-                                    width: "30%",
-                                    height: "100%",
-                                    display: 'flex',
-                                    flexDirection: "column",
+                                    fontSize: "1.5vw",
+                                    fontFamily: "Bebas",
+                                    textAlign: "center",
+                                    marginTop: 0
                                 }}
                             >
+                                Decaf, Soy, Oat, Almond, Zymil, Coconut, <br />  Macadamia, Extra Shot, Syrups 0.5
+                            </p>
 
-                                <h4
-                                    style={{
-                                        fontFamily: "Oswald",
-                                        textAlign: "center",
-                                        fontSize: "2.5vw",
-                                        marginTop: 0,
-                                        marginBottom: "0.35vw"
-                                    }}
-                                >
-                                    Cold Ones
-                                </h4>
+                            <p
+                                style={{
+                                    fontSize: "1.5vw",
+                                    fontFamily: "Bebas",
+                                    textAlign: "center",
+                                }}
+                            >
+                                Add ice cream to any drink 0.5
+                            </p>
 
-                                <p
-                                    style={{
-                                        fontSize: "1.25vw",
-                                        marginLeft: "12.5%"
-                                    }}
-                                >
-                                    Iced Latte
-                                    <br />
-                                    Iced Vanilla Latte
-                                    <br />
-                                    Iced Caramel Latte
-                                    <br />
-                                    Iced Long Black
-                                    <br />
-                                    Iced Mocha
-                                    <br />
-                                    Iced White Mocha
-                                    <br />
-                                    Iced Chai Latte
-                                    <br />
-                                    Iced Chocolate
-                                    <br />
-                                    Cold Brew Black/Latte
-                                </p>
+                        </div>
+                        <div
+                            style={{
+                                width: "30%",
+                                height: "100%",
+                                display: 'flex',
+                                flexDirection: "column",
+                            }}
+                        >
 
-                                <p style={{
+                            <h4
+                                style={{
+                                    fontFamily: "Oswald",
+                                    textAlign: "center",
+                                    fontSize: "2.5vw",
+                                    marginTop: 0,
+                                    marginBottom: "0.35vw"
+                                }}
+                            >
+                                Cold Ones
+                            </h4>
+
+                            <p
+                                style={{
+                                    fontSize: "1.25vw",
+                                    marginLeft: "12.5%"
+                                }}
+                            >
+                                Iced Latte
+                                <br />
+                                Iced Vanilla Latte
+                                <br />
+                                Iced Caramel Latte
+                                <br />
+                                Iced Long Black
+                                <br />
+                                Iced Mocha
+                                <br />
+                                Iced White Mocha
+                                <br />
+                                Iced Chai Latte
+                                <br />
+                                Iced Chocolate
+                                <br />
+                                Cold Brew Black/Latte
+                            </p>
+
+                            <p style={{
+                                marginTop: 0,
+                                display: "flex",
+                                justifyContent: "space-evenly",
+                                fontSize: "1.5vw",
+                                fontFamily: "Bebas",
+                            }}
+                            >
+                                Reg 5.5
+                            </p>
+
+                            <p
+                                style={{
+                                    fontSize: "1.25vw",
+                                    marginLeft: "12.5%",
+                                    marginTop: 0
+                                }}
+                            >
+                                Milkshakes (Chocolate, Vanilla, Caramel & Strawberry)
+                            </p>
+
+                            <p
+                                style={{
                                     marginTop: 0,
                                     display: "flex",
                                     justifyContent: "space-evenly",
                                     fontSize: "1.5vw",
                                     fontFamily: "Bebas",
                                 }}
-                                >
-                                    Reg 5.5
-                                </p>
-
-                                <p
-                                    style={{
-                                        fontSize: "1.25vw",
-                                        marginLeft: "12.5%",
-                                        marginTop: 0
-                                    }}
-                                >
-                                    Milkshakes (Chocolate, Vanilla, Caramel & Strawberry)
-                                </p>
-
-                                <p
-                                    style={{
-                                        marginTop: 0,
-                                        display: "flex",
-                                        justifyContent: "space-evenly",
-                                        fontSize: "1.5vw",
-                                        fontFamily: "Bebas",
-                                    }}
-                                >
-                                    Reg 6
-                                </p>
-
-
-                            </div>
+                            >
+                                Reg 6
+                            </p>
 
 
                         </div>
+
                     </div>
-
-
                 </div>
+                
             </ParallaxLayer>
         </div >
     )

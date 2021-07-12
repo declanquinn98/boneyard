@@ -230,7 +230,7 @@ export const About = () => {
                         </div>
                         <div
                             style={{
-                                height:"12vh"
+                                height:"6vw"
                             }}
                         />
                     </div>

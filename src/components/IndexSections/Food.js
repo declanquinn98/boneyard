@@ -1,7 +1,11 @@
 import * as React from "react";
-import { useRef, useEffect, useState } from "react";
-import { config } from 'react-spring';
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
+import { StaticImage } from "gatsby-plugin-image";
+import { ParallaxLayer } from '@react-spring/parallax';
+
+import bread from "../../assets/images/Food/bread.jpg";
+import cookies from "../../assets/images/Food/cookies.jpg";
+import doughnut from "../../assets/images/Food/doughluxe.jpg";
+import cube from "../../assets/images/Food/cube1.jpg";
 
 import styles from '../../styles/global.css';
 
@@ -24,53 +28,126 @@ export const Food = () => {
             }}
         >
             <ParallaxLayer
-                offset={0.5}
+                offset={0.4}
                 speed={0.1}
                 style={{
                     display: "flex",
                     height: "100%",
                     justifyContent: "center",
-                    zIndex: 1
+                    zIndex: 1,
                 }}
             >
                 <div
                     style={{
+                        zIndex: 1,
                         width: "90%",
                         height: "85%",
-                        alignSelf: "center",
                         display: "flex",
-                        zIndex: 1,
+                        fontSize: "1.25vw",
+                        alignSelf: "center",
+                        justifyContent: "space-evenly",
                     }}
                 >
                     <div
                         style={{
-                            flex: 5,
+                            width: "17.5%",
                             display: "flex",
                             flexDirection: "column",
                         }}
                     >
-                        <h3
-                            style={{
-                                fontFamily: "Oswald",
-                                fontSize: "5vw",
-                                marginTop: 0,
-                                marginBottom: 0
-                            }}
-                        >
-                            Food
-                        </h3>
                         <div
                             style={{
-                                fontSize: "1.145vw",
+                                width: "100%",
+                                aspectRatio: "1/1"
                             }}
                         >
-                            <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
-                            <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
-                            <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
-                            <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
+                            <img
+                                src={bread}
+                                alt="Brasserie Bread"
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover"
+                                }}
+                            />
                         </div>
+                        <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
                     </div>
-
+                    <div
+                        style={{
+                            width: "17.5%",
+                            display: "flex",
+                            flexDirection: "column",
+                        }}
+                    >
+                        <div
+                            style={{
+                                width: "100%",
+                                aspectRatio: "1/1"
+                            }}
+                        >
+                            <img
+                                src={cookies}
+                                alt="Cakes By Jordyn"
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover"
+                                }}
+                            />
+                        </div>
+                        <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
+                    </div>
+                    <div
+                        style={{
+                            width: "17.5%",
+                            display: "flex",
+                            flexDirection: "column",
+                        }}
+                    >
+                        <div
+                            style={{
+                                width: "100%",
+                                aspectRatio: "1/1"
+                            }}
+                        >
+                            <img
+                                src={doughnut}
+                                alt="Doughluxe"
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover"
+                                }}
+                            />
+                        </div>
+                        <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
+                    </div>
+                    <div
+                        style={{
+                            width: "17.5%",
+                            display: "flex",
+                            flexDirection: "column",
+                        }}
+                    >
+                        <div
+                            style={{
+                                width: "100%",
+                                aspectRatio: "1/1"
+                            }}
+                        >
+                            <img
+                                src={cube}
+                                alt="MMMORE Raw Treats"
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover"
+                                }}
+                            />
+                        </div>
+                        <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
+                    </div>
                 </div>
             </ParallaxLayer>
         </div >
