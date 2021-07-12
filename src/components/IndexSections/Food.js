@@ -26,8 +26,8 @@ export const Food = () => {
             }}
         >
             <ParallaxLayer
-                offset={1.5}
-                speed={0.5}
+                offset={0.72}
+                speed={0.18}
                 style={{
                     zIndex: 1,
                     display: "flex",
@@ -138,8 +138,8 @@ export const Food = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-                offset={-4}
-                speed={-0.5}
+                offset={-0.9}
+                speed={-0.18}
                 style={{
                     zIndex: 1,
                     display: "flex",
@@ -155,6 +155,7 @@ export const Food = () => {
                         alignSelf: "center",
                     }}
                 >
+
                     <div
                         style={{
                             height: "50%",
@@ -187,7 +188,6 @@ export const Food = () => {
                         </div>
                     </div>
 
-                    
                     <div
                         style={{
                             height: "50%",
@@ -197,7 +197,7 @@ export const Food = () => {
                     >
 
                         <div style={{ width: "17.5%" }} />
-                        
+
                         <div
                             style={{
                                 width: "17.5%",
@@ -253,12 +253,6 @@ export const Food = () => {
 
                 </div>
             </ParallaxLayer>
-
-
-
-
-
-
         </div >
     )
 }

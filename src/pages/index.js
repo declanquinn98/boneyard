@@ -186,7 +186,7 @@ const Index = () => {
                 }}
             >
                 <Sustain />
-                <BackgroundText text="SUSTAINABILITY" color={green} />
+                <BackgroundText text="SUSTAINABILITY" color={green} sus={true} />
                 <ScrollArrows ref={parallax} arrows={[["up", 4], ["down", 7]]} />
             </ParallaxLayer>
 

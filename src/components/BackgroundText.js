@@ -13,14 +13,15 @@ const red = "#db4451";
 
 export const BackgroundText = (props) => {
 
-    
+    const fontSize = props.sus ? "25vw" : "30vw";
+
     return (
         <h2
             style={{
                 position: "absolute",
                 color: props.color,
                 fontFamily: "Stereofidelic",
-                fontSize: "30vw",
+                fontSize: fontSize,
                 alignSelf: "center",
                 opacity: "50%"
             }}
