@@ -13,7 +13,7 @@ const red = "#db4451";
 
 export const BackgroundText = (props) => {
 
-    const fontSize = props.sus ? "25vw" : "30vw";
+    const fontSize = props.sus ? "25vw" : props.size ? props.size : "30vw";
 
     return (
         <h2

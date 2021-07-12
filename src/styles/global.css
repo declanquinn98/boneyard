@@ -73,3 +73,11 @@ body {
     font-family: 'Felix';
     src: local('Felix'), url(../fonts/Felixti.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'Facebook';
+    src: local('Facebook'), url(../fonts/facebook.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Instagram';
+    src: local('Instagram'), url(../fonts/instagram.otf) format('opentype');
+}

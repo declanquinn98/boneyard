@@ -218,7 +218,7 @@ const Index = () => {
                 }}
             >
                 <Contact />
-                <BackgroundText text="FIND US" color={offWhite} />
+                <BackgroundText text="Contact" color={offWhite} size={"20vw"} />
                 <ScrollArrows ref={parallax} arrows={[["up", 5.5]]} />
             </ParallaxLayer>
 

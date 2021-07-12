@@ -83,7 +83,7 @@ export const Contact = () => {
             }}
         >
             <ParallaxLayer
-                offset={0.75}
+                offset={0.7}
                 speed={0.1}
                 style={{
                     display: "flex",
@@ -97,122 +97,122 @@ export const Contact = () => {
                         height: "85%",
                         alignSelf: "center",
                         display: "flex",
+                        justifyContent: "space-between",
                         zIndex: 1,
                     }}
                 >
-
                     <div
                         style={{
-                            flex: 12,
+                            width: "100%",
                             display: "flex",
+                            justifyContent: "center",
                             flexDirection: "column",
                         }}
                     >
-                        <h4
-                            style={{
-                                fontFamily: "Oswald",
-                                fontSize: "2.5vw",
-                                marginBottom: 0
-                            }}
-                        >
-                            Open Tuesday - Sunday 7am-2pm
-                            <br />
-                            0413 442 321
-                            <br />
-                            hello@boneyardespresso.com <span style={{ fontSize: "1.5vw", color: "red" }}>(or whatever you want the email to be)</span>
-                        </h4>
-
-                        <div
-                            style={{
-                                marginTop: "9%",
-                                marginLeft: "17.5%",
-                                display: "flex",
-                            }}
-                        >
-                            <a
-                                href="https://www.facebook.com/boneyardespresso"
-                                target="_blank"
-                                rel="noreferrer"
-                                style={{
-                                    width: "4%"
-                                }}
-                            >
-                                <img
-                                    src={fb}
-                                    alt="Facebook"
-                                    style={{
-                                        width: "100%",
-                                        objectFit: "contain"
-                                    }}
-                                />
-
-                            </a>
-
-                            <a
-                                href="https://www.instagram.com/boneyardespresso"
-                                target="_blank"
-                                rel="noreferrer"
-                                style={{
-                                    marginLeft: "4%",
-                                    width: "4%",
-                                }}
-                            >
-                                <img
-                                    src={insta}
-                                    alt="Instagram"
-                                    style={{
-                                        width: "100%",
-                                        objectFit: "contain"
-                                    }}
-                                />
-                            </a>
-                        </div>
-
-
                         <div
                             style={{
                                 width: "100%",
-                                height: "25%",
-                                marginTop: "auto",
-                                backgroundColor:"red"
+                                display: "flex",
+                                justifyContent: "space-between",
                             }}
                         >
-                            <InstagramFeed
-                                counter="6"
-                                token={process.env.INSTAGRAM_TOKEN}
-                            />
+                            <h4
+                                style={{
+                                    fontFamily: "Oswald",
+                                    fontSize: "2.5vw",
+                                    marginTop: 0,
+                                    marginBottom: 0,
+                                }}
+                            >
+                                18 Anzac ave, Redcliffe QLD 4020
+                                <br />
+                                Open Tuesday - Sunday 7am-2pm
+                                <br />
+                                hello@boneyardespresso.com
+                                <br />
+                                0413 442 321
+                            </h4>
+
+                            <div
+                                style={{
+                                    fontSize: "4vw",
+                                    alignSelf: "flex-end",
+                                    marginRight: "7.25vw",
+                                }}
+                            >
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href={"https://www.facebook.com/boneyardespresso"}
+                                    style={{
+                                        marginTop: 0,
+                                        marginBottom: 0,
+                                        fontFamily: "Facebook",
+                                        color: offWhite,
+                                        textDecoration: "none"
+                                    }}
+                                >
+                                    facebook
+                                </a>
+                                <br />
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href={"https://www.instagram.com/boneyardespresso"}
+                                    style={{
+                                        marginTop: 0,
+                                        marginBottom: 0,
+                                        fontFamily: "instagram",
+                                        color: offWhite,
+                                        textDecoration: "none"
+                                    }}
+                                >
+                                    instagram
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div
+                            style={{
+                                display: "flex",
+                                width: "100%",
+                                height: "23vw",
+                                marginTop: "1vw",
+                                marginLeft: "0.15vw",
+                                justifyContent: "space-between"
+                            }}
+                        >
+                            <div
+                                style={{
+                                    height: "98%",
+                                    alignSelf: "center",
+                                    aspectRatio: "1/1",
+                                }}
+                            >
+                                <Map w="100%" h="100%" />
+                            </div>
+
+
+                            <div
+                                style={{
+                                    height: "100%",
+                                    aspectRatio: "1/1",
+                                }}
+                            >
+                                <InstagramFeed
+                                    counter="9"
+                                    token={process.env.INSTAGRAM_TOKEN}
+                                />
+                            </div>
+
+
                         </div>
                     </div>
 
 
-                    <div
-                        style={{
-                            flex: 5,
-                            display: "flex",
-                            flexDirection: "column-reverse",
-                        }}
-                    >
-                        <Map w="100%" h="55%" />
-                        <h4
-                            style={{
-                                fontFamily: "Oswald",
-                                textAlign: "center",
-                                fontSize: "2.5vw",
-                                marginTop: 0,
-                                marginBottom: 0
-                            }}
-                        >
-                            18 Anzac ave,
-                            <br />
-                            Redcliffe QLD 4020
-                        </h4>
-                    </div>
-
                 </div>
             </ParallaxLayer>
-
-
-
 
         </div >
     )
@@ -229,9 +229,9 @@ const Map = (props) => {
         <div style={{ height: props.h, width: props.w }}>
 
             <GoogleMap
-                bootstrapURLKeys={{ key: "AIzaSyBSTv5d3daWx5vdROnH9LN0vG6EReHyZeA" }}
+                bootstrapURLKeys={{ key: process.env.MAP_TOKEN }}
                 defaultCenter={center}
-                defaultZoom={18}
+                defaultZoom={17}
                 options={{
                     zoomControl: false,
                     mapTypeControl: false,
