@@ -52,7 +52,10 @@ const Index = () => {
         <Parallax
             ref={parallax}
             pages={8}
-            config={config.fast}
+            config={{
+                tension: 70,
+                friction: 20,
+            }}
             style={{
                 top: 0,
                 left: 0,
@@ -74,7 +77,7 @@ const Index = () => {
 
                     <CremaTitle device={deviceType} />
                     <ScrollArrows ref={parallax} arrows={[["down", 1]]} />
-                    <NavMenu ref={parallax}/>
+                    <NavMenu ref={parallax} />
 
                 </div>
             </ParallaxLayer>
@@ -119,7 +122,7 @@ const Index = () => {
             >
 
                 <Drinks />
-                <BackgroundText text="DRINKS" color={red} />
+                <BackgroundText text="DRINKS" color={orange} />
                 <ScrollArrows ref={parallax} arrows={[["up", 1], ["down", 4]]} />
 
             </ParallaxLayer>

@@ -20,136 +20,245 @@ export const Food = () => {
             style={{
                 width: "100%",
                 height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                textShadow: "0px 0px 25px rgba(0,0,0,1)",
                 color: offWhite,
-                backgroundColor: offBlack
+                backgroundColor: offBlack,
+                textShadow: "0px 0px 25px rgba(0,0,0,1)"
             }}
         >
             <ParallaxLayer
-                offset={0.4}
-                speed={0.1}
+                offset={1.5}
+                speed={0.5}
                 style={{
-                    display: "flex",
-                    height: "100%",
-                    justifyContent: "center",
                     zIndex: 1,
+                    display: "flex",
+                    justifyContent: "center",
                 }}
             >
                 <div
                     style={{
                         zIndex: 1,
                         width: "90%",
-                        height: "85%",
-                        display: "flex",
+                        height: "100%",
                         fontSize: "1.25vw",
                         alignSelf: "center",
-                        justifyContent: "space-evenly",
                     }}
                 >
                     <div
                         style={{
-                            width: "17.5%",
+                            height: "50%",
                             display: "flex",
-                            flexDirection: "column",
+                            justifyContent: "space-evenly",
                         }}
                     >
+
                         <div
                             style={{
-                                width: "100%",
-                                aspectRatio: "1/1"
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column-reverse",
                             }}
                         >
-                            <img
-                                src={bread}
-                                alt="Brasserie Bread"
+                            <div
                                 style={{
                                     width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover"
+                                    aspectRatio: "1/1"
                                 }}
-                            />
+                            >
+                                <img
+                                    src={bread}
+                                    alt="Brasserie Bread"
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover"
+                                    }}
+                                />
+                            </div>
                         </div>
-                        <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
+
+                        <div style={{ width: "17.5%" }} />
+
+                        <div
+                            style={{
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column-reverse",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: "100%",
+                                    aspectRatio: "1/1"
+                                }}
+                            >
+                                <img
+                                    src={doughnut}
+                                    alt="Doughluxe"
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover"
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div style={{ width: "17.5%" }} />
                     </div>
+
                     <div
                         style={{
-                            width: "17.5%",
+                            height: "50%",
                             display: "flex",
-                            flexDirection: "column",
+                            justifyContent: "space-evenly",
                         }}
                     >
+
                         <div
                             style={{
-                                width: "100%",
-                                aspectRatio: "1/1"
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column",
                             }}
                         >
-                            <img
-                                src={cookies}
-                                alt="Cakes By Jordyn"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover"
-                                }}
-                            />
+                            <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
                         </div>
-                        <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
-                    </div>
-                    <div
-                        style={{
-                            width: "17.5%",
-                            display: "flex",
-                            flexDirection: "column",
-                        }}
-                    >
+                        <div style={{ width: "17.5%" }} />
                         <div
                             style={{
-                                width: "100%",
-                                aspectRatio: "1/1"
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column",
                             }}
                         >
-                            <img
-                                src={doughnut}
-                                alt="Doughluxe"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover"
-                                }}
-                            />
+                            <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
                         </div>
-                        <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
-                    </div>
-                    <div
-                        style={{
-                            width: "17.5%",
-                            display: "flex",
-                            flexDirection: "column",
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: "100%",
-                                aspectRatio: "1/1"
-                            }}
-                        >
-                            <img
-                                src={cube}
-                                alt="MMMORE Raw Treats"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover"
-                                }}
-                            />
-                        </div>
-                        <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
+                        <div style={{ width: "17.5%" }} />
                     </div>
                 </div>
             </ParallaxLayer>
+
+            <ParallaxLayer
+                offset={-4}
+                speed={-0.5}
+                style={{
+                    zIndex: 1,
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                <div
+                    style={{
+                        zIndex: 1,
+                        width: "90%",
+                        height: "100%",
+                        fontSize: "1.25vw",
+                        alignSelf: "center",
+                    }}
+                >
+                    <div
+                        style={{
+                            height: "50%",
+                            display: "flex",
+                            justifyContent: "space-evenly",
+                        }}
+                    >
+
+                        <div style={{ width: "17.5%" }} />
+
+                        <div
+                            style={{
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column-reverse",
+                            }}
+                        > <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
+                        </div>
+
+                        <div style={{ width: "17.5%" }} />
+
+                        <div
+                            style={{
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column-reverse",
+                            }}
+                        >
+                            <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
+                        </div>
+                    </div>
+
+                    
+                    <div
+                        style={{
+                            height: "50%",
+                            display: "flex",
+                            justifyContent: "space-evenly",
+                        }}
+                    >
+
+                        <div style={{ width: "17.5%" }} />
+                        
+                        <div
+                            style={{
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: "100%",
+                                    aspectRatio: "1/1"
+                                }}
+                            >
+                                <img
+                                    src={cookies}
+                                    alt="Cakes By Jordyn"
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover"
+                                    }}
+                                />
+                            </div>
+                        </div>
+
+                        <div style={{ width: "17.5%" }} />
+
+                        <div
+                            style={{
+                                width: "17.5%",
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: "100%",
+                                    aspectRatio: "1/1"
+                                }}
+                            >
+                                <img
+                                    src={cube}
+                                    alt="MMMORE Raw Treats"
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover"
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </ParallaxLayer>
+
+
+
+
+
+
         </div >
     )
 }
