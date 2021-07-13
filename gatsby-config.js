@@ -5,8 +5,8 @@ require("dotenv").config({
 module.exports = {
     siteMetadata: {
         title: `The Boneyard Espresso`,
-        description: ``,
-        author: `@declanquinn`,
+        description: `Homepage of The Boneyard Espresso and Collective`,
+        author: `Declan Quinn`,
     },
     plugins: [
         `gatsby-plugin-sass`,

@@ -2,6 +2,7 @@ import * as React from "react";
 import { useRef, useState } from "react";
 import { useSpring, animated } from 'react-spring';
 import { ParallaxLayer } from '@react-spring/parallax';
+import LazyLoad from 'react-lazy-load';
 import { Fade } from 'react-slideshow-image';
 
 import 'react-slideshow-image/dist/styles.css'
@@ -25,7 +26,7 @@ const calcSleeveTransform = (x, y, rect) => [
     1.4
 ];
 
-export const About = () => {
+export const About = (props) => {
 
     const ref = useRef(null);
 
@@ -289,18 +290,21 @@ export const About = () => {
                                 }}
                             />
                         </div>
-                        <animated.img
-                            src={record}
-                            className={"slideshowrecord"}
-                            style={{
-                                position: "relative",
-                                left: "25%",
-                                width: "26vw",
-                                height: "26vw",
-                                zIndex: -1,
-                                transform: recordSpring.recordTRS.to((t, r, s) => `translateX(-${t}%) rotate(${r}deg) scale(${s}, ${s})`)
-                            }}
-                        />
+                        <LazyLoad offset={props.height} debounce={false}>
+                            <animated.img
+                                src={record}
+                                alt={"Vinyl Record"}
+                                className={"slideshowrecord"}
+                                style={{
+                                    position: "relative",
+                                    left: "50%",
+                                    width: "26vw",
+                                    height: "26vw",
+                                    zIndex: -1,
+                                    transform: recordSpring.recordTRS.to((t, r, s) => `translateX(-${t}%) rotate(${r}deg) scale(${s}, ${s})`)
+                                }}
+                            />
+                        </LazyLoad>
                     </div>
                 </div>
             </ParallaxLayer>
@@ -322,60 +326,51 @@ const Slideshow = (props) => {
                 }}
             >
 
-                <div className="each-fade" style={{ width: "100%", height: "100%" }}>
-                    <div className="image-container" style={{ width: "100%", height: "100%" }}>
-                        <img
-                            src={slide3}
-                            alt={"Slide 1"}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover"
-                            }}
-                        />
-                    </div>
-                </div>
+                <img
+                    src={slide3}
+                    alt={"Slide 1"}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover"
+                    }}
+                />
 
-                <div className="each-fade" style={{ width: "100%", height: "100%" }}>
-                    <div className="image-container" style={{ width: "100%", height: "100%" }}>
-                        <img
-                            src={slide0}
-                            alt={"Slide 2"}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover"
-                            }}
-                        />
-                    </div>
-                </div>
-                <div className="each-fade" style={{ width: "100%", height: "100%" }}>
-                    <div className="image-container" style={{ width: "100%", height: "100%" }}>
-                        <img
-                            src={slide1}
-                            alt={"Slide 3"}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover"
-                            }}
-                        />
-                    </div>
-                </div>
-                <div className="each-fade" style={{ width: "100%", height: "100%" }}>
-                    <div className="image-container" style={{ width: "100%", height: "100%" }}>
-                        <img
-                            src={slide2}
-                            alt={"Slide 4"}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover"
-                            }}
-                        />
-                    </div>
-                </div>
+                <LazyLoad offset={props.height} debounce={false}>
+                    <img
+                        src={slide0}
+                        alt={"Slide 2"}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                        }}
+                    />
+                </LazyLoad>
 
+                <LazyLoad offset={props.height} debounce={false}>
+                    <img
+                        src={slide1}
+                        alt={"Slide 3"}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                        }}
+                    />
+                </LazyLoad>
+
+                <LazyLoad offset={props.height} debounce={false}>
+                    <img
+                        src={slide2}
+                        alt={"Slide 4"}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                        }}
+                    />
+                </LazyLoad>
             </Fade>
         </div>
     )

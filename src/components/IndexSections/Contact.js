@@ -1,14 +1,18 @@
 import * as React from "react";
 import { ParallaxLayer } from '@react-spring/parallax';
 import GoogleMap from 'google-map-react';
-import { mapStyle } from "../../styles/map.js"
-import InstagramFeed from 'react-ig-feed'
-import 'react-ig-feed/dist/index.css'
+import { mapStyle } from "../../styles/map.js";
+import InstagramFeed from 'react-ig-feed';
+import LazyLoad from 'react-lazy-load';
+import 'react-ig-feed/dist/index.css';
 
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 
-export const Contact = () => {
+export const Contact = (props) => {
+
+    const imageHeightLoad = props.height * 4;
+
 
     return (
         <div
@@ -55,10 +59,11 @@ export const Contact = () => {
                                 justifyContent: "space-between",
                             }}
                         >
-                            <h4
+                            <p
                                 style={{
                                     fontFamily: "Oswald",
                                     fontSize: "2.5vw",
+                                    fontWeight: 600,
                                     marginTop: 0,
                                     marginBottom: 0,
                                 }}
@@ -70,7 +75,7 @@ export const Contact = () => {
                                 hello@boneyardespresso.com
                                 <br />
                                 0413 442 321
-                            </h4>
+                            </p>
 
                             <div
                                 style={{
@@ -139,10 +144,12 @@ export const Contact = () => {
                                     aspectRatio: "1/1",
                                 }}
                             >
-                                <InstagramFeed
-                                    counter="9"
-                                    token={process.env.INSTAGRAM_TOKEN}
-                                />
+                                <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                    <InstagramFeed
+                                        counter="9"
+                                        token={process.env.INSTAGRAM_TOKEN}
+                                    />
+                                </LazyLoad>
                             </div>
 
 
@@ -167,21 +174,21 @@ const Map = (props) => {
     return (
         <div style={{ height: props.h, width: props.w }}>
 
-            <GoogleMap
-                bootstrapURLKeys={{ key: process.env.MAP_TOKEN }}
-                defaultCenter={center}
-                defaultZoom={17}
-                options={{
-                    zoomControl: false,
-                    mapTypeControl: false,
-                    streetViewControl: false,
-                    rotateControl: false,
-                    fullscreenControl: false,
-                    styles: mapStyle
-                }}
-            >
-                <Marker lat={center.lat} lng={center.lng} text="The Boneyard Espresso" />
-            </GoogleMap>
+                <GoogleMap
+                    bootstrapURLKeys={{ key: process.env.MAP_TOKEN }}
+                    defaultCenter={center}
+                    defaultZoom={17}
+                    options={{
+                        zoomControl: false,
+                        mapTypeControl: false,
+                        streetViewControl: false,
+                        rotateControl: false,
+                        fullscreenControl: false,
+                        styles: mapStyle
+                    }}
+                >
+                    <Marker lat={center.lat} lng={center.lng} text="The Boneyard Espresso" />
+                </GoogleMap>
 
         </div>
     );

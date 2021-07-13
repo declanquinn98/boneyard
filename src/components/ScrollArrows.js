@@ -44,6 +44,7 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                         border: "none",
                     }}
                     ref={ref}
+                    aria-label={"Page Navigation"}
                     onClick={() => scroll(props.arrows[0][1])}
                     onKeyDown={(e) => {
                         if (e.key === "Spacebar" || e.key === "Enter") {
@@ -75,6 +76,7 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                         border: "none",
                     }}
                     ref={ref}
+                    aria-label={"Page Navigation"}
                     onClick={() => scroll(props.arrows[0][1])}
                     onKeyDown={(e) => {
                         if (e.key === "Spacebar" || e.key === "Enter") {
@@ -108,6 +110,7 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                         border: "none",
                     }}
                     ref={ref}
+                    aria-label={"Page Navigation"}
                     onClick={() => scroll(props.arrows[0][1])}
                     onKeyDown={(e) => {
                         if (e.key === "Spacebar" || e.key === "Enter") {
@@ -135,6 +138,7 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                         border: "none",
                     }}
                     ref={ref}
+                    aria-label={"Page Navigation"}
                     onClick={() => scroll(props.arrows[1][1])}
                     onKeyDown={(e) => {
                         if (e.key === "Spacebar" || e.key === "Enter") {
