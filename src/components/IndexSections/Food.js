@@ -1,13 +1,10 @@
 import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import { ParallaxLayer } from '@react-spring/parallax';
 
 import bread from "../../assets/images/Food/bread.jpg";
 import cookies from "../../assets/images/Food/cookies.jpg";
 import doughnut from "../../assets/images/Food/doughluxe.jpg";
 import cube from "../../assets/images/Food/cube1.jpg";
-
-import styles from '../../styles/global.css';
 
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";

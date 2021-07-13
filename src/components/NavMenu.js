@@ -1,11 +1,5 @@
 import * as React from "react";
-import { useRef, useEffect, useState } from "react";
-import { config } from 'react-spring';
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 
-import styles from '../styles/global.css';
-
-const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 
 export const NavMenu = React.forwardRef((props, ref) => {
@@ -13,7 +7,6 @@ export const NavMenu = React.forwardRef((props, ref) => {
     const scroll = (page) => {
         ref.current.scrollTo(page)
     }
-    //
 
     return (
         <div
@@ -26,7 +19,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                 justifyContent: "center",
                 color: offWhite,
                 fontSize: "2vh",
-                fontFamily:"playfair",
+                fontFamily: "playfair",
                 background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0) 75%)"
             }}
         >
@@ -35,59 +28,111 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     width: "50%",
                     display: "flex",
                     justifyContent: "space-evenly",
-                    marginBottom: "10vh",
+                    marginTop: "2.5vh",
+                    marginBottom: "5vh",
+                    alignItems: "center",
                 }}
             >
-                <p
+                <button
                     ref={ref}
                     onClick={() => scroll(1)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(1);
+                        }
+                    }}
                     className="nav-menu-option"
                     style={{
+                        border: "none",
                         cursor: "pointer",
+                        fontSize: "1.25vw",
+                        fontFamily: "playfair",
+                        backgroundColor: "rgba(0,0,0,0)",
+                        color: offWhite
                     }}
                 >
                     About
-                </p>
-                <p
+                </button>
+                <button
                     ref={ref}
                     onClick={() => scroll(2.5)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(2.5);
+                        }
+                    }}
                     className="nav-menu-option"
                     style={{
-                        cursor: "pointer"
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: "1.25vw",
+                        fontFamily: "playfair",
+                        backgroundColor: "rgba(0,0,0,0)",
+                        color: offWhite
                     }}
                 >
                     Drinks
-                </p>
-                <p
+                </button>
+                <button
                     ref={ref}
                     onClick={() => scroll(4)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(4);
+                        }
+                    }}
                     className="nav-menu-option"
                     style={{
-                        cursor: "pointer"
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: "1.25vw",
+                        fontFamily: "playfair",
+                        backgroundColor: "rgba(0,0,0,0)",
+                        color: offWhite
                     }}
                 >
                     Food
-                </p>
-                <p
+                </button>
+                <button
                     ref={ref}
                     onClick={() => scroll(5.5)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(5.5);
+                        }
+                    }}
                     className="nav-menu-option"
                     style={{
-                        cursor: "pointer"
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: "1.25vw",
+                        fontFamily: "playfair",
+                        backgroundColor: "rgba(0,0,0,0)",
+                        color: offWhite
                     }}
                 >
                     Sustainability
-                </p>
-                <p
+                </button>
+                <button
                     ref={ref}
                     onClick={() => scroll(7)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(7);
+                        }
+                    }}
                     className="nav-menu-option"
                     style={{
-                        cursor: "pointer"
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: "1.25vw",
+                        fontFamily: "playfair",
+                        backgroundColor: "rgba(0,0,0,0)",
+                        color: offWhite
                     }}
                 >
                     Contact
-                </p>
+                </button>
             </div>
         </div >
     )

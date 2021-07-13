@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from '../styles/arrow.scss';
+import '../styles/arrow.scss';
 
 const UpArrow = () => {
     return (
@@ -33,16 +33,23 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
     if (props.arrows.length === 1) {
         if (props.arrows[0][0] === "up") {
             return (
-                <div
+                <button
                     style={{
                         position: "absolute",
-                        width: "5vh",
-                        height: "5vh",
-                        top: "2.5vh",
+                        width: "5vw",
+                        height: "5vw",
+                        top: "1.5vw",
                         zIndex: 2,
+                        backgroundColor: "rgba(0,0,0,0)",
+                        border: "none",
                     }}
                     ref={ref}
                     onClick={() => scroll(props.arrows[0][1])}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(props.arrows[0][1]);
+                        }
+                    }}
                 >
                     <Arrow
                         up={true}
@@ -51,22 +58,29 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                             height: "100%",
                         }}
                     />
-                </div>
+                </button>
             )
         }
         else {
             return (
 
-                <div
+                <button
                     style={{
                         position: "absolute",
-                        width: "5vh",
-                        height: "5vh",
-                        bottom: "2.5vh",
+                        width: "5vw",
+                        height: "5vw",
+                        bottom: "1.5vw",
                         zIndex: 2,
+                        backgroundColor: "rgba(0,0,0,0)",
+                        border: "none",
                     }}
                     ref={ref}
                     onClick={() => scroll(props.arrows[0][1])}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(props.arrows[0][1]);
+                        }
+                    }}
                 >
                     <Arrow
                         up={false}
@@ -75,7 +89,7 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                             height: "100%",
                         }}
                     />
-                </div>
+                </button>
             )
 
         }
@@ -83,18 +97,23 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
     else {
         return (
             <>
-
-
-                <div
+                <button
                     style={{
                         position: "absolute",
-                        width: "5vh",
-                        height: "5vh",
-                        top: "2.5vh",
+                        width: "5vw",
+                        height: "5vw",
+                        top: "1.5vw",
                         zIndex: 2,
+                        backgroundColor: "rgba(0,0,0,0)",
+                        border: "none",
                     }}
                     ref={ref}
                     onClick={() => scroll(props.arrows[0][1])}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(props.arrows[0][1]);
+                        }
+                    }}
                 >
                     <Arrow
                         up={true}
@@ -103,18 +122,25 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                             height: "100%",
                         }}
                     />
-                </div>
+                </button>
 
-                <div
+                <button
                     style={{
                         position: "absolute",
-                        width: "5vh",
-                        height: "5vh",
-                        bottom: "2.5vh",
+                        width: "5vw",
+                        height: "5vw",
+                        bottom: "1.5vw",
                         zIndex: 2,
+                        backgroundColor: "rgba(0,0,0,0)",
+                        border: "none",
                     }}
                     ref={ref}
                     onClick={() => scroll(props.arrows[1][1])}
+                    onKeyDown={(e) => {
+                        if (e.key === "Spacebar" || e.key === "Enter") {
+                            scroll(props.arrows[1][1]);
+                        }
+                    }}
                 >
                     <Arrow
                         up={false}
@@ -123,7 +149,7 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                             height: "100%",
                         }}
                     />
-                </div>
+                </button>
             </>
         )
     }
@@ -134,9 +160,14 @@ const Arrow = (props) => {
     const offWhite = "#f4f4f9";
 
     return (
-        <div className="cDiv">
+        <div className="cDiv"
+            style={{
+                width: "100%",
+                height: "100%",
+            }}>
             <svg
                 width="100%"
+                height="100%"
                 viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg"
                 className={props.up ? 'cSvgUp' : 'cSvgDown'}

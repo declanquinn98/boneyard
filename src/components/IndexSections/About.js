@@ -5,7 +5,6 @@ import { ParallaxLayer } from '@react-spring/parallax';
 import { Fade } from 'react-slideshow-image';
 
 import 'react-slideshow-image/dist/styles.css'
-import styles from '../../styles/global.css';
 
 import slide0 from "../../assets/images/AboutSlideshow/0.jpg";
 import slide1 from "../../assets/images/AboutSlideshow/1.jpg";
@@ -129,6 +128,7 @@ export const About = () => {
                             >
                                 <img
                                     src={coffee}
+                                    alt={"Quality Coffee"}
                                     style={{
                                         width: "3vw",
                                         height: "3vw",
@@ -165,6 +165,7 @@ export const About = () => {
                             >
                                 <img
                                     src={sustainability}
+                                    alt={"Sustainability"}
                                     style={{
                                         width: "3vw",
                                         height: "3vw",
@@ -201,6 +202,7 @@ export const About = () => {
                             >
                                 <img
                                     src={community}
+                                    alt={"Community"}
                                     style={{
                                         width: "3vw",
                                         height: "3vw",
@@ -230,7 +232,7 @@ export const About = () => {
                         </div>
                         <div
                             style={{
-                                height:"6vw"
+                                height: "6vw"
                             }}
                         />
                     </div>
@@ -258,6 +260,7 @@ export const About = () => {
                             }}
                         >
                             <div
+                                role={"none"}
                                 style={{
                                     width: "26vw",
                                     height: "26vw",
@@ -323,6 +326,7 @@ const Slideshow = (props) => {
                     <div className="image-container" style={{ width: "100%", height: "100%" }}>
                         <img
                             src={slide3}
+                            alt={"Slide 1"}
                             style={{
                                 width: "100%",
                                 height: "100%",
@@ -336,6 +340,7 @@ const Slideshow = (props) => {
                     <div className="image-container" style={{ width: "100%", height: "100%" }}>
                         <img
                             src={slide0}
+                            alt={"Slide 2"}
                             style={{
                                 width: "100%",
                                 height: "100%",
@@ -348,6 +353,7 @@ const Slideshow = (props) => {
                     <div className="image-container" style={{ width: "100%", height: "100%" }}>
                         <img
                             src={slide1}
+                            alt={"Slide 3"}
                             style={{
                                 width: "100%",
                                 height: "100%",
@@ -360,6 +366,7 @@ const Slideshow = (props) => {
                     <div className="image-container" style={{ width: "100%", height: "100%" }}>
                         <img
                             src={slide2}
+                            alt={"Slide 4"}
                             style={{
                                 width: "100%",
                                 height: "100%",

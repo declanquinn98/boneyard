@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useRef, useEffect, useState } from "react";
-import { config } from 'react-spring';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { isDesktop, isMobileOnly, isTablet } from "react-device-detect";
 
@@ -8,19 +7,18 @@ import { CremaTitle } from "../components/CremaTitle.js";
 import { ScrollArrows } from "../components/ScrollArrows.js";
 import { NavMenu } from "../components/NavMenu.js";
 import { About } from "../components/IndexSections/About.js";
-import { Food, Menu } from "../components/IndexSections/Food.js";
+import { Food } from "../components/IndexSections/Food.js";
 import { Drinks } from "../components/IndexSections/Drinks.js";
 import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
 import { BackgroundText } from "../components/BackgroundText.js";
 
-import styles from '../styles/global.css';
 import landingBG from "../assets/images/backgrounds/espressoBlack.jpg";
 import cookiesBG from "../assets/images/backgrounds/cookies.jpg";
 import keepcupBG from "../assets/images/backgrounds/keepcup.jpg";
 import outsideBG from "../assets/images/backgrounds/outside.jpg";
 
-const offBlack = "#1f1d1e";
+//const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 const green = "#5d9835";
 const orange = "#f2a541";
@@ -72,6 +70,9 @@ const Index = () => {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         backgroundImage: 'url(' + landingBG + ')',
+                        position:"absolute",
+                        top:0,
+                        left:0
                     }}
                 >
 

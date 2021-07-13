@@ -1,22 +1,27 @@
 import * as THREE from 'three';
 import * as React from "react";
-import { useEffect, useRef, useState } from 'react';
-import { useSpring, animated, config } from "@react-spring/web";
+import { useEffect } from 'react';
 import stereofidelic from '../fonts/Stereofidelic.json';
 import felix from '../fonts/Felix Titling.json';
 
-import styles from '../styles/global.css';
-
 export const CremaTitle = (props) => {
 
-    const ref = useRef(null);
-    const [xys, set] = useState([0, 0, 1]);
-
     useEffect(() => {
-        console.log(props.device + "D")
-        if (props.device === "desktop")
-            Preload();
-    }, []);
+        console.log("device " + props.device)
+        if (props.device === "desktop") {
+
+            let manager = new THREE.LoadingManager();
+            manager.onLoad = function () {
+                new Environment(typo, font2, particle);
+            }
+
+            const loader = new THREE.FontLoader(manager);
+            const typo = loader.parse(stereofidelic);
+            const font2 = loader.parse(felix);
+            const particle = new THREE.TextureLoader(manager).load('https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png');
+
+        }
+    }, [props.device]);
 
     if (props.device === "desktop") {
         return (
@@ -94,18 +99,6 @@ export const CremaTitle = (props) => {
         )
     }
 
-}
-
-const Preload = () => {
-    let manager = new THREE.LoadingManager();
-    manager.onLoad = function () {
-        new Environment(typo, font2, particle);
-    }
-
-    const loader = new THREE.FontLoader(manager);
-    const typo = loader.parse(stereofidelic);
-    const font2 = loader.parse(felix);
-    const particle = new THREE.TextureLoader(manager).load('https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png');
 }
 
 class Environment {

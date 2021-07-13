@@ -1,9 +1,5 @@
 import * as React from "react";
-import { useRef, useEffect, useState } from "react";
-import { config } from 'react-spring';
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
-
-import styles from '../../styles/global.css';
+import { ParallaxLayer } from '@react-spring/parallax';
 
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
@@ -87,7 +83,7 @@ export const Sustain = () => {
 
                     </div>
 
-                            
+
 
 
 
