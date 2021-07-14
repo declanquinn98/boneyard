@@ -46,47 +46,37 @@ body {
     box-shadow: 0px 30px 100px -5px rgba(0, 0, 0, 0.75);
 }
 @font-face {
-    font-family: 'IndieFlower';
-    src: local('IndieFlower'), url(../fonts/indie-flower-v12-latin-regular.ttf) format('truetype');
-    font-display: swap;
-}
-@font-face {
     font-family: 'Oswald';
-    src: local('Oswald'), url(../fonts/oswald-v36-latin-regular.ttf) format('truetype');
+    src: local('Oswald'), url(/src/fonts/oswald-v36-latin-regular.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Bebas';
-    src: local('Bebas'), url(../fonts/bebas-neue-v2-latin-regular.ttf) format('truetype');
+    src: local('Bebas'), url(/src/fonts/bebas-neue-v2-latin-regular.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Playfair';
-    src: local('Bebas'), url(../fonts/playfair-display-v22-latin-regular.ttf) format('truetype');
-    font-display: swap;
-}
-@font-face {
-    font-family: 'PlayfairItalic';
-    src: local('Bebas'), url(../fonts/playfair-display-v22-latin-italic.ttf) format('truetype');
+    src: local('Bebas'), url(/src/fonts/playfair-display-v22-latin-regular.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Stereofidelic';
-    src: local('Stereofidelic'), url(../fonts/Stereofidelic.ttf) format('truetype');
+    src: local('Stereofidelic'), url(/src/fonts/Stereofidelic.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Felix';
-    src: local('Felix'), url(../fonts/Felixti.ttf) format('truetype');
+    src: local('Felix'), url(/src/fonts/Felixti.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Facebook';
-    src: local('Facebook'), url(../fonts/facebook.otf) format('opentype');
+    src: local('Facebook'), url(/src/fonts/facebook.otf) format('opentype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Instagram';
-    src: local('Instagram'), url(../fonts/instagram.otf) format('opentype');
+    src: local('Instagram'), url(/src/fonts/instagram.otf) format('opentype');
     font-display: swap;
 }
