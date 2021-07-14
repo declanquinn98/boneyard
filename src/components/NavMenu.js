@@ -7,25 +7,37 @@ export const NavMenu = React.forwardRef((props, ref) => {
     const scroll = (page) => {
         ref.current.scrollTo(page)
     }
+    const [textSize, setTextSize] = React.useState("1.25vw");
+    const [textSpace, setTextSpace] = React.useState("50%");
+
+    React.useEffect(() => {
+
+        if (props.device === "mobile") {
+            setTextSize("4.5vw");
+            setTextSpace("100%");
+        }
+        else if (props.device === "tablet") {
+            setTextSize("4vw");
+            setTextSpace("100%");
+        }
+
+    }, [props.device]);
 
     return (
         <div
             style={{
-                position: "absolute",
                 top: 0,
                 left: 0,
                 width: "100%",
                 display: "flex",
+                position: "absolute",
                 justifyContent: "center",
-                color: offWhite,
-                fontSize: "2vh",
-                fontFamily: "playfair",
                 background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0) 75%)"
             }}
         >
             <div
                 style={{
-                    width: "50%",
+                    width: textSpace,
                     display: "flex",
                     justifyContent: "space-evenly",
                     marginTop: "2.5vh",
@@ -45,7 +57,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     style={{
                         border: "none",
                         cursor: "pointer",
-                        fontSize: "1.25vw",
+                        fontSize: textSize,
                         fontFamily: "playfair",
                         backgroundColor: "rgba(0,0,0,0)",
                         color: offWhite
@@ -65,7 +77,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     style={{
                         border: "none",
                         cursor: "pointer",
-                        fontSize: "1.25vw",
+                        fontSize: textSize,
                         fontFamily: "playfair",
                         backgroundColor: "rgba(0,0,0,0)",
                         color: offWhite
@@ -85,7 +97,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     style={{
                         border: "none",
                         cursor: "pointer",
-                        fontSize: "1.25vw",
+                        fontSize: textSize,
                         fontFamily: "playfair",
                         backgroundColor: "rgba(0,0,0,0)",
                         color: offWhite
@@ -105,7 +117,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     style={{
                         border: "none",
                         cursor: "pointer",
-                        fontSize: "1.25vw",
+                        fontSize: textSize,
                         fontFamily: "playfair",
                         backgroundColor: "rgba(0,0,0,0)",
                         color: offWhite
@@ -125,7 +137,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     style={{
                         border: "none",
                         cursor: "pointer",
-                        fontSize: "1.25vw",
+                        fontSize: textSize,
                         fontFamily: "playfair",
                         backgroundColor: "rgba(0,0,0,0)",
                         color: offWhite

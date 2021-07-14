@@ -30,10 +30,11 @@ const red = "#db4451"; //3b0d11
 const Index = () => {
 
     const parallax = useRef(null);
-    const [deviceType, setDeviceType] = useState(null);
     const [height, setHeight] = useState(0);
+    const [deviceType, setDeviceType] = useState(null);
 
     useEffect(() => {
+
         if (isDesktop) {
             setDeviceType("desktop");
         }
@@ -44,9 +45,8 @@ const Index = () => {
             setDeviceType("mobile");
         }
         else {
-            setDeviceType("other");
+            setDeviceType("desktop");
         }
-
         setHeight(window.innerHeight);
 
     }, []);
@@ -79,26 +79,40 @@ const Index = () => {
                 }}
             >
                 <ParallaxLayer offset={0}>
+
                     <div
                         style={{
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            position: "absolute",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            backgroundImage: 'url(' + landingBG + ')',
+                        }}
+                    />
+
+                    <div
+                        style={{
+                            top: 0,
+                            left: 0,
                             width: "100%",
                             height: "100%",
                             display: "flex",
                             justifyContent: "center",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundImage: 'url(' + landingBG + ')',
                             position: "absolute",
-                            top: 0,
-                            left: 0
                         }}
                     >
-
                         <CremaTitle device={deviceType} />
-                        <ScrollArrows ref={parallax} arrows={[["down", 1]]} />
-                        <NavMenu ref={parallax} />
+                        <ScrollArrows device={deviceType} ref={parallax} arrows={[["down", 1]]} />
+                        <NavMenu device={deviceType} ref={parallax} />
 
                     </div>
+
+
+
+
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -108,8 +122,8 @@ const Index = () => {
                         justifyContent: 'center'
                     }}
                 >
-                    <About height={height} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 0], ["down", 2.5]]} />
+                    <About device={deviceType} height={height} />
+                    <ScrollArrows device={deviceType} ref={parallax} arrows={[["up", 0], ["down", 2.5]]} />
 
                 </ParallaxLayer>
 
@@ -143,9 +157,9 @@ const Index = () => {
                     }}
                 >
 
-                    <Drinks />
+                    <Drinks device={deviceType} />
                     <BackgroundText text="DRINKS" color={orange} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 1], ["down", 4]]} />
+                    <ScrollArrows device={deviceType} ref={parallax} arrows={[["up", 1], ["down", 4]]} />
 
                 </ParallaxLayer>
 
@@ -177,9 +191,9 @@ const Index = () => {
                         justifyContent: 'center'
                     }}
                 >
-                    <Food height={height} />
+                    <Food height={height} device={deviceType} />
                     <BackgroundText text="FOOD" color={red} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 2.5], ["down", 5.5]]} />
+                    <ScrollArrows device={deviceType} ref={parallax} arrows={[["up", 2.5], ["down", 5.5]]} />
 
                 </ParallaxLayer>
 
@@ -212,9 +226,9 @@ const Index = () => {
                         justifyContent: 'center'
                     }}
                 >
-                    <Sustain />
+                    <Sustain device={deviceType} />
                     <BackgroundText text="SUSTAINABILITY" color={green} sus={true} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 4], ["down", 7]]} />
+                    <ScrollArrows device={deviceType} ref={parallax} arrows={[["up", 4], ["down", 7]]} />
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -246,9 +260,9 @@ const Index = () => {
                         justifyContent: 'center'
                     }}
                 >
-                    <Contact height={height} />
+                    <Contact device={deviceType} height={height} />
                     <BackgroundText text="Contact" color={offWhite} size={"20vw"} />
-                    <ScrollArrows ref={parallax} arrows={[["up", 5.5]]} />
+                    <ScrollArrows device={deviceType} ref={parallax} arrows={[["up", 5.5]]} />
                 </ParallaxLayer>
 
             </Parallax>

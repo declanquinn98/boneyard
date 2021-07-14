@@ -1,34 +1,23 @@
 import * as React from "react";
 import '../styles/arrow.scss';
 
-const UpArrow = () => {
-    return (
-        <path d="   M 16 24 
-                    v   -16
-                    L 22 16
-                    M 16 8
-                    L 10 16
-                    "
-        />
-    )
-}
-const DownArrow = () => {
-    return (
-        <path d="   M 16 8 
-                    v    16
-                    L 22 16
-                    M 16 24
-                    L 10 16
-                    "
-        />
-    )
-}
-
 export const ScrollArrows = React.forwardRef((props, ref) => {
 
     const scroll = (page) => {
         ref.current.scrollTo(page)
     }
+
+    const [size, setSize] = React.useState("5vw");
+
+    React.useEffect(() => {
+        console.log(props.device)
+        if (props.device === "mobile")
+            setSize("15vw");
+        else if (props.device === "tablet")
+            setSize("10vw")
+
+    }, [props.device]);
+
 
     if (props.arrows.length === 1) {
         if (props.arrows[0][0] === "up") {
@@ -36,8 +25,8 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                 <button
                     style={{
                         position: "absolute",
-                        width: "5vw",
-                        height: "5vw",
+                        width: size,
+                        height: size,
                         top: "1.5vw",
                         zIndex: 2,
                         backgroundColor: "rgba(0,0,0,0)",
@@ -68,8 +57,8 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                 <button
                     style={{
                         position: "absolute",
-                        width: "5vw",
-                        height: "5vw",
+                        width: size,
+                        height: size,
                         bottom: "1.5vw",
                         zIndex: 2,
                         backgroundColor: "rgba(0,0,0,0)",
@@ -102,8 +91,8 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                 <button
                     style={{
                         position: "absolute",
-                        width: "5vw",
-                        height: "5vw",
+                        width: size,
+                        height: size,
                         top: "1.5vw",
                         zIndex: 2,
                         backgroundColor: "rgba(0,0,0,0)",
@@ -130,8 +119,8 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
                 <button
                     style={{
                         position: "absolute",
-                        width: "5vw",
-                        height: "5vw",
+                        width: size,
+                        height: size,
                         bottom: "1.5vw",
                         zIndex: 2,
                         backgroundColor: "rgba(0,0,0,0)",
@@ -215,5 +204,27 @@ const Arrow = (props) => {
                 </g>
             </svg>
         </div>
+    )
+}
+const UpArrow = () => {
+    return (
+        <path d="   M 16 24 
+                    v   -16
+                    L 22 16
+                    M 16 8
+                    L 10 16
+                    "
+        />
+    )
+}
+const DownArrow = () => {
+    return (
+        <path d="   M 16 8 
+                    v    16
+                    L 22 16
+                    M 16 24
+                    L 10 16
+                    "
+        />
     )
 }

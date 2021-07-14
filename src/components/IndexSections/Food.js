@@ -12,273 +12,550 @@ const offWhite = "#f4f4f9";
 
 export const Food = (props) => {
 
+    const columnSpace = "17.5vw";
+    const [fontSize, setFontSize] = React.useState("1.25vw");
+
+    React.useEffect(() => {
+
+        if (props.device === "mobile") {
+            setFontSize("3.5vw");
+        }
+        else if (props.device === "tablet") {
+            setFontSize("3vw");
+        }
+
+    }, [props.device]);
+
     const imageHeightLoad = props.height * 3.5;
 
-    return (
-        <div
-            style={{
-                width: "100%",
-                height: "100%",
-                color: offWhite,
-                backgroundColor: offBlack,
-                textShadow: "0px 0px 25px rgba(0,0,0,1)"
-            }}
-        >
-            <ParallaxLayer
-                offset={0.72}
-                speed={0.18}
+
+    if (props.device === "desktop") {
+        return (
+            <div
                 style={{
-                    zIndex: 1,
-                    display: "flex",
-                    justifyContent: "center",
+                    width: "100%",
+                    height: "100%",
+                    color: offWhite,
+                    backgroundColor: offBlack,
+                    textShadow: "0px 0px 25px rgba(0,0,0,1)"
                 }}
             >
-                <div
+                <ParallaxLayer
+                    offset={0.72}
+                    speed={0.18}
                     style={{
                         zIndex: 1,
-                        width: "90%",
-                        height: "100%",
-                        fontSize: "1.25vw",
-                        alignSelf: "center",
-                        pointerEvents: "auto"
+                        display: "flex",
+                        justifyContent: "center",
                     }}
                 >
                     <div
                         style={{
-                            height: "50%",
-                            display: "flex",
-                            justifyContent: "space-evenly",
-                            pointerEvents: "auto"
+                            zIndex: 1,
+                            width: "90%",
+                            height: "100%",
+                            fontSize: fontSize,
+                            alignSelf: "center",
+                            pointerEvents: "auto",
                         }}
                     >
-
                         <div
                             style={{
-                                width: "17.5%",
+                                height: "50%",
                                 display: "flex",
-                                flexDirection: "column-reverse",
-                                pointerEvents: "auto"
+                                justifyContent: "space-evenly",
+                                pointerEvents: "auto",
                             }}
                         >
+
                             <div
                                 style={{
-                                    width: "100%",
-                                    aspectRatio: "1/1",
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column-reverse",
+                                    pointerEvents: "auto",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        width: "100%",
+                                        aspectRatio: "1/1",
+                                        pointerEvents: "auto",
+                                    }}
+                                >
+                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={bread}
+                                            alt="Brasserie Bread"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "cover",
+                                                pointerEvents: "auto",
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+
+                            <div style={{ width: columnSpace }} />
+
+                            <div
+                                style={{
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column-reverse",
                                     pointerEvents: "auto"
                                 }}
                             >
-                                <LazyLoad offset={imageHeightLoad} debounce={false}>
-                                    <img
-                                        src={bread}
-                                        alt="Brasserie Bread"
-                                        style={{
-                                            width: "100%",
-                                            height: "100%",
-                                            objectFit: "cover",
-                                            pointerEvents: "auto"
-                                        }}
-                                    />
-                                </LazyLoad>
+                                <div
+                                    style={{
+                                        width: "100%",
+                                        aspectRatio: "1/1",
+                                        pointerEvents: "auto"
+                                    }}
+                                >
+                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={doughnut}
+                                            alt="Doughluxe"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "cover",
+                                                pointerEvents: "auto"
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
                             </div>
+                            <div style={{ width: columnSpace }} />
                         </div>
-
-                        <div style={{ width: "17.5%" }} />
 
                         <div
                             style={{
-                                width: "17.5%",
+                                height: "50%",
                                 display: "flex",
-                                flexDirection: "column-reverse",
+                                justifyContent: "space-evenly",
                                 pointerEvents: "auto"
                             }}
                         >
+
                             <div
                                 style={{
-                                    width: "100%",
-                                    aspectRatio: "1/1",
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column",
                                     pointerEvents: "auto"
                                 }}
                             >
-                                <LazyLoad offset={imageHeightLoad} debounce={false}>
-                                    <img
-                                        src={doughnut}
-                                        alt="Doughluxe"
-                                        style={{
-                                            width: "100%",
-                                            height: "100%",
-                                            objectFit: "cover",
-                                            pointerEvents: "auto"
-                                        }}
-                                    />
-                                </LazyLoad>
+                                <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
                             </div>
+                            <div style={{ width: columnSpace }} />
+                            <div
+                                style={{
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    pointerEvents: "auto"
+                                }}
+                            >
+                                <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
+                            </div>
+                            <div style={{ width: columnSpace }} />
                         </div>
-                        <div style={{ width: "17.5%" }} />
                     </div>
+                </ParallaxLayer>
 
-                    <div
-                        style={{
-                            height: "50%",
-                            display: "flex",
-                            justifyContent: "space-evenly",
-                            pointerEvents: "auto"
-                        }}
-                    >
-
-                        <div
-                            style={{
-                                width: "17.5%",
-                                display: "flex",
-                                flexDirection: "column",
-                                pointerEvents: "auto"
-                            }}
-                        >
-                            <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
-                        </div>
-                        <div style={{ width: "17.5%" }} />
-                        <div
-                            style={{
-                                width: "17.5%",
-                                display: "flex",
-                                flexDirection: "column",
-                                pointerEvents: "auto"
-                            }}
-                        >
-                            <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
-                        </div>
-                        <div style={{ width: "17.5%" }} />
-                    </div>
-                </div>
-            </ParallaxLayer>
-
-            <ParallaxLayer
-                offset={-0.9}
-                speed={-0.18}
-                style={{
-                    zIndex: 1,
-                    display: "flex",
-                    justifyContent: "center",
-                    pointerEvents: "none"
-                }}
-            >
-                <div
+                <ParallaxLayer
+                    offset={-0.9}
+                    speed={-0.18}
                     style={{
                         zIndex: 1,
-                        width: "90%",
-                        height: "100%",
-                        fontSize: "1.25vw",
-                        alignSelf: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        pointerEvents: "none"
                     }}
                 >
-
                     <div
                         style={{
-                            height: "50%",
-                            display: "flex",
-                            justifyContent: "space-evenly",
+                            zIndex: 1,
+                            width: "90%",
+                            height: "100%",
+                            fontSize: fontSize,
+                            alignSelf: "center",
                         }}
                     >
 
-                        <div style={{ width: "17.5%", pointerEvents: "none" }} />
-
                         <div
                             style={{
-                                width: "17.5%",
+                                height: "50%",
                                 display: "flex",
-                                flexDirection: "column-reverse",
-                                pointerEvents: "auto"
-                            }}
-                        > <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
-                        </div>
-
-                        <div style={{ width: "17.5%", pointerEvents: "none" }} />
-
-                        <div
-                            style={{
-                                width: "17.5%",
-                                display: "flex",
-                                flexDirection: "column-reverse",
-                                pointerEvents: "auto"
+                                justifyContent: "space-evenly",
                             }}
                         >
-                            <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
+
+                            <div style={{ width: columnSpace, pointerEvents: "none" }} />
+
+                            <div
+                                style={{
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column-reverse",
+                                    pointerEvents: "auto"
+                                }}
+                            > <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
+                            </div>
+
+                            <div style={{ width: columnSpace, pointerEvents: "none" }} />
+
+                            <div
+                                style={{
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column-reverse",
+                                    pointerEvents: "auto"
+                                }}
+                            >
+                                <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div
-                        style={{
-                            height: "50%",
-                            display: "flex",
-                            justifyContent: "space-evenly",
-                        }}
-                    >
-
-                        <div style={{ width: "17.5%", pointerEvents: "none" }} />
 
                         <div
                             style={{
-                                width: "17.5%",
+                                height: "50%",
                                 display: "flex",
-                                flexDirection: "column",
+                                justifyContent: "space-evenly",
+                            }}
+                        >
+
+                            <div style={{ width: columnSpace, pointerEvents: "none" }} />
+
+                            <div
+                                style={{
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        width: "100%",
+                                        aspectRatio: "1/1"
+                                    }}
+                                >
+                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={cookies}
+                                            alt="Cakes By Jordyn"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "cover",
+                                                pointerEvents: "auto"
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+
+                            <div style={{ width: columnSpace, pointerEvents: "none", }} />
+
+                            <div
+                                style={{
+                                    width: columnSpace,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        width: "100%",
+                                        aspectRatio: "1/1"
+                                    }}
+                                >
+                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={cube}
+                                            alt="MMMORE Raw Treats"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "cover",
+                                                pointerEvents: "auto"
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </ParallaxLayer>
+            </div >
+        )
+    }
+    else if (props.device === "mobile" || props.device === "tablet") {
+        return (
+            <div
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    color: offWhite,
+                    backgroundColor: offBlack,
+                    textShadow: "0px 0px 25px rgba(0,0,0,1)"
+                }}
+            >
+                <ParallaxLayer
+                    offset={0.72}
+                    speed={0.18}
+                    style={{
+                        zIndex: 1,
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <div
+                        style={{
+                            zIndex: 1,
+                            width: "90%",
+                            height: "84%",
+                            fontSize: fontSize,
+                            alignSelf: "center",
+                            display: "flex",
+                            flexDirection: 'column',
+                            justifyContent: "space-evenly",
+
+                        }}
+                    >
+                        <div
+                            style={{
+                                display: "flex",
+                                alignSelf: "center",
+                                width: "100%",
+                                height: "20%",
                             }}
                         >
                             <div
                                 style={{
-                                    width: "100%",
-                                    aspectRatio: "1/1"
+                                    display: "flex",
+                                    flexDirection: "row-reverse",
+                                    width: "50%",
+                                    height: "100%",
                                 }}
                             >
-                                <LazyLoad offset={imageHeightLoad} debounce={false}>
-                                    <img
-                                        src={cookies}
-                                        alt="Cakes By Jordyn"
-                                        style={{
-                                            width: "100%",
-                                            height: "100%",
-                                            objectFit: "cover",
-                                            pointerEvents: "auto"
-                                        }}
-                                    />
-                                </LazyLoad>
+                                <div
+                                    style={{
+                                        height: "100%",
+                                        aspectRatio: "1/1",
+                                        marginRight:"5vw"
+                                    }}
+                                >
+                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={bread}
+                                            alt="Brasserie Bread"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+                            <div
+                                style={{
+                                    width: "50%",
+                                    height: "100%",
+                                    display:"flex"
+                                }}
+                            >
+                                <p
+                                    style={{
+                                        marginTop: 0,
+                                        marginBottom: 0,
+                                        alignSelf:"center"
+                                    }}
+                                >
+                                    On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.
+                                </p>
                             </div>
                         </div>
 
-                        <div style={{ width: "17.5%", pointerEvents: "none", }} />
-
                         <div
                             style={{
-                                width: "17.5%",
                                 display: "flex",
-                                flexDirection: "column",
+                                alignSelf: "center",
+                                width: "100%",
+                                height: "20%",
                             }}
                         >
                             <div
                                 style={{
-                                    width: "100%",
-                                    aspectRatio: "1/1"
+                                    width: "50%",
+                                    height: "100%",
+                                    display:"flex"
                                 }}
                             >
-                                <LazyLoad offset={imageHeightLoad} debounce={false}>
-                                    <img
-                                        src={cube}
-                                        alt="MMMORE Raw Treats"
-                                        style={{
-                                            width: "100%",
-                                            height: "100%",
-                                            objectFit: "cover",
-                                            pointerEvents: "auto"
-                                        }}
-                                    />
-                                </LazyLoad>
+                                <p
+                                    style={{
+                                        marginTop: 0,
+                                        marginBottom: 0,
+                                        textAlign: "right",
+                                        alignSelf:"center"
+                                    }}
+                                > Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />.</p>
+                            </div>
+                            <div
+                                style={{
+                                    width: "50%",
+                                    height: "100%",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        height: "100%",
+                                        aspectRatio: "1/1",
+                                        alignSelf: "center",
+                                        marginLeft:"5vw"
+                                    }}
+                                >
+                                    <LazyLoad style={{ width: "100%", height: "100%" }} offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={cookies}
+                                            alt="Cakes By Jordyn"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            style={{
+                                display: "flex",
+                                alignSelf: "center",
+                                width: "100%",
+                                height: "20%",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection:"row-reverse",
+                                    width: "50%",
+                                    height: "100%",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        height: "100%",
+                                        aspectRatio: "1/1",
+                                        alignSelf: "center",
+                                        marginRight:"5vw"
+                                    }}
+                                >
+                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={doughnut}
+                                            alt="Doughluxe"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+                            <div
+                                style={{
+                                    width: "50%",
+                                    height: "100%",
+                                    display:"flex"
+                                }}
+                            >
+                                <p
+                                    style={{
+                                        marginTop: 0,
+                                        marginBottom: 0,
+                                        alignSelf:"center"
+                                    }}
+                                >
+                                    If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />.</p>
+
                             </div>
                         </div>
-                    </div>
 
-                </div>
-            </ParallaxLayer>
-        </div >
-    )
+                        <div
+                            style={{
+                                display: "flex",
+                                alignSelf: "center",
+                                width: "100%",
+                                height: "20%",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display:"flex",
+                                    width: "50%",
+                                    height: "100%",
+                                }}
+                            >
+                                <p
+                                    style={{
+                                        marginTop: 0,
+                                        marginBottom: 0,
+                                        textAlign: "right",
+                                        alignSelf:'center',
+                                    }}
+                                > 
+                                Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan.</p></div>
+                            <div
+                                style={{
+                                    width: "50%",
+                                    height: "100%",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        height: "100%",
+                                        aspectRatio: "1/1",
+                                        alignSelf: "center",
+                                        marginLeft:"5vw"
+                                    }}
+                                >
+                                    <LazyLoad style={{ width: "100%", height: "100%" }} offset={imageHeightLoad} debounce={false}>
+                                        <img
+                                            src={cube}
+                                            alt="MMMORE Raw Treats"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                            }}
+                                        />
+                                    </LazyLoad>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </ParallaxLayer>
+            </div >
+        )
+    }
 }
+
+
+
 
 const Link = (props) => {
 

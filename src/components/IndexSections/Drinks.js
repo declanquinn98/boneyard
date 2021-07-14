@@ -1,10 +1,33 @@
 import * as React from "react";
+import { useState } from "react";
 import { ParallaxLayer } from '@react-spring/parallax';
 
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 
-export const Drinks = () => {
+export const Drinks = (props) => {
+
+    const [t1Size, setT1Size] = useState("2.5vw");
+    const [t2Size, setT2Size] = useState("1.5vw");
+    const [pSize, setPSize] = useState("1.25vw");
+    const [columnSpace, setColumnSpace] = useState("75%");
+
+    React.useEffect(() => {
+
+        if (props.device === "mobile") {
+            setT1Size("6.25vw");
+            setT2Size("4.25vw");
+            setPSize("3.25vw");
+            setColumnSpace("95%")
+        }
+        else if (props.device === "tablet") {
+            setT1Size("5vw");
+            setT2Size("3vw");
+            setPSize("2.5vw");
+            setColumnSpace("95%")
+        }
+
+    }, [props.device]);
 
 
     return (
@@ -16,7 +39,8 @@ export const Drinks = () => {
                 justifyContent: "center",
                 textShadow: "0px 0px 25px rgba(0,0,0,1)",
                 color: offWhite,
-                backgroundColor: offBlack
+                backgroundColor: offBlack,
+                fontSize: t2Size
             }}
         >
             <ParallaxLayer
@@ -26,13 +50,13 @@ export const Drinks = () => {
                     display: "flex",
                     height: "100%",
                     justifyContent: "center",
-                    zIndex: 1
+                    zIndex: 1,
                 }}
             >
                 <div
                     style={{
                         zIndex: 1,
-                        width: "80%",
+                        width: columnSpace,
                         height: "70%",
                         display: "flex",
                         alignSelf: "center",
@@ -44,7 +68,7 @@ export const Drinks = () => {
                             width: "100%",
                             display: "flex",
                             alignSelf: "center",
-                            justifyContent: "space-around",
+                            justifyContent: "space-between",
                         }}
                     >
 
@@ -60,7 +84,7 @@ export const Drinks = () => {
                                 style={{
                                     fontFamily: "Oswald",
                                     textAlign: "center",
-                                    fontSize: "2.5vw",
+                                    fontSize: t1Size,
                                     marginTop: 0,
                                     marginBottom: 0
                                 }}
@@ -70,7 +94,7 @@ export const Drinks = () => {
 
                             <p
                                 style={{
-                                    fontSize: "1.25vw",
+                                    fontSize: pSize,
                                     marginLeft: "12.5%"
                                 }}
                             >
@@ -93,7 +117,6 @@ export const Drinks = () => {
                                 style={{
                                     display: "flex",
                                     justifyContent: "space-evenly",
-                                    fontSize: "1.5vw",
                                     fontFamily: "Bebas",
                                 }}
                             >
@@ -114,7 +137,7 @@ export const Drinks = () => {
                                 style={{
                                     fontFamily: "Oswald",
                                     textAlign: "center",
-                                    fontSize: "2.5vw",
+                                    fontSize: t1Size,
                                     marginTop: 0,
                                     marginBottom: 0
                                 }}
@@ -124,7 +147,7 @@ export const Drinks = () => {
 
                             <p
                                 style={{
-                                    fontSize: "1.25vw",
+                                    fontSize: pSize,
                                     marginLeft: "12.5%"
                                 }}
                             >
@@ -147,7 +170,6 @@ export const Drinks = () => {
                                 style={{
                                     display: "flex",
                                     justifyContent: "space-evenly",
-                                    fontSize: "1.5vw",
                                     fontFamily: "Bebas",
                                 }}
                             >
@@ -158,7 +180,6 @@ export const Drinks = () => {
 
                             <p
                                 style={{
-                                    fontSize: "1.5vw",
                                     fontFamily: "Bebas",
                                     textAlign: "center",
                                     marginTop: 0
@@ -169,7 +190,6 @@ export const Drinks = () => {
 
                             <p
                                 style={{
-                                    fontSize: "1.5vw",
                                     fontFamily: "Bebas",
                                     textAlign: "center",
                                 }}
@@ -191,7 +211,7 @@ export const Drinks = () => {
                                 style={{
                                     fontFamily: "Oswald",
                                     textAlign: "center",
-                                    fontSize: "2.5vw",
+                                    fontSize: t1Size,
                                     marginTop: 0,
                                     marginBottom: "0.35vw"
                                 }}
@@ -201,7 +221,7 @@ export const Drinks = () => {
 
                             <p
                                 style={{
-                                    fontSize: "1.25vw",
+                                    fontSize: pSize,
                                     marginLeft: "12.5%"
                                 }}
                             >
@@ -228,7 +248,6 @@ export const Drinks = () => {
                                 marginTop: 0,
                                 display: "flex",
                                 justifyContent: "space-evenly",
-                                fontSize: "1.5vw",
                                 fontFamily: "Bebas",
                             }}
                             >
@@ -237,7 +256,7 @@ export const Drinks = () => {
 
                             <p
                                 style={{
-                                    fontSize: "1.25vw",
+                                    fontSize: pSize,
                                     marginLeft: "12.5%",
                                     marginTop: 0
                                 }}
@@ -250,7 +269,6 @@ export const Drinks = () => {
                                     marginTop: 0,
                                     display: "flex",
                                     justifyContent: "space-evenly",
-                                    fontSize: "1.5vw",
                                     fontFamily: "Bebas",
                                 }}
                             >

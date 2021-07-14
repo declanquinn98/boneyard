@@ -7,7 +7,6 @@ import felix from '../fonts/Felix Titling.json';
 export const CremaTitle = (props) => {
 
     useEffect(() => {
-        console.log("device " + props.device)
         if (props.device === "desktop") {
 
             let manager = new THREE.LoadingManager();
@@ -68,9 +67,10 @@ export const CremaTitle = (props) => {
 
                 </div>
             </div >
+
         )
     }
-    else {
+    else if (props.device === "mobile" || props.device === "tablet") {
         return (
             <div>
                 <div
@@ -82,7 +82,7 @@ export const CremaTitle = (props) => {
                         justifyContent: "center",
                         flexDirection: "column",
                         color: "white",
-                        fontSize: "5vw",
+                        fontSize: "10vw",
                         fontFamily: "Felix",
                         textAlign: "center",
                         zIndex: 0
@@ -90,7 +90,13 @@ export const CremaTitle = (props) => {
                 >
 
                     <h4 style={{ marginBottom: 0 }}>The</h4>
-                    <h4 style={{ fontFamily: "Stereofidelic" }}>BONEYARD</h4>
+                    <h4 style={{
+                        fontFamily: "Stereofidelic",
+                        fontSize: "35vw",
+                        fontWeight:300,
+                        marginTop: 0,
+                        marginBottom: 0
+                    }}>BONE YARD</h4>
                     <h4 style={{ marginTop: 0 }}>Espresso</h4>
                     <div style={{ height: "10%" }} />
 
@@ -98,7 +104,6 @@ export const CremaTitle = (props) => {
             </div>
         )
     }
-
 }
 
 class Environment {
@@ -180,13 +185,13 @@ class CreateParticles {
 
         this.data = {
             text: `BONE YARD`,
-            amount: 1000,
+            amount: 1500,
             //1
-            particleSize: 1.25,
+            particleSize: 1.2,
             particleColor: 0xffffff,
             textSize: 85,
-            area: 5000,
-            ease: .07,
+            area: 10000,
+            ease: .075,
         }
         this.setup();
         this.bindEvents();
