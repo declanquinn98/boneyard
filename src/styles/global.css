@@ -62,7 +62,7 @@ body {
 }
 @font-face {
     font-family: 'Stereofidelic';
-    src: local('Stereofidelic'), url(../src/fonts/Stereofidelic.ttf) format('truetype');
+    src: local('Stereofidelic'), url(../fonts/Stereofidelic.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
