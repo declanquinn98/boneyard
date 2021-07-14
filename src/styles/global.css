@@ -67,16 +67,16 @@ body {
 }
 @font-face {
     font-family: 'Felix';
-    src: local('Felix'), url(../src/fonts/Felixti.ttf) format('truetype');
+    src: local('Felix'), url(../fonts/Felixti.ttf) format('truetype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Facebook';
-    src: local('Facebook'), url(../src/fonts/facebook.otf) format('opentype');
+    src: local('Facebook'), url(../fonts/facebook.otf) format('opentype');
     font-display: swap;
 }
 @font-face {
     font-family: 'Instagram';
-    src: local('Instagram'), url(../src/fonts/instagram.otf) format('opentype');
+    src: local('Instagram'), url(../fonts/instagram.otf) format('opentype');
     font-display: swap;
 }
