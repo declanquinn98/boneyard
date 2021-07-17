@@ -164,7 +164,7 @@ export const Contact = (props) => {
                                     <LazyLoad offset={imageHeightLoad} debounce={false}>
                                         <InstagramFeed
                                             counter="9"
-                                            token={process.env.INSTAGRAM_TOKEN}
+                                            token={process.env.GATSBY_INSTAGRAM_TOKEN}
                                         />
                                     </LazyLoad>
                                 </div>
@@ -320,7 +320,7 @@ export const Contact = (props) => {
                                                     <LazyLoad offset={imageHeightLoad} debounce={false}>
                                                         <InstagramFeed
                                                             counter="9"
-                                                            token={process.env.INSTAGRAM_TOKEN}
+                                                            token={process.env.GATSBY_INSTAGRAM_TOKEN}
                                                         />
                                                     </LazyLoad>
                                                 </div>
@@ -358,7 +358,7 @@ const Map = (props) => {
         <div style={{ height: props.h, width: props.w }}>
 
             <GoogleMap
-                bootstrapURLKeys={{ key: process.env.MAP_TOKEN }}
+                bootstrapURLKeys={{ key: process.env.GATSBY_MAP_TOKEN }}
                 defaultCenter={center}
                 defaultZoom={17}
                 options={{
