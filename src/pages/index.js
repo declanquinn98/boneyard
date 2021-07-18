@@ -85,7 +85,7 @@ const AsyncImage = (props) => {
                         backgroundImage: 'url(' + props.src + ')',
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
-                        backgroundSize: "contain",
+                        backgroundSize: "cover",
                     }}
                 />
             );
@@ -154,7 +154,7 @@ const Index = () => {
                             height: "100%",
                             position: "absolute",
                             zIndex: -2,
-                            backgroundColor:"black"
+                            backgroundColor: "black"
                         }}
                     />
                     <AsyncImage src={foodBG} landing />
@@ -196,7 +196,9 @@ const Index = () => {
                         zIndex: -1
                     }}
                 >
-                    <AsyncImage src={drinksBG} />
+                    <LazyLoad offset={height} debounce={false}>
+                        <AsyncImage src={drinksBG} />
+                    </LazyLoad>
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -221,16 +223,7 @@ const Index = () => {
                     }}
                 >
                     <LazyLoad offset={height} debounce={false}>
-                        <div
-                            style={{
-                                height: "100vh",
-                                width: "100vw",
-                                backgroundImage: 'url(' + foodBG + ')',
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
-                                backgroundSize: "cover",
-                            }}
-                        />
+                        <AsyncImage src={foodBG} />
                     </LazyLoad>
                 </ParallaxLayer>
 
@@ -265,7 +258,6 @@ const Index = () => {
                                 backgroundSize: "cover",
                             }}
                         />
-
                     </LazyLoad>
                 </ParallaxLayer>
 
