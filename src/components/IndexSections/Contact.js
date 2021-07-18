@@ -1,13 +1,17 @@
 import * as React from "react";
 import { ParallaxLayer } from '@react-spring/parallax';
-import GoogleMap from 'google-map-react';
+//import GoogleMapReact from 'google-map-react';
+import GoogleMap from '../../components/googlemap/index.js';
 import { mapStyle } from "../../styles/map.js";
 import InstagramFeed from 'react-ig-feed';
+//import LazyLoad from 'react-lazy-load';
 import LazyLoad from 'react-lazy-load';
 import 'react-ig-feed/dist/index.css';
+import '../../styles/marker.css';
 
 const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
+//const instaURL = "https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url&&access_token=";
 
 export const Contact = (props) => {
 
@@ -151,7 +155,7 @@ export const Contact = (props) => {
                                         aspectRatio: "1/1",
                                     }}
                                 >
-                                    <Map w="100%" h="100%" />
+                                    <Map w="100%" h="100%" loadHeight={props.height} />
                                 </div>
 
 
@@ -298,7 +302,7 @@ export const Contact = (props) => {
                                                     aspectRatio: "1/1",
                                                 }}
                                             >
-                                                <Map w="100%" h="100%" />
+                                                <Map w="100%" h="100%" loadHeight={props.height} />
                                             </div>
                                         )
                                         :
@@ -331,7 +335,7 @@ export const Contact = (props) => {
                                                         aspectRatio: "1/1",
                                                     }}
                                                 >
-                                                    <Map w="100%" h="100%" />
+                                                    <Map w="100%" h="100%" loadHeight={props.height} />
                                                 </div>
                                             </div>
                                         )
@@ -354,32 +358,44 @@ const Map = (props) => {
         lng: 153.115957
     }
 
+    const handleApiLoaded = (map, maps) => {
+        // use map and maps objects
+        console.log("loaded map")
+    };
     return (
         <div style={{ height: props.h, width: props.w }}>
 
-            <GoogleMap
-                bootstrapURLKeys={{ key: process.env.GATSBY_MAP_TOKEN }}
-                defaultCenter={center}
-                defaultZoom={17}
-                options={{
-                    zoomControl: false,
-                    mapTypeControl: false,
-                    streetViewControl: false,
-                    rotateControl: false,
-                    fullscreenControl: false,
-                    styles: mapStyle
-                }}
-            >
-                <Marker lat={center.lat} lng={center.lng} text="The Boneyard Espresso" />
-            </GoogleMap>
+
+                <GoogleMap
+                    bootstrapURLKeys={{ key: process.env.GATSBY_MAP_TOKEN }}
+                    defaultCenter={center}
+                    defaultZoom={17}
+                    yesIWantToUseGoogleMapApiInternals
+                    onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+                    options={{
+                        styles: mapStyle,
+                        zoomControl: false,
+                        rotateControl: false,
+                        mapTypeControl: false,
+                        fullscreenControl: false,
+                        streetViewControl: false,
+                    }}
+                >
+                    <Marker lat={center.lat} lng={center.lng} text="The Boneyard Espresso" />
+                </GoogleMap>
 
         </div>
     );
 }
 
 const Marker = props => {
+
     return <>
-        <div className="pin"></div>
-        <div className="pulse"></div>
+        <LazyLoad debounce={false}>
+            <div className="pin"></div>
+        </LazyLoad>
+        <LazyLoad debounce={false}>
+            <div className="pulse"></div>
+        </LazyLoad>
     </>
 }

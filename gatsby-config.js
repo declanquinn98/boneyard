@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
+    flags: { PRESERVE_WEBPACK_CACHE: true },
     siteMetadata: {
         title: `The Boneyard Espresso`,
         description: `Homepage of The Boneyard Espresso and Collective`,
