@@ -15,8 +15,7 @@ import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
 import { BackgroundText } from "../components/BackgroundText.js";
 
-import landingBG from "../assets/images/backgrounds/espressoBlack.jpg";
-//import landingBG2000 from "../assets/images/backgrounds/espressoBlack.jpf";
+import landingVid from "../assets/images/backgrounds/landing.mp4";
 import foodBG from "../assets/images/backgrounds/food.jpg";
 import sustainBG from "../assets/images/backgrounds/sustain.jpg";
 import contactBG from "../assets/images/backgrounds/contact.jpg";
@@ -28,6 +27,72 @@ const green = "#5d9835";
 const orange = "#f2a541";
 const red = "#db4451"; //3b0d11
 
+const AsyncImage = (props) => {
+
+    const [loadedSrc, setLoadedSrc] = React.useState(null);
+
+    React.useEffect(() => {
+
+        setLoadedSrc(null);
+
+        if (props.src) {
+
+            const handleLoad = () => {
+                setLoadedSrc(props.src);
+            };
+
+            const image = new Image();
+
+            image.addEventListener('load', handleLoad);
+            image.src = props.src;
+
+            return () => {
+                image.removeEventListener('load', handleLoad);
+            };
+
+        }
+    }, [props.src]);
+
+    if (loadedSrc === props.src) {
+
+        if (props.landing) {
+            return (
+                <video
+                    style={{
+                        zIndex: -1,
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        position: "absolute",
+                        objectFit: "cover"
+                    }}
+                    className='videoTag'
+                    autoPlay
+                    loop
+                    muted
+                >
+                    <source src={landingVid} type='video/mp4' />
+                </video>
+            );
+        }
+        else {
+            return (
+                <div
+                    style={{
+                        height: "100vh",
+                        width: "100vw",
+                        backgroundImage: 'url(' + props.src + ')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        backgroundSize: "contain",
+                    }}
+                />
+            );
+        }
+    }
+    return null;
+};
 
 const Index = () => {
 
@@ -82,28 +147,26 @@ const Index = () => {
             >
                 <ParallaxLayer offset={0}>
 
-                    <div
-                        style={{
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            position: "absolute",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundImage: 'url(' + landingBG + ')',
-                        }}
-                    />
 
                     <div
                         style={{
-                            top: 0,
-                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            position: "absolute",
+                            zIndex: -2,
+                            backgroundColor:"black"
+                        }}
+                    />
+                    <AsyncImage src={foodBG} landing />
+
+                    <div
+                        style={{
                             width: "100%",
                             height: "100%",
                             display: "flex",
                             justifyContent: "center",
                             position: "absolute",
+                            zIndex: 1,
                         }}
                     >
                         <CremaTitle device={deviceType} />
@@ -133,19 +196,7 @@ const Index = () => {
                         zIndex: -1
                     }}
                 >
-
-                    <LazyLoad offset={height} debounce={false}>
-                        <div
-                            style={{
-                                height: "100vh",
-                                width: "100vw",
-                                backgroundImage: 'url(' + drinksBG + ')',
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
-                                backgroundSize: "contain",
-                            }}
-                        />
-                    </LazyLoad>
+                    <AsyncImage src={drinksBG} />
                 </ParallaxLayer>
 
                 <ParallaxLayer

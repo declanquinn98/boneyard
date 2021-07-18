@@ -629,7 +629,7 @@ const Slideshow = (props) => {
             <Fade
                 arrows={false}
                 autoplay={props.autoplay}
-                duration={2500}
+                duration={3000}
                 style={{
                     width: "100%",
                     height: "100%",

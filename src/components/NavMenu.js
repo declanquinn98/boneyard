@@ -32,7 +32,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                 display: "flex",
                 position: "absolute",
                 justifyContent: "center",
-                background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0) 75%)"
+                background: "rgba(0,0,0,0.35)"
             }}
         >
             <div
@@ -41,7 +41,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     display: "flex",
                     justifyContent: "space-evenly",
                     marginTop: "2.5vh",
-                    marginBottom: "5vh",
+                    marginBottom: "2.5vh",
                     alignItems: "center",
                 }}
             >
