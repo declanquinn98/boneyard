@@ -1167,7 +1167,7 @@ class GoogleMap extends Component {
                 }}
                 role={"none"}
             >
-                <LazyLoad debounce={false} offset={window.screen.height} onContentVisible={this.lazyLoaded}>
+                <LazyLoad debounce={false} offset={window.screen.height * 2} onContentVisible={this.lazyLoaded}>
                     <GoogleMapMap registerChild={this._registerChild} />
                 </LazyLoad>
                 {IS_REACT_16 && overlay && createPortal(this._renderPortal(), overlay)}

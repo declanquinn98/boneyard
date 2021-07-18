@@ -16,9 +16,11 @@ import { Contact } from "../components/IndexSections/Contact.js";
 import { BackgroundText } from "../components/BackgroundText.js";
 
 import landingBG from "../assets/images/backgrounds/espressoBlack.jpg";
-import cookiesBG from "../assets/images/backgrounds/cookies.jpg";
-import keepcupBG from "../assets/images/backgrounds/keepcup.jpg";
-import outsideBG from "../assets/images/backgrounds/outside.jpg";
+//import landingBG2000 from "../assets/images/backgrounds/espressoBlack.jpf";
+import foodBG from "../assets/images/backgrounds/food.jpg";
+import sustainBG from "../assets/images/backgrounds/sustain.jpg";
+import contactBG from "../assets/images/backgrounds/contact.jpg";
+import drinksBG from "../assets/images/backgrounds/drinks.jpg";
 
 //const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
@@ -110,9 +112,6 @@ const Index = () => {
 
                     </div>
 
-
-
-
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -128,7 +127,7 @@ const Index = () => {
                 </ParallaxLayer>
 
                 <ParallaxLayer
-                    offset={1.5}
+                    offset={1.7}
                     speed={-0.1}
                     style={{
                         zIndex: -1
@@ -140,10 +139,10 @@ const Index = () => {
                             style={{
                                 height: "100vh",
                                 width: "100vw",
-                                backgroundImage: 'url(' + cookiesBG + ')',
+                                backgroundImage: 'url(' + drinksBG + ')',
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
-                                backgroundSize: "cover",
+                                backgroundSize: "contain",
                             }}
                         />
                     </LazyLoad>
@@ -175,7 +174,7 @@ const Index = () => {
                             style={{
                                 height: "100vh",
                                 width: "100vw",
-                                backgroundImage: 'url(' + keepcupBG + ')',
+                                backgroundImage: 'url(' + foodBG + ')',
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                                 backgroundSize: "cover",
@@ -198,7 +197,7 @@ const Index = () => {
                 </ParallaxLayer>
 
                 <ParallaxLayer
-                    offset={4.75}
+                    offset={4.625}
                     speed={-0.1}
                     style={{
                         zIndex: -1
@@ -209,7 +208,7 @@ const Index = () => {
                             style={{
                                 height: "100vh",
                                 width: "100vw",
-                                backgroundImage: 'url(' + outsideBG + ')',
+                                backgroundImage: 'url(' + sustainBG + ')',
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                                 backgroundSize: "cover",
@@ -232,7 +231,7 @@ const Index = () => {
                 </ParallaxLayer>
 
                 <ParallaxLayer
-                    offset={6.25}
+                    offset={6.125}
                     speed={-0.1}
                     style={{
                         zIndex: -1
@@ -243,7 +242,7 @@ const Index = () => {
                             style={{
                                 height: "100vh",
                                 width: "100vw",
-                                backgroundImage: 'url(' + outsideBG + ')',
+                                backgroundImage: 'url(' + contactBG + ')',
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                                 backgroundSize: "cover",

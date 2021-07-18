@@ -3,7 +3,7 @@ import * as React from "react";
 export const BackgroundText = (props) => {
 
     const fontSize = props.sus ? "25vw" : props.size ? props.size : "30vw";
-
+    const opacity = props.sus ? "40%" : "50%";
     return (
         <h2
             style={{
@@ -12,7 +12,7 @@ export const BackgroundText = (props) => {
                 fontFamily: "Stereofidelic",
                 fontSize: fontSize,
                 alignSelf: "center",
-                opacity: "50%"
+                opacity: opacity,
             }}
         >
             {props.text}

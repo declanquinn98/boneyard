@@ -7,10 +7,10 @@ import { Fade } from 'react-slideshow-image';
 
 import 'react-slideshow-image/dist/styles.css'
 
-import slide0 from "../../assets/images/AboutSlideshow/0.jpg";
-import slide1 from "../../assets/images/AboutSlideshow/1.jpg";
-import slide2 from "../../assets/images/AboutSlideshow/2.jpg";
-import slide3 from "../../assets/images/AboutSlideshow/3.jpg";
+import slide0 from "../../assets/images/AboutSlideshow/1.jpg";
+import slide1 from "../../assets/images/AboutSlideshow/2.jpg";
+import slide2 from "../../assets/images/AboutSlideshow/3.jpg";
+import slide3 from "../../assets/images/AboutSlideshow/4.jpg";
 import record from "../../assets/images/AboutSlideshow/record.png";
 
 import coffee from "../../assets/images/coffeeIcon.png";
@@ -42,11 +42,11 @@ export const About = (props) => {
     const recordSpring = useSpring({ recordTRS });
 
     const [t1Size, setT1Size] = useState("5vw");
-    const [t2Size, setT2Size] = useState("2.5vw");
-    const [t3Size, setT3Size] = useState("1.5vw");
-    const [p1Size, setP1Size] = useState("1vw");
-    const [p2Size, setP2Size] = useState("0.75vw");
-    const [iconSize, setIconSize] = useState("3vw");
+    const [t2Size, setT2Size] = useState("3vw");
+    const [t3Size, setT3Size] = useState("1.85vw");
+    const [p1Size, setP1Size] = useState("1.25vw");
+    const [p2Size, setP2Size] = useState("0.95vw");
+    const [iconSize, setIconSize] = useState("3.75vw");
 
     React.useEffect(() => {
 
@@ -54,16 +54,16 @@ export const About = (props) => {
             setT1Size("12.5vw");
             setT2Size("7.5vw");
             setT3Size("4.5vw");
-            setP1Size("3.5vw");
-            setP2Size("3.25vw");
+            setP1Size("3.75vw");
+            setP2Size("3.5vw");
             setIconSize("11vw");
         }
         else if (props.device === "tablet") {
             setT1Size("10vw");
             setT2Size("6.25vw");
             setT3Size("3.75vw");
-            setP1Size("2.25vw");
-            setP2Size("1.875vw");
+            setP1Size("2.5vw");
+            setP2Size("2vw");
             setIconSize("7.5vw");
         }
     }, [props.device]);
@@ -98,7 +98,7 @@ export const About = (props) => {
                             width: "90%",
                             height: "85%",
                             display: "flex",
-                            alignSelf: "center",
+                            alignSelf: "center"
                         }}
                     >
                         <div
@@ -107,7 +107,7 @@ export const About = (props) => {
                                 height: "100%",
                                 display: "flex",
                                 flexDirection: "column",
-                                justifyContent: "center",
+                                justifyContent: "center"
                             }}
                         >
                             <h3
@@ -128,7 +128,10 @@ export const About = (props) => {
                                         fontSize: p1Size,
                                     }}
                                 >
-                                    There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler--- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    We are one half of the Boneyard Collective - a family of Redcliffe locals who share a passion for great coffee and great music.
+                                    Our other half is The Boneyard Records and Relics.
+                                    As the name would suggest, they stock a vast selection of new and vintage vinyl, as well as a range of funky relics and handmade goods.
+                                    With new stock sourced weekly, you never know what gems you'll find.
                                 </p>
                             </div>
                             <h4
@@ -136,6 +139,7 @@ export const About = (props) => {
                                     fontSize: t2Size,
                                     fontFamily: "Oswald",
                                     marginBottom: "3vh",
+                                    marginTop: 0,
                                     textAlign: "center"
                                 }}
                             >
@@ -182,7 +186,7 @@ export const About = (props) => {
                                             fontSize: p2Size,
                                         }}
                                     >
-                                        Our beans are ethically sourced or something like that.
+                                        Great brews every time thanks to Fonzie Abbot.
                                     </p>
                                 </div>
 
@@ -219,7 +223,7 @@ export const About = (props) => {
                                             fontSize: p2Size,
                                         }}
                                     >
-                                        We minimise our power usage and waste.??
+                                        We like this planet, and operate with its well-being in mind.
                                     </p>
                                 </div>
 
@@ -256,15 +260,10 @@ export const About = (props) => {
                                             fontSize: p2Size,
                                         }}
                                     >
-                                        We like our neighbours, they're very cool.
+                                        Family run and family owned.
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                style={{
-                                    height: "6vw"
-                                }}
-                            />
                         </div>
                         <div
                             style={{
@@ -392,7 +391,11 @@ export const About = (props) => {
                                     fontSize: p1Size,
                                 }}
                             >
-                                There's a cool record store and a cool coffee shop next door. IDK, whatever you want to put here Ruby. filler--- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                We are one half of the Boneyard Collective - a family of Redcliffe locals who share a passion for great coffee and great music.
+                                Our other half is The Boneyard Records and Relics.
+                                As the name would suggest, they stock a vast selection of new and vintage vinyl, as well as a range of funky relics and handmade goods.
+                                With new stock sourced weekly, you never know what gems you'll find.
+
                             </p>
                         </div>
                         {
@@ -526,7 +529,7 @@ export const About = (props) => {
                                         fontSize: p2Size,
                                     }}
                                 >
-                                    Our beans are ethically sourced or something like that.
+                                    Great brews every time thanks to Fonzie Abbot.
                                 </p>
                             </div>
 
@@ -563,7 +566,7 @@ export const About = (props) => {
                                         fontSize: p2Size,
                                     }}
                                 >
-                                    We minimise our power usage and waste.??
+                                    We like this planet, and operate with its well-being in mind.
                                 </p>
                             </div>
 
@@ -635,7 +638,7 @@ const Slideshow = (props) => {
             >
 
                 <img
-                    src={slide3}
+                    src={slide0}
                     alt={"Slide 1"}
                     style={{
                         width: "100%",
@@ -646,7 +649,7 @@ const Slideshow = (props) => {
 
                 <LazyLoad offset={props.height} debounce={false}>
                     <img
-                        src={slide0}
+                        src={slide1}
                         alt={"Slide 2"}
                         style={{
                             width: "100%",
@@ -658,7 +661,7 @@ const Slideshow = (props) => {
 
                 <LazyLoad offset={props.height} debounce={false}>
                     <img
-                        src={slide1}
+                        src={slide2}
                         alt={"Slide 3"}
                         style={{
                             width: "100%",
@@ -670,7 +673,7 @@ const Slideshow = (props) => {
 
                 <LazyLoad offset={props.height} debounce={false}>
                     <img
-                        src={slide2}
+                        src={slide3}
                         alt={"Slide 4"}
                         style={{
                             width: "100%",
