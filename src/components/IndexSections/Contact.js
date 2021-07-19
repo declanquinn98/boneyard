@@ -91,7 +91,7 @@ export const Contact = (props) => {
                                 >
                                     18 Anzac ave, Redcliffe QLD 4020
                                     <br />
-                                    Open Tuesday - Sunday 7am-2pm
+                                    Open Tuesday-Sunday 7am-2pm
                                     <br />
                                     hello@boneyardespresso.com
                                     <br />

@@ -15,7 +15,7 @@ import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
 import { BackgroundText } from "../components/BackgroundText.js";
 
-import landingVid from "../assets/images/backgrounds/landing.mp4";
+import landingVid from "../assets/images/backgrounds/landingvid.webm";
 import foodBG from "../assets/images/backgrounds/food.jpg";
 import sustainBG from "../assets/images/backgrounds/sustain.jpg";
 import contactBG from "../assets/images/backgrounds/contact.jpg";
@@ -158,7 +158,14 @@ const Index = () => {
                         }}
                     />
                     <AsyncImage src={foodBG} landing />
-
+                    <div
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            position: "absolute",
+                            backgroundColor: "rgba(0,0,0,0.5)"
+                        }}
+                    />
                     <div
                         style={{
                             width: "100%",

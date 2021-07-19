@@ -32,7 +32,6 @@ export const NavMenu = React.forwardRef((props, ref) => {
                 display: "flex",
                 position: "absolute",
                 justifyContent: "center",
-                background: "rgba(0,0,0,0.35)"
             }}
         >
             <div
