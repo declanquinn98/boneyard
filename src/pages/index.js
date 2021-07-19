@@ -15,7 +15,7 @@ import { Sustain } from "../components/IndexSections/Sustain.js";
 import { Contact } from "../components/IndexSections/Contact.js";
 import { BackgroundText } from "../components/BackgroundText.js";
 
-import landingVid from "../assets/images/backgrounds/landingvid.webm";
+import landingVid from "../assets/images/backgrounds/landingVid.webm";
 import foodBG from "../assets/images/backgrounds/food.jpg";
 import sustainBG from "../assets/images/backgrounds/sustain.jpg";
 import contactBG from "../assets/images/backgrounds/contact.jpg";
