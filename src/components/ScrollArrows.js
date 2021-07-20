@@ -10,7 +10,6 @@ export const ScrollArrows = React.forwardRef((props, ref) => {
     const [size, setSize] = React.useState("5vw");
 
     React.useEffect(() => {
-        console.log(props.device)
         if (props.device === "mobile")
             setSize("15vw");
         else if (props.device === "tablet")

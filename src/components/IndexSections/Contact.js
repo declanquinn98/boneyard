@@ -1,12 +1,10 @@
 import * as React from "react";
+import LazyLoad from 'react-lazy-load';
 import { ParallaxLayer } from '@react-spring/parallax';
-//import GoogleMapReact from 'google-map-react';
 import GoogleMap from '../../components/googlemap/index.js';
 import { mapStyle } from "../../styles/map.js";
-import InstagramFeed from 'react-ig-feed';
-//import LazyLoad from 'react-lazy-load';
-import LazyLoad from 'react-lazy-load';
-import 'react-ig-feed/dist/index.css';
+
+import { InstagramFeed } from "../instafeed/feed.js";
 import '../../styles/marker.css';
 
 const offBlack = "#1f1d1e";
@@ -358,31 +356,25 @@ const Map = (props) => {
         lng: 153.115957
     }
 
-    const handleApiLoaded = (map, maps) => {
-        // use map and maps objects
-        console.log("loaded map")
-    };
     return (
         <div style={{ height: props.h, width: props.w }}>
 
 
-                <GoogleMap
-                    bootstrapURLKeys={{ key: process.env.GATSBY_MAP_TOKEN }}
-                    defaultCenter={center}
-                    defaultZoom={17}
-                    yesIWantToUseGoogleMapApiInternals
-                    onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
-                    options={{
-                        styles: mapStyle,
-                        zoomControl: false,
-                        rotateControl: false,
-                        mapTypeControl: false,
-                        fullscreenControl: false,
-                        streetViewControl: false,
-                    }}
-                >
-                    <Marker lat={center.lat} lng={center.lng} text="The Boneyard Espresso" />
-                </GoogleMap>
+            <GoogleMap
+                bootstrapURLKeys={{ key: process.env.GATSBY_MAP_TOKEN }}
+                defaultCenter={center}
+                defaultZoom={17}
+                options={{
+                    styles: mapStyle,
+                    zoomControl: false,
+                    rotateControl: false,
+                    mapTypeControl: false,
+                    fullscreenControl: false,
+                    streetViewControl: false,
+                }}
+            >
+                <Marker lat={center.lat} lng={center.lng} text="The Boneyard Espresso" />
+            </GoogleMap>
 
         </div>
     );
