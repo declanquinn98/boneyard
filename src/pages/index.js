@@ -142,7 +142,7 @@ const Index = () => {
                 style={{
                     top: 0,
                     left: 0,
-                    fontFamily: "Playfair"
+                    fontFamily: "Playfair Display"
                 }}
             >
                 <ParallaxLayer offset={0}>

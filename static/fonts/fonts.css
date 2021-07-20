@@ -1,0 +1,36 @@
+
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald'), url(oswald-v36-latin-regular.ttf) format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bebas';
+    src: local('Bebas'), url(bebas-neue-v2-latin-regular.ttf) format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: local('Bebas'), url(playfair-display-v22-latin-regular.ttf) format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Stereofidelic';
+    src: local('Stereofidelic'), url(Stereofidelic.ttf) format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Felix';
+    src: local('Felix'), url(Felixti.ttf) format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Facebook';
+    src: local('Facebook'), url(facebook.otf) format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Instagram';
+    src: local('Instagram'), url(instagram.otf) format('opentype');
+    font-display: swap;
+}

@@ -35,8 +35,23 @@ module.exports = {
             },
         },
         `gatsby-plugin-gatsby-cloud`,
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
+        {
+            resolve: "gatsby-omni-font-loader",
+            options: {
+
+                mode: "async",
+                enableListener: true,
+
+                /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
+                custom: [
+                    {
+                        /* Exact name of the font as defied in @font-face CSS rule */
+                        name: ["Oswald, Bebas, Playfair, Felix, Facebook, Instagram"],
+                        /* Path to the font CSS file inside the "static" folder with @font-face definition */
+                        file: "/fonts/fonts.css",
+                    },
+                ],
+            },
+        }
     ],
 }
