@@ -91,7 +91,7 @@ export const Contact = (props) => {
                                     <br />
                                     Open Tuesday-Sunday 7am-2pm
                                     <br />
-                                    hello@boneyardespresso.com
+                                    manager@boneyardespresso.com
                                     <br />
                                     0413 442 321
                                 </p>
