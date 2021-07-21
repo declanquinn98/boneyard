@@ -603,7 +603,7 @@ export const About = (props) => {
                                         fontSize: p2Size,
                                     }}
                                 >
-                                    We like our neighbours, they're very cool.
+                                    Family run and family owned.
                                 </p>
                             </div>
                         </div>
