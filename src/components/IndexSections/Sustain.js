@@ -127,7 +127,7 @@ export const Sustain = (props) => {
                                         We only offer digital receipts
                                     </li>
                                     <li>
-                                        We do not use ANY single-use plastics
+                                        We use minimal single-use plastics
                                     </li>
                                     <li>
                                         We focus on sustainable, local and plant-based snacks and treats
@@ -225,7 +225,7 @@ export const Sustain = (props) => {
                                         We only offer digital receipts
                                     </li>
                                     <li>
-                                        We do not use ANY single-use plastics
+                                        We use minimal single-use plastics
                                     </li>
                                     <li>
                                         We focus on sustainable, local and plant-based snacks and treats
@@ -319,7 +319,7 @@ export const Sustain = (props) => {
                                         We only offer digital receipts
                                     </li>
                                     <li>
-                                        We do not use ANY single-use plastics
+                                        We use minimal single-use plastics
                                     </li>
                                     <li>
                                         We focus on sustainable, local and plant-based snacks and treats
