@@ -21,8 +21,8 @@ const offBlack = "#1f1d1e";
 const offWhite = "#f4f4f9";
 
 const calcSleeveTransform = (x, y, rect) => [
-    -(y - rect.top - rect.height / 2) / 5,
-    (x - rect.left - rect.width / 2) / 5,
+    -(y - rect.top - rect.height / 2) / 10,
+    (x - rect.left - rect.width / 2) / 10,
     1.4
 ];
 
@@ -291,8 +291,8 @@ export const About = (props) => {
                                 <div
                                     role={"none"}
                                     style={{
-                                        width: "26vw",
-                                        height: "26vw",
+                                        width: "40vw",
+                                        height: "40vw",
                                         zIndex: 1,
                                     }}
                                     onMouseEnter={async () => {
