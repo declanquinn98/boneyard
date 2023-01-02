@@ -2,8 +2,8 @@ import * as React from "react";
 import LazyLoad from 'react-lazy-load';
 import { ParallaxLayer } from '@react-spring/parallax';
 
-import bread from "../../assets/images/Food/bread.jpg";
-import cookies from "../../assets/images/Food/cookies.jpg";
+import bread from "../../assets/images/Food/brasserie.jpg";
+import cookies from "../../assets/images/Food/gcCookies.jpg";
 import doughnut from "../../assets/images/Food/doughluxe.jpg";
 import cube from "../../assets/images/Food/cube1.jpg";
 
@@ -149,7 +149,7 @@ export const Food = (props) => {
                                     pointerEvents: "auto"
                                 }}
                             >
-                                <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
+                                <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
                             </div>
                             <div style={{ width: columnSpace }} />
                             <div
@@ -204,7 +204,7 @@ export const Food = (props) => {
                                     flexDirection: "column-reverse",
                                     pointerEvents: "auto"
                                 }}
-                            > <p>Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />. Make sure to try the blueberry and white chocolate flavour made exclusively for The Boneyard!</p>
+                            > <p>Throughout the week you will find a variety of cookies baked by <Link href="www.instagram.com/goldcoastcookies" text="Gold Coast Cookies" />.</p>
                             </div>
 
                             <div style={{ width: columnSpace, pointerEvents: "none" }} />
@@ -247,7 +247,7 @@ export const Food = (props) => {
                                     <LazyLoad offset={imageHeightLoad} debounce={false}>
                                         <img
                                             src={cookies}
-                                            alt="Cakes By Jordyn"
+                                            alt="Gold Coast Cookies"
                                             style={{
                                                 width: "100%",
                                                 height: "100%",
@@ -378,7 +378,7 @@ export const Food = (props) => {
                                         alignSelf:"center"
                                     }}
                                 >
-                                    On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked bread and pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.
+                                    On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.
                                 </p>
                             </div>
                         </div>
@@ -405,7 +405,7 @@ export const Food = (props) => {
                                         textAlign: "right",
                                         alignSelf:"center"
                                     }}
-                                > Throughout the week you will find a variety of cookies baked especially for The Boneyard Espresso by <Link href="www.instagram.com/cakesbyjordyn" text="Cakes By Jordyn" />.</p>
+                                > Throughout the week you will find a variety of cookies baked by <Link href="www.instagram.com/goldcoastcookies" text="Gold Coast Cookies" />.</p>
                             </div>
                             <div
                                 style={{
@@ -424,7 +424,7 @@ export const Food = (props) => {
                                     <LazyLoad style={{ width: "100%", height: "100%" }} offset={imageHeightLoad} debounce={false}>
                                         <img
                                             src={cookies}
-                                            alt="Cakes By Jordyn"
+                                            alt="Gold Coast Cookies"
                                             style={{
                                                 width: "100%",
                                                 height: "100%",

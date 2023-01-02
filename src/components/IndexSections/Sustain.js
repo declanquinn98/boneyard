@@ -87,9 +87,6 @@ export const Sustain = (props) => {
                                     The paint was a mixture of leftover tins, hence the variety on our white walls.
                                     Even the wall cladding is reclaimed timber from an old Queenslander in the area.
                                     As for our furnishings, they were all sourced from friends, family and marketplaces. After some love and TLC, they were good as new!
-                                    Our low-waste mission didn't stop there - it's been a challenge, but I knew I needed to be able to operate sustainably.
-                                    With any business there is going to be waste, but it's our responsibility to minimise it.
-                                    We endeavour to produce less than a wheelie bin of landfill per month - no need for skip bins at this business!
 
                                 </p>
                                 <p>
@@ -114,7 +111,7 @@ export const Sustain = (props) => {
                                     We encourage our customers to dine in, feel the ocean breeze and enjoy their coffee in a ceramic mug.
                                     If you prefer takeaway, we've got that covered too. All our takeaway cups are 100% home compostable (lid included!) and break down in a matter of weeks.
                                     We even have a collection point in-store for your old cups.
-                                    The Boneyard Espresso offers a $1 discount for reusable cups, as well as stocking reusable straws and Keep Cups - your first Keep Cup coffee is free!
+                                    The Boneyard Espresso offers a 75c discount for reusable cups, as well as stocking reusable straws and Keep Cups - your first Keep Cup coffee is free!
                                 </p>
                                 <p>
                                     Our other eco-concious initiatives:
@@ -208,7 +205,7 @@ export const Sustain = (props) => {
                                     We encourage our customers to dine in, feel the ocean breeze and enjoy their coffee in a ceramic mug.
                                     If you prefer takeaway, we've got that covered too. All our takeaway cups are 100% home compostable (lid included!) and break down in a matter of weeks.
                                     We even have a collection point in-store for your old cups.
-                                    The Boneyard Espresso offers a $1 discount for reusable cups, as well as stocking reusable straws and Keep Cups - your first Keep Cup coffee is free!
+                                    The Boneyard Espresso offers a 75c discount for reusable cups, as well as stocking reusable straws and Keep Cups - your first Keep Cup coffee is free!
                                 </p>
                                 <p>
                                     Our fresh, organic milk comes in bulk, straight from the local SEQ Barambah Dairies in 10L sacks.
@@ -306,7 +303,7 @@ export const Sustain = (props) => {
                                     We encourage our customers to dine in, feel the ocean breeze and enjoy their coffee in a ceramic mug.
                                     If you prefer takeaway, we've got that covered too. All our takeaway cups are 100% home compostable (lid included!) and break down in a matter of weeks.
                                     We even have a collection point in-store for your old cups.
-                                    The Boneyard Espresso offers a $1 discount for reusable cups, as well as stocking reusable straws and Keep Cups - your first Keep Cup coffee is free!
+                                    The Boneyard Espresso offers a 75c discount for reusable cups, as well as stocking reusable straws and Keep Cups - your first Keep Cup coffee is free!
                                 </p>
                                 <p>
                                     Our other eco-concious initiatives:

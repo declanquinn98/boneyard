@@ -87,13 +87,13 @@ export const Contact = (props) => {
                                         marginBottom: 0,
                                     }}
                                     >
-                                    Open Monday-Friday 5:30am-12:30pm
+                                    Open Monday - Friday 6:00am - 2:30pm
                                     <br />
-                                    & Saturday-Sunday 6:30am-2:30pm
+                                    & Saturday - Sunday 6:30am - 2:30pm
                                     <br />
                                     18 Anzac ave, Redcliffe QLD 4020
                                     <br />
-                                    hello@boneyardespresso.com
+                                    boneyardespresso@gmail.com
                                     <br />
                                     0413 442 321
 
@@ -238,11 +238,13 @@ export const Contact = (props) => {
                                         marginBottom: 0,
                                     }}
                                 >
+                                    Open Monday - Friday 6:00am - 2:30pm
+                                    <br />
+                                    & Saturday - Sunday 6:30am - 2:30pm
+                                    <br />
                                     18 Anzac ave, Redcliffe QLD 4020
                                     <br />
-                                    Open Tuesday - Sunday 7am-2pm
-                                    <br />
-                                    hello@boneyardespresso.com
+                                    boneyardespresso@gmail.com
                                     <br />
                                     0413 442 321
                                 </p>
