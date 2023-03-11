@@ -3,7 +3,6 @@ import * as React from "react";
 const offWhite = "#f4f4f9";
 
 export const NavMenu = React.forwardRef((props, ref) => {
-
     const scroll = (page) => {
         ref.current.scrollTo(page)
     }
@@ -144,6 +143,21 @@ export const NavMenu = React.forwardRef((props, ref) => {
                 >
                     Contact
                 </button>
+
+				<a
+					href="https://boneyardespresso.square.site/"
+                    className="nav-menu-option"
+                    style={{
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: textSize,
+                        fontFamily: "playfair",
+                        backgroundColor: "rgba(0,0,0,0)",
+                        color: offWhite
+                    }}
+                >
+                    Shop Online
+                </a>
             </div>
         </div >
     )
