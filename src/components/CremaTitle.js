@@ -24,7 +24,7 @@ export const CremaTitle = (props) => {
 
     if (props.device === "desktop") {
         return (
-            <div>
+            <div style={{ marginTop: '125px' }}>
                 <div
                     style={{
                         left: 0,
@@ -48,6 +48,7 @@ export const CremaTitle = (props) => {
                         style={{
                             width: "100vw",
                             height: "50vh",
+                            marginTop: 80,
                             position: "absolute",
                             top: "22vh",
                             left: 0
@@ -67,7 +68,6 @@ export const CremaTitle = (props) => {
 
                 </div>
             </div >
-
         )
     }
     else if (props.device === "mobile" || props.device === "tablet") {
@@ -93,7 +93,7 @@ export const CremaTitle = (props) => {
                     <h4 style={{
                         fontFamily: "Stereofidelic",
                         fontSize: "35vw",
-                        fontWeight:300,
+                        fontWeight: 300,
                         marginTop: 0,
                         marginBottom: 0
                     }}>BONE YARD</h4>

@@ -132,6 +132,8 @@ export const About = (props) => {
                                     Our other half is The Boneyard Records and Relics.
                                     As the name would suggest, they stock a vast selection of new and vintage vinyl, as well as a range of funky relics and handmade goods.
                                     With new stock sourced weekly, you never know what gems you'll find.
+                                    <br/><br/>
+                                    On the last sunday of each month you'll find our carpark bustling with vintage and handmade stalls. If you'd like to learn more about our market, or become a stall holder, checkout @boneyardmarkets.
                                 </p>
                             </div>
                             <h4
@@ -186,7 +188,7 @@ export const About = (props) => {
                                             fontSize: p2Size,
                                         }}
                                     >
-                                        Great brews every time thanks to Fonzie Abbot.
+                                    Great brews every time thanks to our very own beans roasted in partnership with Crema Coffee Garage
                                     </p>
                                 </div>
 
@@ -395,6 +397,8 @@ export const About = (props) => {
                                 Our other half is The Boneyard Records and Relics.
                                 As the name would suggest, they stock a vast selection of new and vintage vinyl, as well as a range of funky relics and handmade goods.
                                 With new stock sourced weekly, you never know what gems you'll find.
+                                <br/><br/>
+                                On the last sunday of each month you'll find our carpark bustling with vintage and handmade stalls. If you'd like to learn more about our market, or become a stall holder, checkout @boneyardmarkets.
 
                             </p>
                         </div>
@@ -529,7 +533,7 @@ export const About = (props) => {
                                         fontSize: p2Size,
                                     }}
                                 >
-                                    Great brews every time thanks to Fonzie Abbot.
+                                    Great brews every time thanks to our very own beans roasted in partnership with Crema Coffee Garage
                                 </p>
                             </div>
 

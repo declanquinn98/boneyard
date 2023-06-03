@@ -120,9 +120,9 @@ export const Drinks = (props) => {
                                     fontFamily: "Bebas",
                                 }}
                             >
-                                <p style={{ marginTop: 0 }}>SML 4</p>
-                                <p style={{ marginTop: 0 }}>MED 4.5</p>
-                                <p style={{ marginTop: 0 }}>LRG 5</p>
+                                <p style={{ marginTop: 0 }}>SML 4.5</p>
+                                <p style={{ marginTop: 0 }}>MED 5</p>
+                                <p style={{ marginTop: 0 }}>LRG 5.5</p>
                             </div>
 
                         </div>
@@ -185,7 +185,7 @@ export const Drinks = (props) => {
                                     marginTop: 0
                                 }}
                             >
-                                Decaf, Soy, Oat, Almond, Zymil, Coconut, <br />  Macadamia, Extra Shot, Syrups 0.5
+                                Decaf, Soy, Oat, Almond, Zymil, Coconut, <br />  Macadamia, Extra Shot, Syrups 0.75
                             </p>
 
                             <p
@@ -194,7 +194,7 @@ export const Drinks = (props) => {
                                     textAlign: "center",
                                 }}
                             >
-                                Add ice cream to any drink 0.5
+                                Add ice cream to any drink $1
                             </p>
 
                         </div>
@@ -251,7 +251,7 @@ export const Drinks = (props) => {
                                 fontFamily: "Bebas",
                             }}
                             >
-                                Reg 5.5
+                                Reg 6
                             </p>
 
                             <p
@@ -272,7 +272,7 @@ export const Drinks = (props) => {
                                     fontFamily: "Bebas",
                                 }}
                             >
-                                Reg 6
+                                Reg 6.5
                             </p>
 
 
