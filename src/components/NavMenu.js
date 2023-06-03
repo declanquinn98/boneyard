@@ -30,7 +30,8 @@ export const NavMenu = React.forwardRef((props, ref) => {
                 width: "100%",
                 display: "flex",
                 position: "absolute",
-                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: 'column'
             }}
         >
             <div
@@ -144,7 +145,7 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     Contact
                 </button>
 
-				<a
+                {/* <a
 					href="https://boneyardespresso.square.site/"
                     className="nav-menu-option"
                     style={{
@@ -157,6 +158,32 @@ export const NavMenu = React.forwardRef((props, ref) => {
                     }}
                 >
                     Shop Online
+                </a> */}
+            </div>
+
+            <div
+                style={{
+                    width: "100%",
+                    background: 'red',
+                    color: 'white',
+                    textAlign: 'center',
+                    fontFamily: 'Oswald',
+                    fontSize: props.device === 'desktop' ? 50 : props.device === 'mobile' ? '8vw' : '6vw',
+                }}
+            >
+                <a
+                    target="_blank"
+                    href="https://boneyardespresso.square.site/"
+                    style={{ textDecoration: "none", color: "white" }}
+                >
+                    <h4 style={{ margin: 0 }}>ONLINE STORE NOW OPEN!</h4>
+                </a>
+                <a
+                    target="_blank"
+                    href="https://boneyardespresso.square.site/"
+                    style={{ textDecoration: "none", color: "white" }}
+                >
+                    <h6 style={{ margin: 0 }}>SHOP HERE</h6>
                 </a>
             </div>
         </div >

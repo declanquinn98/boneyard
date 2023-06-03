@@ -117,8 +117,8 @@ export const Food = (props) => {
                                 >
                                     <LazyLoad offset={imageHeightLoad} debounce={false}>
                                         <img
-                                            src={doughnut}
-                                            alt="Doughluxe"
+                                            src={cube}
+                                            alt="MMMORE Raw Treats"
                                             style={{
                                                 width: "100%",
                                                 height: "100%",
@@ -129,7 +129,6 @@ export const Food = (props) => {
                                     </LazyLoad>
                                 </div>
                             </div>
-                            <div style={{ width: columnSpace }} />
                         </div>
 
                         <div
@@ -149,7 +148,7 @@ export const Food = (props) => {
                                     pointerEvents: "auto"
                                 }}
                             >
-                                <p>On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
+                                <p>Pop into The Boneyard Espresso any day of the week and you will find an assortment of fresh baked pastries and wild breads delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.</p>
                             </div>
                             <div style={{ width: columnSpace }} />
                             <div
@@ -160,9 +159,8 @@ export const Food = (props) => {
                                     pointerEvents: "auto"
                                 }}
                             >
-                                <p>If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />. Flavours rotate daily but you'll always find both fruity and chocolately doughnuts on offer.</p>
+                                <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
                             </div>
-                            <div style={{ width: columnSpace }} />
                         </div>
                     </div>
                 </ParallaxLayer>
@@ -209,16 +207,7 @@ export const Food = (props) => {
 
                             <div style={{ width: columnSpace, pointerEvents: "none" }} />
 
-                            <div
-                                style={{
-                                    width: columnSpace,
-                                    display: "flex",
-                                    flexDirection: "column-reverse",
-                                    pointerEvents: "auto"
-                                }}
-                            >
-                                <p>Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan - the perfect healthy snack alongside your coffee.</p>
-                            </div>
+                            
                         </div>
 
                         <div
@@ -261,33 +250,7 @@ export const Food = (props) => {
 
                             <div style={{ width: columnSpace, pointerEvents: "none", }} />
 
-                            <div
-                                style={{
-                                    width: columnSpace,
-                                    display: "flex",
-                                    flexDirection: "column",
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: "100%",
-                                        aspectRatio: "1/1"
-                                    }}
-                                >
-                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
-                                        <img
-                                            src={cube}
-                                            alt="MMMORE Raw Treats"
-                                            style={{
-                                                width: "100%",
-                                                height: "100%",
-                                                objectFit: "cover",
-                                                pointerEvents: "auto"
-                                            }}
-                                        />
-                                    </LazyLoad>
-                                </div>
-                            </div>
+                           
                         </div>
 
                     </div>
@@ -378,7 +341,7 @@ export const Food = (props) => {
                                         alignSelf:"center"
                                     }}
                                 >
-                                    On Saturday and Sunday at The Boneyard Espresso you will find an assortment of fresh baked pastries delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.
+                                    Pop into The Boneyard Espresso any day of the week and you will find an assortment of fresh baked pastries and wild breads delivered daily by <Link href="www.brasseriebread.com.au" text="Brasserie Bread" />.
                                 </p>
                             </div>
                         </div>
@@ -461,14 +424,13 @@ export const Food = (props) => {
                                         marginRight:"5vw"
                                     }}
                                 >
-                                    <LazyLoad offset={imageHeightLoad} debounce={false}>
+                                    <LazyLoad style={{ width: "100%", height: "100%" }} offset={imageHeightLoad} debounce={false}>
                                         <img
-                                            src={doughnut}
-                                            alt="Doughluxe"
+                                            src={cube}
+                                            alt="MMMORE Raw Treats"
                                             style={{
                                                 width: "100%",
                                                 height: "100%",
-                                                objectFit: "cover",
                                             }}
                                         />
                                     </LazyLoad>
@@ -488,63 +450,11 @@ export const Food = (props) => {
                                         alignSelf:"center"
                                     }}
                                 >
-                                    If cookies and pastries aren’t enough, pop in store on a Friday, Saturday or Sunday to find small batch, slow rise doughnuts fresh from <Link href='www.doughluxedoughnuts.com.au' text="Doughluxe Doughnuts" />.</p>
+                                    Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan.</p>
 
                             </div>
                         </div>
 
-                        <div
-                            style={{
-                                display: "flex",
-                                alignSelf: "center",
-                                width: "100%",
-                                height: "20%",
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display:"flex",
-                                    width: "50%",
-                                    height: "100%",
-                                }}
-                            >
-                                <p
-                                    style={{
-                                        marginTop: 0,
-                                        marginBottom: 0,
-                                        textAlign: "right",
-                                        alignSelf:'center',
-                                    }}
-                                > 
-                                Sugary sweet treats not your thing? Try one of our <Link href="mmmore.com.au" text="MMMORE Raw Treats" /> Power Cubes! Refined sugar free, gluten free and vegan.</p></div>
-                            <div
-                                style={{
-                                    width: "50%",
-                                    height: "100%",
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        height: "100%",
-                                        aspectRatio: "1/1",
-                                        alignSelf: "center",
-                                        marginLeft:"5vw"
-                                    }}
-                                >
-                                    <LazyLoad style={{ width: "100%", height: "100%" }} offset={imageHeightLoad} debounce={false}>
-                                        <img
-                                            src={cube}
-                                            alt="MMMORE Raw Treats"
-                                            style={{
-                                                width: "100%",
-                                                height: "100%",
-                                            }}
-                                        />
-                                    </LazyLoad>
-                                </div>
-                            </div>
-
-                        </div>
 
 
                     </div>
